@@ -24,9 +24,13 @@ function restart_mysql {
  start_mysql
 }
 
+alias link_mysql='ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock'
+
 # nginx
-alias start_nginx='sudo launchctl load -w /Library/LaunchDaemons/org.macports.nginx.plist'
-alias stop_nginx='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.nginx.plist'
+# alias start_nginx='sudo launchctl load -w /Library/LaunchDaemons/org.macports.nginx.plist'
+# alias stop_nginx='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.nginx.plist'
+alias start_nginx='sudo /opt/nginx/sbin/nginx'
+alias stop_nginx='sudo kill `cat /opt/nginx/logs/nginx.pid `'
 function restart_nginx {
  stop_nginx
  start_nginx
@@ -101,11 +105,12 @@ export CLICOLOR=1
 export TERM=xterm-color
 export LSCOLORS=gxfxcxdxbxegedabagacad  # cyan directories
 
-COLOR_YELLOW="\[\e[33;33m\]"
-COLOR_GREEN="\[\033[32;32m\]"
-COLOR_RED="\[\e[01;31m\]"
+COLOR_YELLOW="\[\e[1;33m\]"
+COLOR_GREEN="\[\033[1;32m\]"
+COLOR_RED="\[\e[1;31m\]"
 COLOR_NONE="\[\e[0m\]"
-COLOR_CYAN="\[\033[32;36m\]"
+COLOR_CYAN="\[\033[1;36m\]"
+COLOR_BLUE='\[\033[1;34m\]'
 
 git_dirty_flag() {
   git status 2> /dev/null | grep -c : | awk '{if ($1 > 0) print "*"}'
@@ -114,11 +119,11 @@ git_dirty_flag() {
 prompt_func()
 {
     previous_return_value=$?;
-    prompt_line_one="${COLOR_CYAN}\u${COLOR_YELLOW}@\h${COLOR_GREEN}$(__git_ps1 ' [%s]')${COLOR_RED}$(git_dirty_flag)"
-    prompt_line_two="${COLOR_GREEN}\w${COLOR_NONE} "
+    prompt_line_one="${COLOR_CYAN}\u${COLOR_YELLOW}@\h"
+    prompt_line_two="${COLOR_GREEN}\w${COLOR_BLUE}$(__git_ps1 ' (%s)')${COLOR_RED}$(git_dirty_flag)${COLOR_NONE}"
     pointer="${prompt}$> "
 
-    PS1="\n${prompt_line_one}\n${prompt_line_two}${pointer}"
+    PS1="${prompt_line_one} ${prompt_line_two} ${pointer}"
 }
 PROMPT_COMMAND=prompt_func
 

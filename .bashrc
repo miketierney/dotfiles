@@ -16,25 +16,44 @@ alias rdm="rake db:migrate"
 alias rdtp="rake db:test:prepare"
 
 # MySQL
-alias mysql="mysql5"
-alias start_mysql='sudo launchctl load -w /Library/LaunchDaemons/org.macports.mysql5.plist'
-alias stop_mysql='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.mysql5.plist'
-function restart_mysql {
- stop_mysql
- start_mysql
+# alias mysql="mysql5"
+alias start_mysql='/usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server start'
+alias stop_mysql='/usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server stop'
+alias restart_mysql='/usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server restart'
+
+# MongoDB
+alias start_mongo='launchctl load -w ~/Library/LaunchAgents/org.mongodb.mongod.plist'
+alias stop_mongo='launchctl unload -w ~/Library/LaunchAgents/org.mongodb.mongod.plist'
+function restart_mongo {
+  stop_mongo
+  start_mongo
 }
 
-alias link_mysql='ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock'
+# alias start_mysql='sudo launchctl load -w /Library/LaunchDaemons/org.macports.mysql5.plist'
+# alias stop_mysql='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.mysql5.plist'
+# function restart_mysql {
+#  stop_mysql
+#  start_mysql
+# }
+
+# alias link_mysql='ln -s /opt/local/var/run/mysql5/mysqld.sock /tmp/mysql.sock'
 
 # nginx
 # alias start_nginx='sudo launchctl load -w /Library/LaunchDaemons/org.macports.nginx.plist'
 # alias stop_nginx='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.nginx.plist'
-alias start_nginx='sudo /opt/nginx/sbin/nginx'
-alias stop_nginx='sudo kill `cat /opt/nginx/logs/nginx.pid `'
+alias start_nginx='sudo launchctl load -w /Library/LaunchDaemons/org.macports.nginx.plist'
+alias stop_nginx='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.nginx.plist'
 function restart_nginx {
  stop_nginx
  start_nginx
 }
+
+# alias start_nginx='sudo /opt/nginx/sbin/nginx'
+# alias stop_nginx='sudo kill `cat /opt/nginx/logs/nginx.pid `'
+# function restart_nginx {
+#  stop_nginx
+#  start_nginx
+# }
 
 # nginx short cuts
 alias start_memd='sudo launchctl load -w /Library/LaunchDaemons/org.macports.memcached.plist'
@@ -55,7 +74,7 @@ alias sites='cl ~/Sites/'
 alias gs='git-sh'
 
 # Github commands
-alias git=hub
+# alias git=hub
 
 # branch management
 alias gbc='git branch --color'

@@ -33,13 +33,19 @@ alias rdtp='rake db:test:prepare'
 
 # Mike's sanity-saving shortcuts
 # apache short cut
-alias start_apache='sudo /opt/local/apache2/bin/apachectl start'
+# alias start_apache='sudo /opt/local/apache2/bin/apachectl start'
+alias start_apache='sudo launchctl load -w /Library/LaunchDaemons/org.macports.apache2.plist'
 alias apstart=start_apache
 
-alias stop_apache='sudo /opt/local/apache2/bin/apachectl stop'
+# alias stop_apache='sudo /opt/local/apache2/bin/apachectl stop'
+alias stop_apache='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.apache2.plist'
 alias apstop=stop_apache
 
-alias restart_apache='sudo /opt/local/apache2/bin/apachectl restart'
+# alias restart_apache='sudo /opt/local/apache2/bin/apachectl restart'
+function restart_apache {
+  stop_mysql
+  start_mysql
+}
 alias aprestart=restart_apache
 
 

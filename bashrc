@@ -30,6 +30,7 @@ alias sc='./script/console'
 alias ss='./script/server'
 alias rdm='rake db:migrate'
 alias rdtp='rake db:test:prepare'
+alias rdma='rake db:migrate && rake db:test:prepare'
 
 # Mike's sanity-saving shortcuts
 # apache short cut

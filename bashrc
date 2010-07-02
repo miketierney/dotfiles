@@ -49,7 +49,8 @@ function restart_apache {
 }
 alias aprestart=restart_apache
 
-
+# Dev Resources (only works on the doxo intranet)
+alias dev='ssh dev' # requires that the 'dev' ssh alias be set up properly
 
 # Personal
 alias projects='cl ~/Projects'

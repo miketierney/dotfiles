@@ -1,0 +1,46 @@
+[user]
+  name = Michael Tierney
+  email = mike@panpainter.com
+[github]
+  user = panpainter
+  token = 2b91725ebb0b5fcab94bc7a7e831a626
+[color]
+  sh = auto
+  ui = true
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+  nobranch = red bold
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "sh"]
+  branch = yellow
+  workdir = green
+[alias]
+  co = checkout
+  pl = pull
+  pu = push
+  st = status
+  stat = status
+  br = branch
+  ca = commit -v -a
+  sh = !git-sh
+
+  # Git-SVN stuff
+  update = svn rebase
+  up = update
+  dcommit = svn dcommit
+[push]
+  default = current
+[pull]
+  default = current
+[help]
+  autocorrect = 1

@@ -1,0 +1,17 @@
+K 8
+passtype
+V 6
+simple
+K 8
+password
+V 9
+passwordz
+K 15
+svn:realmstring
+V 24
+<http://svn:80> SVN User
+K 8
+username
+V 5
+miket
+END

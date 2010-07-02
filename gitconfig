@@ -21,7 +21,7 @@
   up = update
   dcommit = svn dcommit
 [core]
-  editor = mate -w
+  editor = vim
 [push]
   default = current
 [pull]

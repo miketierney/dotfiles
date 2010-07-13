@@ -82,4 +82,4 @@ map <leader>tm :tabmove
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 " autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
-
+au BufRead,BufNewFile *.scss set filetype=scss

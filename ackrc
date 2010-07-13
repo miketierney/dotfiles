@@ -9,3 +9,7 @@
 --ignore-dir=tmp
 
 --type-set=bin=.pdf --nobin
+--type-set=bin=.png --nobin
+--type-set=bin=.jpg --nobin
+--type-set=bin=.jpeg --nobin
+--type-set=bin=.gif --nobin

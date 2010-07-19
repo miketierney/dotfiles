@@ -52,6 +52,8 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 " Or use vividchalk
 colorscheme topfunky-light
 
+let mapleader = "_"
+
 " Tab mappings.
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
@@ -80,4 +82,4 @@ map <leader>tm :tabmove
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 " autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
-
+au BufRead,BufNewFile *.scss set filetype=scss

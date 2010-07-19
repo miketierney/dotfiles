@@ -60,7 +60,7 @@ alias bonsai='cl ~/Projects/doxo/bonsai'
 alias sites='cl ~/Sites/'
 
 # Development
-alias dev_aspen='mate /Volumes/Doxo\ Development\ Machine/projects/aspen'
+alias dev_aspen='mate /Volumes/projects/aspen'
 
 # Git commands
 alias gs='git-sh'

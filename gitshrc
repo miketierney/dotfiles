@@ -33,9 +33,9 @@ gitalias p='git diff --cached'   # mnemonic: "patch"
 gitalias  s='git status'
 
 # git log
-gitalias  L='git log'
-gitalias  l='git log --pretty=oneline --abbrev-commit'
-gitalias ll='git log --pretty=oneline --abbrev-commit --max-count=15'
+gitalias  L='git log --decorate'
+gitalias  l='git log --pretty=oneline --decorate --abbrev-commit'
+gitalias ll='git log --pretty=oneline --decorate --abbrev-commit --max-count=15'
 
 # experimental
 gitalias mirror='git reset --hard'

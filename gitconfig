@@ -21,6 +21,10 @@
   update = svn rebase
   up = update
   dcommit = svn dcommit
+  # git log
+  L = log --decorate
+  l = log --pretty=oneline --decorate --abbrev-commit
+  ll = log --pretty=oneline --decorate --abbrev-commit --max-count=15
 [core]
   editor = vim
 [push]

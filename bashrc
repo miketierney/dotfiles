@@ -71,6 +71,11 @@ alias gup='git up'
 # Github commands
 alias git=hub
 
+# Timesavers
+alias spoff="sudo mdutil -a -i off"
+alias spof=spoff
+alias spon="sudo mdutil -a -i on"
+
 # enable Git tab completion
 complete -o default -o nospace -F _git_checkout gco
 complete -o default -o nospace -F _git_checkout gb

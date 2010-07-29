@@ -56,10 +56,14 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+git_dirty_flag() {
+  git status 2> /dev/null | grep -c : | awk '{if ($1 > 0) print " *"}'
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;36m\]\u\[\033[01;34m\]@\h\[\033[00m\] \[\033[01;32m\]\w\[\033[01;33m\] $(__git_ps1 "(%s) ")\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;36m\]\u\[\033[01;34m\]@\h\[\033[00m\] \[\033[01;32m\]\w\[\033[01;33m\] $(__git_ps1 "(%s) ")\[\033[00m\]\$\[\e[01;31m\]$(git_dirty_flag)\[\e[0m\] '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h \w$(__git_ps1 " (%s)")\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h \w$(__git_ps1 " (%s)")\$$(git_dirty_flag) '
 fi
 unset color_prompt force_color_prompt
 
@@ -124,6 +128,9 @@ function cl () {
 		cd "$*" && ll
 	fi
 }
+
+# Searching - ACK is a little weird in this particular Ubuntu install
+alias ack='ack-grep'
 
 # Rails commands
 alias sc='./script/console'

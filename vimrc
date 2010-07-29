@@ -83,3 +83,6 @@ map <leader>tm :tabmove
 " autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
 au BufRead,BufNewFile *.scss set filetype=scss
+
+" De-conflicting the rooter <Leader>cd mapping
+map <silent> <unique> <Leader>rcd <Plug>RooterChangeToRootDirectory

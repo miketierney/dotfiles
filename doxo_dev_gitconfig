@@ -3,7 +3,6 @@
   email = mike@panpainter.com
 [github]
   user = panpainter
-  token = 2b91725ebb0b5fcab94bc7a7e831a626
 [color]
   sh = auto
   ui = true

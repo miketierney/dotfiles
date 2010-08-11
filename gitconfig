@@ -8,7 +8,7 @@
   co = checkout
   pl = pull
   pu = push
-  st = status
+  st = status -sb
   stat = status
   br = branch
   ca = commit -v -a

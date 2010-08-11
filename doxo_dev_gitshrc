@@ -28,7 +28,7 @@ gitalias d='git diff'
 gitalias p='git diff --cached'   # mnemonic: "patch"
 
 # git status
-gitalias  s='git status'
+gitalias  s='git status -sb'
 
 # git log
 gitalias  L='git log'

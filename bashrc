@@ -95,18 +95,18 @@ COLOR_CYAN='\[\033[1;36m\]'
 COLOR_BLUE='\[\033[1;34m\]'
 
 git_dirty_flag() {
-  git_status 2> /dev/null | grep -c : | awk '{if ($1 > 0) print "*"}'
+  # git_status 2> /dev/null | grep -c : | awk '{if ($1 > 0) print "* "}'
+  git branch --no-color 2> /dev/null | grep -c : | awk '{if ($1 > 0) print "* "}'
 }
 
 prompt_func()
 {
     previous_return_value=$?;
     prompt_line_one="${COLOR_CYAN}\u${COLOR_YELLOW}@\h"
-	# prompt_line_one="${COLOR_CYAN}\u${COLOR_YELLOW}@\h"
-    prompt_line_two="${COLOR_BLUE}\w${COLOR_GREEN}$(__git_ps1 ' (%s)')${COLOR_RED}$(git_dirty_flag)${COLOR_NONE}"
-    pointer="${prompt}$> "
+    prompt_line_two="${COLOR_BLUE}\w ${COLOR_GREEN}$(__git_ps1 '(%s) ')${COLOR_RED}$(git_dirty_flag)${COLOR_NONE}"
+    pointer="${prompt}$ "
 
-    PS1="${prompt_line_one} ${prompt_line_two} ${pointer}"
+    PS1="${prompt_line_one} ${prompt_line_two}${pointer}"
 }
 PROMPT_COMMAND=prompt_func
 

@@ -1,0 +1,66 @@
+snippet \h
+	/* @group =$1
+	 * ---------------------------------------------------------------------- */
+
+	$2
+
+	/* @end */
+snippet reset
+	/* @group Global =Reset
+	 * -------------------------------------------------------------------------- */
+	
+	* {
+	  padding: 0;
+	  margin: 0;
+	}
+	h1, h2, h3, h4, h5, h6, p, pre, blockquote, label, ul, ol, dl, fieldset, address { margin: 1em 0 }
+	li, dd { margin-left: 5% }
+	fieldset { padding: 0.5em }
+	select option{ padding: 0 5px }
+	
+	a { outline: none }
+	a img { border:none }
+	
+	/* @group Self-clearing =floats
+	 * -------------------------------------------------------------------------- */
+	
+	/* For good browsers */
+	
+	.group:after {
+	  content: ".";
+	  display: block;
+	  height: 0;
+	  clear: both;
+	  visibility: hidden;
+	}
+	
+	/* For IE */
+	
+	* html .group { /* IE6 */
+	  height: 1%;
+	}
+	
+	*:first-child+html .group { /* IE7 */
+	  min-height: 1px;
+	}
+	
+	/* @end */
+	
+	/* @group =Prototyping code: this can be safely removed when development is done
+	 * -------------------------------------------------------------------------- */
+	
+	.placeholder {
+	  background-color: rgba(0,0,0,0.1);
+	  border-radius: 8px;
+	    -moz-border-radius: 8px;
+	    -webkit-border-radius: 8px;
+	  display: block;
+	  padding: 10px;
+	}
+	
+	.placeholder.light {
+	  background-color: rgba(255,255,255,0.5);
+	}
+	
+	/* @end */
+

@@ -27,3 +27,5 @@ export PATH=~/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/sphinx/bin:$PATH
+
+#artii $HOSTNAME -f slant

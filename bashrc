@@ -61,6 +61,7 @@ alias sites='cl ~/Sites/'
 
 # Development
 alias dev_aspen='mate /Volumes/projects/aspen'
+alias mvim_aspen='mvim /Volumes/projects/aspen'
 
 # Git commands
 alias gs='git-sh'

@@ -11,3 +11,9 @@ set lines=40 columns=150          " Window dimensions.
 "set guioptions-=r                 " Don't show right scrollbar
 
 colorscheme railscasts
+
+" Enables Cmd-T functionality in MacVim
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> <Plug>PeepOpen
+end

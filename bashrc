@@ -55,6 +55,7 @@ alias dev='ssh dev' # requires that the 'dev' ssh alias be set up properly
 # Personal
 alias projects='cl ~/Projects'
 alias mine=projects
+alias start_aspen='terminitor start aspen' # starts up 4 ssh tabs in my development instance, and puts my in the right directory/doing the right task. Requires terminitor.
 alias aspen='cl ~/Projects/doxo/aspen'
 alias bonsai='cl ~/Projects/doxo/bonsai'
 alias sites='cl ~/Sites/'

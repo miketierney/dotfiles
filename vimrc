@@ -37,7 +37,7 @@ set smarttab                      " insert tabs on the start of a line according
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 "set invlist                      " Show invisible characters.
-set listchars=tab:»·,trail:·,extends:#,nbsp:·
+" set listchars=tab:»·,trail:·,extends:#,nbsp:·
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
@@ -92,10 +92,10 @@ set history=1000                 " remember more commands and search history
 set undolevels=1000              " use many muchos levels of undo
 
 " Or use vividchalk
-" colorscheme topfunky-light
+colorscheme topfunky-light
 " colorscheme railscasts
 " colorscheme vividchalk
-colorscheme jorourke-railscasts
+" colorscheme jorourke-railscasts
 
 let mapleader = ","
 

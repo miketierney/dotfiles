@@ -3,7 +3,7 @@
   email = mike@panpainter.com
 [github]
   user = panpainter
-  token = ENTER TOKEN HERE
+  token = 3cb249e9f5826dd23085c7f04f3234ed 
 [alias]
   co = checkout
   pl = pull

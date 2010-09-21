@@ -15,11 +15,11 @@ alias home='cd $HOME'
 # Compress the cd, ls -l series of commands
 alias lc='cl'
 function cl () {
-	if [ $# = 0 ]; then
-		cd && ll
-	else
-		cd "$*" && ll
-	fi
+  if [ $# = 0 ]; then
+    cd && ll
+  else
+    cd "$*" && ll
+  fi
 }
 
 # fuck that you have new mail shit - thank you, Ryan Tomayko (http://github.com/rtomayko/dotfiles/blob/rtomayko/.bashrc)

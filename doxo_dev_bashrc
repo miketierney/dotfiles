@@ -180,3 +180,6 @@ complete -o default -o nospace -F _git_push gp
 # Git Server Stuff
 alias git_daemon='sudo -u git git daemon --base-path=/home/git/repositories/ --export-all --detach'
 fi
+
+# This is a good place to source rvm v v v
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.

@@ -161,6 +161,10 @@ if [[ -n "$PS1" ]]; then
   alias reload_apache='sudo /etc/init.d/apache2 reload'
   alias apreload=reload_apache
 
+  # MySQL commands
+  alias start_mysql='sudo service mysql start'
+  alias stop_mysql='sudo service mysql stop'
+
   # Git commands
   alias gs='git-sh'
   alias gst='git status'
@@ -182,4 +186,4 @@ if [[ -n "$PS1" ]]; then
 fi
 
 # This is a good place to source rvm v v v
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.

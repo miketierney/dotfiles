@@ -138,7 +138,7 @@ nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
 " Uncomment to use Jamis Buck's file opening plugin
-map <Leader>t :FuzzyFinderTextMate<Enter>
+map <Leader>ff :FuzzyFinderTextMate<Enter>
 
 " Controversial...swap colon and semicolon for easier commands
 nnoremap ; :

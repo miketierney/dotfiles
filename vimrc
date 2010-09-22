@@ -3,6 +3,7 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
+filetype off                      " Forces the filetype settings to reset (mostly for Debian systems)
 call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
@@ -21,7 +22,7 @@ set backspace=indent,eol,start    " Intuitive backspacing.
 
 set hidden                        " Handle multiple buffers better.
 
-set nowrap                        " don't wrap lines
+" set nowrap                        " don't wrap lines
 
 set autoindent                    " always set autoindenting on
 set copyindent                    " copy the previous indentation on autoindenting
@@ -30,19 +31,40 @@ set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 set wildignore=*.swp,*.bak
 
+" Taming searching and movement
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
+set gdefault                      " Apply substitutions globally on lines. Single substitutions can be done by appending 'g' to the search pattern
+
+" clear the search results highlighting
+nnoremap <leader><space> :noh<cr>
+
+nnoremap / /\v
+vnoremap / /\v
+
+" Changing bracket pair matching movements from % to <tab>, since it's more
+" natural
+nnoremap <tab> %
+vnoremap <tab> %
+
 set smarttab                      " insert tabs on the start of a line according to shiftwidth, not tabstop
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 "set invlist                      " Show invisible characters.
+set list
+set listchars=tab:▸\ ,eol:¬       " A very TextMate way of showing invisibles.
 " set listchars=tab:»·,trail:·,extends:#,nbsp:·
+set cursorline                    " Show the line my cursor's on
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
+set showmatch                    " set show matching parenthesis 
 
 set wrap                          " Turn on line wrapping.
+" set textwidth=79
+" set formatoptions=qrn1
+set colorcolumn=85
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
@@ -58,13 +80,11 @@ set noswapfile                    " do not write annoying intermediate swap file
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 
-" UNCOMMENT TO USE
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
+set softtabstop=2
 set shiftround                   " use multiple of shiftwidth when indenting with '<' and '>'
 set expandtab                    " Use spaces instead of tabs
-
-set showmatch                    " set show matching parenthesis 
 
 set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
@@ -120,13 +140,13 @@ nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
 " Uncomment to use Jamis Buck's file opening plugin
-"map <Leader>t :FuzzyFinderTextMate<Enter>
+map <Leader>t :FuzzyFinderTextMate<Enter>
 
 " Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
+nnoremap ; :
 "nnoremap : ;
 
-"vnoremap ; :
+vnoremap ; :
 "vnoremap : ;
 
 " Use Q for formatting the current paragraph (or visual selection)
@@ -137,12 +157,15 @@ nmap Q gqap
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>"
 
 " Easy window navigation
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 " map <C-h> <C-w>h
 " map <C-j> <C-w>j
 " map <C-k> <C-w>k
 " map <C-l> <C-w>l
-
-nmap <silent> <leader>/ :let @/=""<CR>
 
 " Filetype specific handling
 " only do this part when compiled with support for autocommands
@@ -168,10 +191,13 @@ if has("autocmd")
 
   au BufRead,BufNewFile *.scss set filetype=scss
 
+  " Saves on blur
+  au FocusLost * :wa
+
 endif " has("autocmd")
 
 " De-conflicting the rooter <Leader>cd mapping
-map <silent> <unique> <Leader>rcd <Plug>RooterChangeToRootDirectory
+map <silent> <unique> <Leader>rd <Plug>RooterChangeToRootDirectory
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -207,3 +233,28 @@ set splitbelow
 
 " Open new vertical split windows to the right
 set splitright
+
+" Disable the help key, which is inconveniently placed next to the esc key. Dumb.
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Some nice custom commands
+" ============================================
+" strip all trailing whitespace
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Ack is awesome
+nnoremap <leader>a :Ack
+
+" HTML Tag Folding
+nnoremap <leader>ft Vatzf
+
+" Sort CSS Properties
+nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
+
+" Imitates TextMate's ctrl+Q function to re-hardwrap paragraphs of text
+nnoremap <leader>q gqip
+
+" Exit out of insert mode and back to normal mode without the use of <ESC>
+inoremap <C-c> <ESC>

@@ -37,7 +37,7 @@ set smartcase                     " But case-sensitive if expression contains a 
 set gdefault                      " Apply substitutions globally on lines. Single substitutions can be done by appending 'g' to the search pattern
 
 " clear the search results highlighting
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space> :let @/=""<CR>
 
 nnoremap / /\v
 vnoremap / /\v
@@ -53,7 +53,7 @@ set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 "set invlist                      " Show invisible characters.
 " set listchars=tab:»·,trail:·,extends:#,nbsp:·
-set cursorline                    " Show the line my cursor's on
+" set cursorline                    " Show the line my cursor's on
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
@@ -62,10 +62,10 @@ set showmatch                    " set show matching parenthesis
 set wrap                          " Turn on line wrapping.
 " set textwidth=79
 " set formatoptions=qrn1
-set colorcolumn=85
+" set colorcolumn=85
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 
-set title                         " Set the terminal's title
+" set title                         " Set the terminal's title
 
 set visualbell                    " No beeping.
 set noerrorbells                  " I really mean, no beeping.
@@ -111,9 +111,6 @@ set undolevels=1000              " use many muchos levels of undo
 
 " Or use vividchalk
 colorscheme topfunky-light
-" colorscheme railscasts
-" colorscheme vividchalk
-" colorscheme jorourke-railscasts
 
 let mapleader = ","
 
@@ -158,8 +155,8 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>"
 " Easy window navigation
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " map <C-h> <C-w>h
 " map <C-j> <C-w>j
@@ -201,6 +198,8 @@ map <silent> <unique> <Leader>rd <Plug>RooterChangeToRootDirectory
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>egv :e $MYGVIMRC<CR>
+nmap <silent> <leader>sgv :so $MYGVIMRC<CR>
 
 "NERD Tree Plugin
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>

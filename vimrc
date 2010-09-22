@@ -52,8 +52,6 @@ set smarttab                      " insert tabs on the start of a line according
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 "set invlist                      " Show invisible characters.
-set list
-set listchars=tab:▸\ ,eol:¬       " A very TextMate way of showing invisibles.
 " set listchars=tab:»·,trail:·,extends:#,nbsp:·
 set cursorline                    " Show the line my cursor's on
 

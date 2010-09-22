@@ -16,4 +16,7 @@ colorscheme railscasts
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <D-t> <Plug>PeepOpen
+
+  set list
+  set listchars=tab:▸\ ,eol:¬       " A very TextMate way of showing invisibles.
 end

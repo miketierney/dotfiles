@@ -5,15 +5,20 @@ set guifont=Menlo-Regular:h12     " Font family and font size.
 set antialias                     " MacVim: smooth fonts.
 set encoding=utf-8                " Use UTF-8 everywhere.
 set guioptions-=T                 " Hide toolbar.
-set background=light              " Background.
+" set background=light              " Background.
 set lines=40 columns=150          " Window dimensions.
+set cursorline                    " Show the line my cursor is on.
+set colorcolumn=85                " The edge of reason
 
 "set guioptions-=r                 " Don't show right scrollbar
 
-colorscheme railscasts
+colorscheme sjl-molokai
 
 " Enables Cmd-T functionality in MacVim
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <D-t> <Plug>PeepOpen
+
+  set list
+  set listchars=tab:▸\ ,eol:¬       " A very TextMate way of showing invisibles.
 end

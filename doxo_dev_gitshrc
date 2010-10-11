@@ -24,7 +24,7 @@ gitalias f='git fetch'
 gitalias r='git rebase --interactive HEAD~10'
 
 # git diff
-gitalias d='git diff'
+gitalias d='git diff --word-diff'
 gitalias p='git diff --cached'   # mnemonic: "patch"
 
 # git status

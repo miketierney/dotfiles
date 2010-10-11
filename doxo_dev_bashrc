@@ -148,6 +148,11 @@ if [[ -n "$PS1" ]]; then
   alias tail_aspen=log_aspen
   alias git_aspen='aspen && gs'
 
+  # Task management --uses 't' (http://bitbucket.org/sjl/t)
+  alias t='python ~/utilities/t/t.py --task-dir ~/tasks --list tasks'
+  alias d='python ~/utilities/t/t.py --task-dir ~/tasks --list doxo'
+  alias b='python ~/utilities/t/t.py --task-dir ~/tasks --list bugs'
+
   # apache short cut
   alias start_apache='sudo /etc/init.d/apache2 start'
   alias apstart=start_apache

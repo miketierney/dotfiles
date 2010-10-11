@@ -55,14 +55,20 @@ alias dev='ssh dev' # requires that the 'dev' ssh alias be set up properly
 # Personal
 alias projects='cl ~/Projects'
 alias mine=projects
-alias start_aspen='terminitor start aspen' # starts up 4 ssh tabs in my development instance, and puts my in the right directory/doing the right task. Requires terminitor.
+alias dev_aspen='terminitor start aspen_remote' # starts up 4 ssh tabs in my development instance, and puts me in the right directory/doing the right task. Requires terminitor.
+alias local_aspen='terminitor start aspen_local' # starts up 4 ssh tabs in my local environment, and puts me in the right directory/doing the right task. Requires terminitor.
 alias aspen='cl ~/Projects/doxo/aspen'
 alias bonsai='cl ~/Projects/doxo/bonsai'
 alias sites='cl ~/Sites/'
 
 # Development
-alias dev_aspen='mate /Volumes/Home\ Directory/projects/aspen'
+alias mate_aspen='mate /Volumes/Home\ Directory/projects/aspen'
 alias mvim_aspen='mvim /Volumes/Home\ Directory/projects/aspen'
+
+# Task Management
+alias t='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list tasks'
+alias d='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list doxo'
+alias b='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list bugs'
 
 # Git commands
 alias gs='git-sh'

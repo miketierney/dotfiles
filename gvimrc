@@ -21,4 +21,7 @@ if has("gui_macvim")
 
   set list
   set listchars=tab:▸\ ,eol:¬       " A very TextMate way of showing invisibles.
+
+  " clear the search results highlighting
+  nnoremap <leader><space> :noh<cr>
 end

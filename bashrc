@@ -75,6 +75,7 @@ alias d='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/t
 alias b='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list bugs'
 
 # Git commands
+alias s='gits'
 alias gs='git-sh'
 alias gst='git status'
 alias gsup='git sup'
@@ -82,6 +83,11 @@ alias gup='git up'
 
 # Github commands
 alias git=hub
+
+# Git SVN fixer
+function gits() {
+  git svn $1
+}
 
 # Timesavers
 alias spoff="sudo mdutil -a -i off"

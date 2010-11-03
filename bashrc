@@ -137,3 +137,6 @@ export EDITOR='vim -r'
 export VISUAL=vim
 export SVN_EDITOR='vim -w'
 # export GIT_EDITOR='vim'
+
+# export PATH="$PATH:~/projects/utilities/git-achievements"
+# alias git="git-achievements"

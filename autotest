@@ -1,6 +1,6 @@
 require 'autotest/growl'
 require 'autotest/fsevent'
-require 'redgreen/autotest' unless ENV['RSPEC']
+# require 'redgreen/autotest' unless ENV['RSPEC']
 
 Autotest::Growl::clear_terminal = true
 Autotest::Growl::show_modified_files = false

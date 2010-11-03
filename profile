@@ -24,5 +24,10 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/local/apache2/bin:/usr/local/mysql/bin:/usr/local/sphinx/bin:$PATH
 
+# Authme function (railsrumble)
+function authme {
+ssh $1 'cat >>.ssh/authorized_keys' <~/.ssh/id_rsa.pub
+}
+
 # This is a good place to source rvm v v v
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.

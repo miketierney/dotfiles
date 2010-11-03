@@ -2,7 +2,7 @@
   name = Mike Tierney
   email = mike@panpainter.com
 [github]
-  user = panpainter
+  user = miketierney
   token = ADD GITHUB API TOKEN HERE 
 [alias]
   co = checkout

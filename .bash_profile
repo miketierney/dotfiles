@@ -24,3 +24,5 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 #export PATH=~/.gem/ruby/1.8/bin:$PATH
 # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/local/apache2/bin:/usr/local/bin/mysql:/usr/local/sphinx/bin:$PATH
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

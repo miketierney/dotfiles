@@ -44,10 +44,14 @@ alias apstop=stop_apache
 
 # alias restart_apache='sudo /opt/local/apache2/bin/apachectl restart'
 function restart_apache {
-  stop_mysql
-  start_mysql
+  stop_apache
+  start_apache
 }
 alias aprestart=restart_apache
+
+# Postgres commands
+alias start_pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stop_pg='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # Dev Resources (only works on the doxo intranet)
 alias dev='ssh dev' # requires that the 'dev' ssh alias be set up properly
@@ -71,6 +75,7 @@ alias d='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/t
 alias b='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list bugs'
 
 # Git commands
+alias s='gits'
 alias gs='git-sh'
 alias gst='git status'
 alias gsup='git sup'
@@ -78,6 +83,11 @@ alias gup='git up'
 
 # Github commands
 alias git=hub
+
+# Git SVN fixer
+function gits() {
+  git svn $1
+}
 
 # Timesavers
 alias spoff="sudo mdutil -a -i off"
@@ -127,3 +137,6 @@ export EDITOR='vim -r'
 export VISUAL=vim
 export SVN_EDITOR='vim -w'
 # export GIT_EDITOR='vim'
+
+# export PATH="$PATH:~/projects/utilities/git-achievements"
+# alias git="git-achievements"

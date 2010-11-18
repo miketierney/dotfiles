@@ -44,10 +44,14 @@ alias apstop=stop_apache
 
 # alias restart_apache='sudo /opt/local/apache2/bin/apachectl restart'
 function restart_apache {
-  stop_mysql
-  start_mysql
+  stop_apache
+  start_apache
 }
 alias aprestart=restart_apache
+
+# Postgres commands
+alias start_pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stop_pg='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # Dev Resources (only works on the doxo intranet)
 alias dev='ssh dev' # requires that the 'dev' ssh alias be set up properly
@@ -55,16 +59,23 @@ alias dev='ssh dev' # requires that the 'dev' ssh alias be set up properly
 # Personal
 alias projects='cl ~/Projects'
 alias mine=projects
-alias start_aspen='terminitor start aspen' # starts up 4 ssh tabs in my development instance, and puts my in the right directory/doing the right task. Requires terminitor.
+alias dev_aspen='terminitor start aspen_remote' # starts up 4 ssh tabs in my development instance, and puts me in the right directory/doing the right task. Requires terminitor.
+alias local_aspen='terminitor start aspen_local' # starts up 4 ssh tabs in my local environment, and puts me in the right directory/doing the right task. Requires terminitor.
 alias aspen='cl ~/Projects/doxo/aspen'
 alias bonsai='cl ~/Projects/doxo/bonsai'
 alias sites='cl ~/Sites/'
 
 # Development
-alias dev_aspen='mate /Volumes/Home\ Directory/projects/aspen'
+alias mate_aspen='mate /Volumes/Home\ Directory/projects/aspen'
 alias mvim_aspen='mvim /Volumes/Home\ Directory/projects/aspen'
 
+# Task Management
+alias t='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list tasks'
+alias d='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list doxo'
+alias b='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list bugs'
+
 # Git commands
+alias s='gits'
 alias gs='git-sh'
 alias gst='git status'
 alias gsup='git sup'
@@ -72,6 +83,11 @@ alias gup='git up'
 
 # Github commands
 alias git=hub
+
+# Git SVN fixer
+function gits() {
+  git svn $1
+}
 
 # Timesavers
 alias spoff="sudo mdutil -a -i off"
@@ -121,3 +137,6 @@ export EDITOR='vim -r'
 export VISUAL=vim
 export SVN_EDITOR='vim -w'
 # export GIT_EDITOR='vim'
+
+# export PATH="$PATH:~/projects/utilities/git-achievements"
+# alias git="git-achievements"

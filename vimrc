@@ -256,3 +256,15 @@ nnoremap <leader>q gqip
 
 " Exit out of insert mode and back to normal mode without the use of <ESC>
 inoremap <C-c> <ESC>
+
+" Fancy CSS headings.
+" inoremap <C-h> <Plug>SnipMate h<tab>
+
+" Helpful rails expander. Temporary until I find a better way to do this.
+" inoremap <C-l>  <Plug>SnipMate ><Tab> 
+inoremap <C-l> <Space>=><Space>
+
+" ERB tags
+" inoremap <leader>= <C-X>+
+" inoremap <leader>- <C-X>_
+" inoremap <leader># <C-X>"

@@ -1,10 +1,13 @@
-snippet \h
-	/* @group =$1
+:set ft=css.scss
+# Section heading styles.
+snippet h
+	/* @group =${1}
 	 * ---------------------------------------------------------------------- */
 
-	$2
+	${2}
 
 	/* @end */
+# Global reset styles.
 snippet reset
 	/* @group Global =Reset
 	 * -------------------------------------------------------------------------- */
@@ -63,4 +66,650 @@ snippet reset
 	}
 	
 	/* @end */
+
+##############################
+# TextMate CSS Bundle Snippets
+##############################
+# properties { } ( } )
+snippet {
+	{
+	/* ${2} */
+	${1}
+# background: color image repeat attachment position
+snippet background background: color image repeat attachment position
+	background:${6: #${1:DDD}} url(${2}) ${3:repeat/repeat-x/repeat-y/no-repeat} ${4:scroll/fixed} ${5:top left/top center/top right/center left/center center/center right/bottom left/bottom center/bottom right/x-% y-%/x-pos y-pos};${7}
+# background-color: hex
+snippet background background-color: hex
+	background-color: #${1:DDD};${2}
+# background-color: rgb
+snippet background background-color: rgba
+	background-color: rgb(${1:255},${2:255},${3:255});${4}
+# background-color: name
+snippet background background-color: name
+	background-color: ${1:red};${2}
+# background-color: transparent
+snippet background background-color: transparent
+	background-color: transparent;${1}
+# background-image: url
+snippet background background-image: url
+	background-image: url(${1});${2}
+# background-image: none
+snippet background background-image: none
+	background-image: none;${1}
+# background-attachment: scroll/fixed
+snippet background background-attachment: scroll/fixed
+	background-attachment: ${1:scroll/fixed};${2}
+# background-position: position
+snippet background background-position: position
+	background-position: ${1:top left/top center/top right/center left/center center/center right/bottom left/bottom center/bottom right/x-% y-%/x-pos y-pos};${2}
+# background-repeat: r/r-x/r-y/n-r
+snippet background background-repeat: r/r-x/r-y/n-r
+	background-repeat: ${1:repeat/repeat-x/repeat-y/no-repeat};${2}
+# filter: AlphaImageLoader [for IE PNGs]
+snippet background filter: AlphaImageLoader [for IE PNGs]
+	${3:background-image: none;
+	}filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='${1:/images/transparent.png}', sizingMethod='${2:image/scale/crop}');
+# border: size style color
+snippet border border: size style color
+	border: ${1:1px} ${2:solid} #${3:999};${4}
+# border-color: color
+snippet border border-color: color
+	border-color: #${1:999};${2}
+# border-style: style
+snippet border border-style: style
+	border-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};${2}
+# border-width: size
+snippet border border-width: size
+	border-width: ${1:1px};${2}
+# border-bottom: size style color
+snippet border border-bottom: size style color
+	border-bottom: ${1:1}px ${2:solid} #${3:999};${4}
+# border-bottom-color: color
+snippet border border-bottom-color: color
+	border-bottom-color: #${1:999};${2}
+# border-bottom-style: style
+snippet border border-bottom-style: style
+	border-bottom-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};${2}
+# border-bottom-width: size
+snippet border border-bottom-width: size
+	border-bottom-width: ${1:1}px ${2:solid} #${3:999};${4}
+# border-top: size style color
+snippet border border-top: size style color
+	border-top: ${1:1}px ${2:solid} #${3:999};${4}
+# border-top-color: color
+snippet border border-top-color: color
+	border-top-color: #${1:999};${2}
+# border-top-style: style
+snippet border border-top-style: style
+	border-top-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};${2}
+# border-top-width: size
+snippet border border-top-width: size
+	border-top-width: ${1:1}px ${2:solid} #${3:999};${4}
+# border-left: size style color
+snippet border border-left: size style color
+	border-left: ${1:1}px ${2:solid} #${3:999};${4}
+# border-left-color: color
+snippet border border-left-color: color
+	border-left-color: #${1:999};${2}
+# border-left-style: style
+snippet border border-left-style: style
+	border-left-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};${2}
+# border-left-width: size
+snippet border border-left-width: size
+	border-left-width: ${1:1}px ${2:solid} #${3:999};${4}
+# border-right: size style color
+snippet border border-right: size style color
+	border-right: ${1:1}px ${2:solid} #${3:999};${4}
+# border-right-color: color
+snippet border border-right-color: color
+	border-right-color: #${1:999};${2}
+# border-right-style: style
+snippet border border-right-style: style
+	border-right-style: ${1:none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset};${2}
+# border-right-width: size
+snippet border border-right-width: size
+	border-right-width: ${1:1}px ${2:solid} #${3:999};${4}
+# clear: value
+snippet clear
+	clear: ${1:left/right/both/none};${2}
+# cursor: type
+snippet cursor cursor: type
+	cursor: ${1:default/auto/crosshair/pointer/move/*-resize/text/wait/help};${2}
+# cursor: url
+snippet cursor cursor: url
+	cursor: url(${1});${2}
+# color: hex
+snippet color color: hex
+	color: #${1:DDD};${2}
+# color: rgba
+snippet color color: rgb
+	color: rgb(${1:255},${2:255},${3:255});${4}
+# color: name
+snippet color color: name
+	color: ${1:red};${2}
+# direction: ltr/rtl
+snippet direction
+	direction: ${1:ltr|rtl};${2}
+# display: inline
+snippet display display: inline
+	display: inline;${1}
+# display: block
+snippet display display: block
+	display: block;${1}
+# display: common-types
+snippet display display: common-types
+	display: ${1:none/inline/block/list-item/run-in/compact/marker};${2}
+# display: table-types
+snippet display display: table-types
+	display: ${1:table/inline-table/table-row-group/table-header-group/table-footer-group/table-row/table-column-group/table-column/table-cell/table-caption};${2}
+# float: left/right/none
+snippet float
+	float: ${1:left/right/none};${2}
+# font: size font
+snippet font font: size font
+	font: ${1:75%} ${2:"Lucida Grande", "Trebuchet MS", Verdana,} ${3:sans-}serif;${4}
+# font: style variant weight size/line-height
+snippet font font: style variant weight size/line-height
+	font: ${1:normal/italic/oblique} ${2:normal/small-caps} ${3:normal/bold} ${4:1em/1.5em} ${5:Arial}, ${6:sans-}serif;${7}
+# font-family: family
+snippet font font-family: family
+	font-family: ${1:Arial, "MS Trebuchet"}, ${2:sans-}serif;${3}
+# font-size: size
+snippet font font-size: size
+	font-size: ${1:100%};${2}
+# font-style: normal/italic/oblique
+snippet font font-style: normal/italic/oblique
+	font-style: ${1:normal/italic/oblique};${2}
+# font-variant: normal/small-caps
+snippet font font-variant: normal/small-caps
+	font-variant: ${1:normal/small-caps};${2}
+# font-weight: weight
+snippet font font-weight: weight
+	font-weight: ${1:normal/bold};${2}
+# letter-spacing: em
+snippet letter letter-spacing: em
+	letter-spacing: ${1}em;${2}
+# letter-spacing: px
+snippet letter letter-spacing: px
+	letter-spacing: ${1}pxm;${2}
+# list-style: type position image
+snippet list list-style: type position image
+	list-style: ${1:none/disc/circle/square/decimal/zero} ${2:inside/outside} url(${3});${4}
+# list-style-image: url
+snippet list list-style-image: url
+	list-style-image: url(${1});${2}
+# list-style-position: pos
+snippet list list-style-position: pos
+	list-style-position: ${1:inside/outside};${2}
+# list-style-type: marker
+snippet list list-style-type: marker
+	list-style-type: ${1:none/disc/circle/square};${2}
+# list-style-type: numeric
+snippet list list-style-type: numeric
+	list-style-type: ${1:decimal/decimal-leading-zero/zero};${2}
+# list-style-type: roman-alpha-greek
+snippet list list-style-type: roman-alpha-greek
+	list-style-type: ${1:lower-roman/upper-roman/lower-alpha/upper-alpha/lower-greek/lower-latin/upper-latin};${2}
+# list-style-type: asian
+snippet list list-style-type: asian
+	list-style-type: ${1:cjk-ideographic/hiragana/katakana/hiragana-iroha/katakana-iroha};${2}
+# list-style-type: other
+snippet list list-style-type: other
+	list-style-type: ${1:hebrew/armenian/georgian};${2}
+# margin: T R B L
+snippet margin margin: T R B L
+	margin: ${1:20px} ${2:0px} ${3:40px} ${4:0px};${5}
+# margin: all
+snippet margin margin: all
+	margin: ${1:20px};${2}
+# margin: V H
+snippet margin margin: V H
+	margin: ${1:20px} ${2:0px};${3}
+# margin-bottom: length
+snippet margin margin-bottom: length
+	margin-bottom: ${1:20px};${2}
+# margin-left: length
+snippet margin margin-left: length
+	margin-left: ${1:20px};${2}
+# margin-right: length
+snippet margin margin-right: length
+	margin-right: ${1:20px};${2}
+# margin-top: length
+snippet margin margin-top: length
+	margin-top: ${1:20px};${2}
+# marker-offset: length
+snippet marker marker-offset: length
+	marker-offset: ${1:10px};${2}
+# marker-offset: auto
+snippet marker marker-offset: auto
+	marker-offset: auto;${1}
+# overflow: type
+snippet overflow
+	overflow: ${1:visible/hidden/scroll/auto};${2}
+# opacity: [for Safari, FF & IE]
+snippet opacity
+	opacity: ${1:0.5};${100:
+	}-moz-opacity: ${1:0.5};${100:
+	}filter:alpha(opacity=${2:${1/(1?)0?\.(.*)/$1$2/}${1/^\d*\.\d\d+$|^\d*$|(^\d\.\d$)/(?1:0)/}});${3}
+	
+# padding: T R B L
+snippet padding padding: T R B L
+	padding: ${1:20px} ${2:0px} ${3:40px} ${4:0px};${5}
+# padding: all
+snippet padding padding: all
+	padding: ${1:20px};${2}
+# padding: V H
+snippet padding padding: V H
+	padding: ${1:20px} ${2:0px};${3}
+# padding-bottom: length
+snippet padding padding-bottom: length
+	padding-bottom: ${1:20px};${2}
+# padding-left: length
+snippet padding padding-left: length
+	padding-left: ${1:20px};${2}
+# padding-right: length
+snippet padding padding-right: length
+	padding-right: ${1:20px};${2}
+# padding-top: length
+snippet padding padding-top: length
+	padding-top: ${1:20px};${2}
+# position: type
+snippet position
+	position: ${1:static/relative/absolute/fixed};${2}
+# text-align: left/center/right
+snippet text text-align: left/center/right
+	text-align: ${1:left/right/center/justify};${2}
+# text-decoration: none/underline/overline/line-through/blink
+snippet text text-decoration: none/underline/overline/line-through/blink
+	text-decoration: ${1:none/underline/overline/line-through/blink};${2}
+# text-indent: length
+snippet text text-indent: length
+	text-indent: ${1:10}px;${2}
+# text-shadow: color-hex x y blur
+snippet text text-shadow: color-hex x y blur
+	text-shadow: #${1:DDD} ${2:10px} ${3:10px} ${4:2px};${5}
+# text-shadow: color-rgb x y blur
+snippet text text-shadow: color-rgb x y blur
+	text-shadow: rgb(${1:255},${2:255},${3:255}) ${4:10px} ${5:10px} ${6:2px};${7}
+# text-shadow: none
+snippet text text-shadow: none
+	text-shadow: none;${1}
+# text-transform: capitalize/upper/lower
+snippet text text-transform: capitalize/upper/lower
+	text-transform: ${1:capitalize/uppercase/lowercase};${2}
+# text-transform: none
+snippet text text-transform: none
+	text-transform: none;${1}
+# vertical-align: type
+snippet vertical
+	vertical-align: ${1:baseline/sub/super/top/text-top/middle/bottom/text-bottom/length/%};${2}
+# visibility: type
+snippet visibility
+	visibility: ${1:visible/hidden/collapse};${2}
+# white-space: normal/pre/nowrap
+snippet white
+	white-space: ${1:normal/pre/nowrap};${2}
+# word-spacing: length
+snippet word word-spacing: length
+	word-spacing: ${1:10px};${2}
+# word-spacing: normal
+snippet word word-spacing: normal
+	word-spacing: normal;${1}
+# z-index: index
+snippet z
+	z-index: ${1};${2}
+# !important CSS
+snippet !
+	${1:!important}
+# scrollbar
+snippet scrollbar
+	scrollbar-base-color:       ${1:#CCCCCC};
+	scrollbar-arrow-color:      ${2:#000000};
+	scrollbar-track-color:      ${3:#999999};
+	scrollbar-3dlight-color:    ${4:#EEEEEE};
+	scrollbar-highlight-color:  ${5:#FFFFFF};
+	scrollbar-face-color:       ${6:#CCCCCC};
+	scrollbar-shadow-color:     ${7:#999999};
+	scrollbar-darkshadow-color: ${8:#666666};
+# Fixed Position Bottom 100% wide IE6
+snippet fixed
+	${2:bottom: auto;}top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-${1:THE HEIGHT OF THIS THING IN PIXELS}));
+	${3:left: expression(eval(document.documentElement.scrollLeft));
+	}${4:width: expression(eval(document.documentElement.clientWidth));}${5}
+# selection
+snippet selection
+	${1}::-moz-selection,
+	${1}::selection {
+	  color: ${2:inherit};
+	  background: ${3:inherit};
+	}
+	
+###############################
+# ZenCoding CSS Bundle Snippets
+###############################
+# @import
+snippet @i
+	@import url(${1});${2}
+# @media
+snippet @m
+	@media ${1:print} {
+	  ${2}
+	}
+# @font-face
+snippet @f
+	@font-face {
+	  font-family:${1};
+	  src: url(${2});${3}
+	}
+# expression
+snippet exp
+	expression(${1})
+# position
+snippet pos
+	position: ${1};${2}
+# position:static
+snippet pos:s
+	position: static;${1}
+# position:absolute
+snippet pos:a
+	position: absolute;${1}
+# position:relative
+snippet pos:r
+	position: relative;${1}
+# position:fixed
+	position: fixed;${1}
+# top
+snippet t
+	top: ${1};${2}
+# top:auto
+snippet t:a
+	top: auto;${1}
+# right
+snippet r
+	right: ${1};${2}
+# right:auto
+snippet r:a
+	right: auto;${1}
+# bottom
+snippet b
+	bottom: ${1};${2}
+# bottom:auto
+snippet b:a
+	left: auto;${1}
+# left
+snippet l
+	left: ${1};${2}
+# left:auto
+snippet l:a
+	left: auto;${1}
+# z-index: auto
+snippet z:a
+	z-index: auto;${1}
+# float
+snippet fl
+	float: ${1};${2}
+# float:none
+snippet fl:n
+	float: none;${1}
+# float:left
+snippet fl:l
+	float: left;${1}
+# float:right
+snippet fl:r
+	float: right;${1}
+# clear
+snippet cl
+	clear: ${1};${2}
+# clear:none
+snippet cl:n
+	clear: none;${1}
+# clear:left
+snippet cl:l
+	clear: left;${1}
+# clear:right
+snippet cl:r
+	clear: right;${1}
+# clear:both
+snippet cl:b
+	clear: both;${1}
+# display
+snippet d
+	display: ${1};${2}
+# display:none
+snippet d:n
+	display: none;${1}
+# display:block
+snippet d:b
+	display: block;${1}
+# display:inline
+snippet d:i
+	display: inline;${1}
+# display:inline-block
+snippet d:ib
+	display: inline-block;${1}
+# display:-moz-inline-box
+snippet d:mib
+	display: -moz-inline-box;${1}
+# display:-moz-inline-stack
+snippet d:mis
+	display: -moz-inline-stack;${1}
+# display:list-item
+snippet d:li
+	display: list-item;${1}
+# display:run-in
+snippet d:ri
+	display: run-in;${1}
+# display:compact
+snippet d:cp
+	display: compact;${1}
+# display:table
+snippet d:tb
+	display: table;${1}
+# display:inline-table
+snippet d:itb
+	display: inline-table;${1}
+# display:table-caption
+snippet d:tbcp
+	display: table-caption;${1}
+# display:table-column
+snippet d:tbcl
+	display: table-column;${1}
+# display:table-column-group
+snippet d:tbclg
+	display: table-column-group;${1}
+# display:table-header-group
+snippet d:tbhg
+	display: table-header-group;${1}
+# display:table-footer-group
+snippet d:tbfg
+	display: table-footer-group;${1}
+# display:table-row
+snippet d:tbr
+	display: table-row;${1}
+# display:table-row-group
+snippet d:tbrg
+	display: table-row-group;${1}
+# display:table-cell
+snippet d:tbc
+	display: table-cell;${1}
+# visibility
+snippet v
+	visibility: ${1};${2}
+# visibility:visible
+snippet v:v
+	visibility: visible;${1}
+# visibility:hidden
+snippet v:h
+	visibility: hidden;${1}
+# visibility:collapse
+snippet v:c
+	visibility: collapse;${1}
+# overflow
+snippet ov
+	overflow: ${1};${2}
+# overflow:visible
+snippet ov:v
+	overflow: visible;${1}
+# overflow:hidden
+snippet ov:h
+	overflow: hidden;${1}
+# overflow:scroll
+snippet ov:s
+	overflow: scroll;${1}
+# overflow:auto
+snippet ov:a
+	overflow: auto;${1}
+# overflow-x
+snippet ovx
+	overflow-x: ${1};${2}
+# overflow-x:visible
+snippet ovx:v
+	overflow-x: visible;${1}
+# overflow-x:hidden
+snippet ovx:h
+	overflow-xx: hidden;${1}
+# overflow-x:scroll
+snippet ovx:s
+	overflow-x: scroll;${1}
+# overflow-x:auto
+snippet ovx:a
+	overflow-x: auto;${1}
+# overflow-y
+snippet ovy
+	overflow-y: ${1};${2}
+# overflow-y:visible
+snippet ovy:v
+	overflow-y: visible;${1}
+# overflow-y:hidden
+snippet ovy:h
+	overflow-y: hidden;${1}
+# overflow-y:scroll
+snippet ovy:s
+	overflow-y: scroll;${1}
+# overflow-y:auto
+snippet ovy:a
+	overflow-y: auto;${1}
+# overflow-style
+snippet ovs
+	overflow-style: ${1};${2}
+# overflow-style:auto
+snippet ovs:a
+	overflow-style: auto;${1}
+# overflow-style:scrollbar
+snippet ovs:s
+	overflow-style: scrollbar;${1}
+# overflow-style:panner
+snippet ovs:p
+	overflow-style: panner;${1}
+# overflow-style:move
+snippet ovs:mv
+	overflow-style: move;${1}
+# overflow-style:marquee
+snippet ovs:mq
+	overflow-style: marquee;${1}
+# zoom
+snippet zoo
+	zoom: 1;${1}
+# clip
+snippet cp
+	clip: ${1};${2}
+# clip:auto
+snippet cp:a
+	clip: auto;${1}
+# clip:rect()
+snippet cp:r
+	clip: rect(${2:0} ${3:0} ${4:0} ${5:0});${1}
+# box-sizing
+snippet bxz
+	box-sizing: ${1};${2}
+# box-sizing:content-box
+snippet bxz:cb
+	box-sizing: content-box;${1}
+# box-sizing:border-box
+snippet bxz:bb
+	box-sizing: border-box;${1}
+# box-shadow
+snippet bxsh
+	box-shadow: ${1};${2}
+	  -moz-box-shadow: ${1};${3}
+	  -webkit-box-shadow: ${1};${4}
+# box-shadow:none
+snippet bxsh:n
+	box-shadow: none;${1}
+	  -moz-box-shadow: none;${2}
+	  -webkit-box-shadow: none;${3}
+# box-shadow+
+snippet bxsh+
+	box-shadow: ${1:0} ${2:0} ${3:0} #${4:000};${5}
+	  -moz-box-shadow: ${1:0} ${2:0} ${3:0} #${4:000};${5}
+	  -webkit-box-shadow: ${1:0} ${2:0} ${3:0} #${4:000};${5}
+# margin
+snippet m
+	margin: ${1};${2}
+# margin:auto
+snippet m:a
+	margin: auto;${1}
+# margin:0
+snippet m:0
+	margin: ${1:0};${2}
+# margin:0 0
+snippet m:2
+	margin: ${1:0} ${2:0};${3}
+# margin: 0 0 0
+snippet m:3
+	margin: ${1:0} ${2:0} ${3:0};${4}
+# margin: 0 0 0 0
+snippet m:4
+	margin: ${1:0} ${2:0} ${3:0} ${4:0};${5}
+# margin-top
+snippet mt
+	margin-top: ${1};${2}
+# margin-top:auto
+snippet mt:a
+	margin-top: auto;${1}
+# margin-right
+snippet mr
+	margin-right: ${1};${2}
+# margin-right:auto
+snippet mr:a
+	margin-right: auto;${1}
+# margin-bottom
+snippet mb
+	margin-bottom: ${1};${2}
+# margin-bottom:auto
+snippet mb:a
+	margin-bottom: auto;${1}
+# margin-left
+snippet ml
+	margin-left: ${1};${2}
+# margin-left:auto
+snippet ml:a
+	margin-left: auto;${1}
+# padding
+snippet p
+	padding: ${1};${2}
+# padding:0
+snippet p:0
+	padding: ${1:0};${2}
+# padding:0 0
+snippet p:2
+	padding: ${1:0} ${2:0};${3}
+# padding: 0 0 0
+snippet p:3
+	padding: ${1:0} ${2:0} ${3:0};${4}
+# padding: 0 0 0 0
+snippet p:4
+	padding: ${1:0} ${2:0} ${3:0} ${4:0};${5}
+# padding-top
+snippet pt
+	padding-top: ${1};${2}
+# padding-top:auto
+snippet pr
+	padding-right: ${1};${2}
+# padding-right:auto
+snippet pb
+	padding-bottom: ${1};${2}
+# padding-bottom:auto
+snippet pl
+	padding-left: ${1};${2}
 

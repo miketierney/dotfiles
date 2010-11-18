@@ -110,7 +110,11 @@ set history=1000                 " remember more commands and search history
 set undolevels=1000              " use many muchos levels of undo
 
 " Or use vividchalk
-colorscheme topfunky-light
+" colorscheme topfunky-light
+" colorscheme vividchalk
+" colorscheme slate
+colorscheme sjl-molokai
+" colorscheme wandering
 
 let mapleader = ","
 
@@ -268,3 +272,12 @@ inoremap <C-l> <Space>=><Space>
 " inoremap <leader>= <C-X>+
 " inoremap <leader>- <C-X>_
 " inoremap <leader># <C-X>"
+
+" Expose scopes for colorscheming
+nmap <C-S-P> :call <SID>SynStack()<CR>
+  function! <SID>SynStack()
+    if !exists("*synstack")
+      return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  endfunc

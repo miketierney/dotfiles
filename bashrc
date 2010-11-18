@@ -121,8 +121,8 @@ git_dirty_flag() {
 prompt_func()
 {
     previous_return_value=$?;
-    prompt_line_one="${COLOR_CYAN}\u${COLOR_YELLOW}@\h"
-    prompt_line_two="${COLOR_BLUE}\w ${COLOR_GREEN}$(__git_ps1 '(%s) ')${COLOR_RED}$(git_dirty_flag)${COLOR_NONE}"
+    prompt_line_one="${COLOR_CYAN}\u${COLOR_BLUE}@\h"
+    prompt_line_two="${COLOR_GREEN}\w ${COLOR_YELLOW}$(__git_ps1 '(%s) ')${COLOR_RED}$(git_dirty_flag)${COLOR_NONE}"
     pointer="${prompt}$ "
 
     PS1="${prompt_line_one} ${prompt_line_two}${pointer}"

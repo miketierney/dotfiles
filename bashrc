@@ -62,6 +62,7 @@ alias mine=projects
 alias dev_aspen='terminitor start aspen_remote' # starts up 4 ssh tabs in my development instance, and puts me in the right directory/doing the right task. Requires terminitor.
 alias local_aspen='terminitor start aspen_local' # starts up 4 ssh tabs in my local environment, and puts me in the right directory/doing the right task. Requires terminitor.
 alias aspen='cl ~/Projects/doxo/aspen'
+alias doxocom='cl ~/Projects/doxo/doxo-com/wp-content/themes/doxo'
 alias bonsai='cl ~/Projects/doxo/bonsai'
 alias sites='cl ~/Sites/'
 

@@ -1,4 +1,11 @@
-require 'redgreen/autotest' unless ENV['RSPEC']
+# require 'redgreen/autotest' unless ENV['RSPEC']
+# require 'autotest/screen'
+
+# Autotest::Screen.statusline = '%H %`%-w%{=b bw}%n %t%{-}%+w'
+# Autotest::Screen.statusline = '%H %l %Y-%m-%d %c'
+# Autotest::Screen.statusline = '%{rw}%H%{wk}|%c|%M%d|%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?'
+# Autotest::Screen.statusline = '%Lw'
+# Autotest::Screen.statusline = '%3n %t%? @%u%?%? [%h]%?%=%c'
 
 Autotest.add_hook :initialize do |autotest|
   autotest.sleep = 1

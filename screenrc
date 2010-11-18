@@ -1,4 +1,8 @@
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-defbce "on"
-term screen-256color-bce
+# defbce "on"
+term screen-256color
+
+# From Andrew's screenrc file
+# escape ^Bb
+# register n ^b^c^bA

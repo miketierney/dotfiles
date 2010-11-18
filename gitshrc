@@ -47,7 +47,7 @@ gitalias review='git log -p --max-count=1'
 prompt_func()
 {
     previous_return_value=$?;
-    prompt_line="${COLOR_BLUE}[git sh]${COLOR_NONE} `_git_workdir` `_git_headname``_git_dirty` "
+    prompt_line="${COLOR_CYAN}[git sh]${COLOR_NONE} `_git_workdir` `_git_headname``_git_dirty` "
     pointer="${prompt}$> "
     
     PS1="\n${prompt_line}${pointer}"

@@ -62,6 +62,7 @@ alias mine=projects
 alias dev_aspen='terminitor start aspen_remote' # starts up 4 ssh tabs in my development instance, and puts me in the right directory/doing the right task. Requires terminitor.
 alias local_aspen='terminitor start aspen_local' # starts up 4 ssh tabs in my local environment, and puts me in the right directory/doing the right task. Requires terminitor.
 alias aspen='cl ~/Projects/doxo/aspen'
+alias doxocom='cl ~/Projects/doxo/doxo-com/wp-content/themes/doxo'
 alias bonsai='cl ~/Projects/doxo/bonsai'
 alias sites='cl ~/Sites/'
 
@@ -120,8 +121,8 @@ git_dirty_flag() {
 prompt_func()
 {
     previous_return_value=$?;
-    prompt_line_one="${COLOR_CYAN}\u${COLOR_YELLOW}@\h"
-    prompt_line_two="${COLOR_BLUE}\w ${COLOR_GREEN}$(__git_ps1 '(%s) ')${COLOR_RED}$(git_dirty_flag)${COLOR_NONE}"
+    prompt_line_one="${COLOR_CYAN}\u${COLOR_BLUE}@\h"
+    prompt_line_two="${COLOR_GREEN}\w ${COLOR_YELLOW}$(__git_ps1 '(%s) ')${COLOR_RED}$(git_dirty_flag)${COLOR_NONE}"
     pointer="${prompt}$ "
 
     PS1="${prompt_line_one} ${prompt_line_two}${pointer}"

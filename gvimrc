@@ -13,6 +13,7 @@ set colorcolumn=85                " The edge of reason
 "set guioptions-=r                 " Don't show right scrollbar
 
 colorscheme sjl-molokai
+" colorscheme wandering
 
 " Enables Cmd-T functionality in MacVim
 if has("gui_macvim")

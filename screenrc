@@ -1,4 +1,10 @@
-attrcolor b ".I"
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-defbce "on"
-term screen-256color-bce
+# attrcolor b ".I"
+# termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# defbce "on"
+# term screen-256color
+
+# From Andrew's screenrc file
+# escape ^Bb
+# register n ^b^c^bA
+caption always "%{bk}%H%{gk}: screen%{gk} | %{rk}(system load: %l)%{gk} | %-21=%{gk}%D %Y.%m.%d %0c"
+hardstatus alwayslastline "%?%-Lw%?%{+b wk}%n*%f %t%?(%u)%?%{kw}%?%+Lw%? %{wk}"

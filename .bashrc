@@ -135,11 +135,11 @@ prompt_func()
 PROMPT_COMMAND=prompt_func
 
 alias esp="open -a Espresso"
-# export EDITOR='mate -r'
-# export VISUAL=mate
-# export SVN_EDITOR='mate -w'
-# export GIT_EDITOR='mate -w'
-export EDITOR='vim -r'
-export VISUAL=vim
-export SVN_EDITOR='vim -w'
-# export GIT_EDITOR='mate -w'
+export EDITOR='mate -r'
+export VISUAL=mate
+export SVN_EDITOR='mate -w'
+export GIT_EDITOR='mate -w'
+# export EDITOR='vim -r'
+# export VISUAL=vim
+# export SVN_EDITOR='vim -w'
+# export GIT_EDITOR='vim -w'

@@ -82,6 +82,8 @@ alias gup='git up'
 # alias gfsck="git fsck"
 # alias gcobj="git count-objects"
 # alias ggc="git gc"
+alias gsi='git svn show-ignore > .git/info/exclude' # takes everything from the svn ignore and adds it to .git/info/exclude
+alias git_svn_ignore=gsi
 
 # enable Git tab completion
 complete -o default -o nospace -F _git_checkout gco

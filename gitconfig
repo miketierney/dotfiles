@@ -63,3 +63,5 @@
 #   external = extDiff
 [achievement]
 	upload = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"

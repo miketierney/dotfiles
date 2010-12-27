@@ -1,15 +1,8 @@
-# require 'redgreen/autotest' unless ENV['RSPEC']
 require 'autotest/screen'
 
-# Autotest::Screen.statusline = '%H %`%-w%{=b bw}%n %t%{-}%+w'
-# Autotest::Screen.statusline = '%H %l %Y-%m-%d %c'
-# Autotest::Screen.statusline = '%{rk}%H%{kw}|%c|%M%d|%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{bw}%?%+Lw%?'
 Autotest::Screen.statusline = "%?%-Lw%?%{+b wk}%n*%f %t%?(%u)%?%{kw}%?%+Lw%? %{wk}"
-# Autotest::Screen.statusline = '%Lw'
-# Autotest::Screen.statusline = '%3n %t%? @%u%?%? [%h]%?%=%c'
-# Autotest::Screen.statusline = '`%99`%{-}%{=r}%12` %100`%112`%= %130`%102`%101`%129`%131`%127`%114`%115`%108`%128`%125`%126`%113`%119`%117`%116`%106`%104`%103`%105`%107`%123`%132`%120`%121'
 
 Autotest.add_hook :initialize do |autotest|
   autotest.sleep = 1
-  %w{.git .svn .hg .DS_Store ._* vendor}.each { |exception| autotest.add_exception(exception)}
+  %w{.git .svn .hg .DS_Store ._* vendor :2e_ .AppleDouble}.each { |exception| autotest.add_exception(exception)}
 end

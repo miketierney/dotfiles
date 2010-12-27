@@ -25,4 +25,4 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/local/apache2/bin:/usr/local/bin/mysql:/usr/local/sphinx/bin:$PATH
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.

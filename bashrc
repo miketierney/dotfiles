@@ -4,6 +4,8 @@ HISTSIZE=1000000
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/sphinx/bin:$PATH
 
+source ~/bin/git-completion.bash
+
 # Faster navigation
 alias ll='ls -al'
 alias search=grep

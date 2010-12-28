@@ -1,5 +1,4 @@
 # source /opt/local/etc/bash_completion.d/svn-completion.sh
-source ~/bin/git-completion.bash
 
 # include .bashrc if it exists
 if [ -f ~/.bashrc ]; then

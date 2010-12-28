@@ -1,0 +1,3 @@
+[submodule "vim/src/jslint.vim"]
+	path = vim/src/jslint.vim
+	url = https://github.com/hallettj/jslint.vim.git

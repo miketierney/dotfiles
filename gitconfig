@@ -26,6 +26,8 @@
   l = log --pretty=oneline --decorate --abbrev-commit
   ll = log --pretty=oneline --decorate --abbrev-commit --max-count=15
   d = diff --word-diff
+  ksd = difftool -y -t Kaleidoscope
+  ksdiff = difftool -y -t Kaleidoscope
 [push]
   default = current
 [pull]

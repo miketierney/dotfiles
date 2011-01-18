@@ -58,6 +58,9 @@ alias stop_pg='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 # Dev Resources (only works on the doxo intranet)
 alias dev='ssh dev' # requires that the 'dev' ssh alias be set up properly
 
+# RVM
+alias rgu='rvm gemset use'
+
 # Personal
 alias projects='cl ~/Projects'
 alias mine=projects

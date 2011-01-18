@@ -50,6 +50,6 @@ prompt_func()
     prompt_line="${COLOR_CYAN}[git sh]${COLOR_RED}[$(~/.rvm/bin/rvm-prompt v g)]${COLOR_NONE} `_git_workdir` `_git_headname``_git_dirty` "
     pointer="${prompt}$> "
     
-    PS1="\n${prompt_line}${pointer}"
+    PS1="${prompt_line}${pointer}"
 }
 PROMPT_COMMAND=prompt_func

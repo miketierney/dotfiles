@@ -14,3 +14,6 @@
 --type-set=bin=.jpg --nobin
 --type-set=bin=.jpeg --nobin
 --type-set=bin=.gif --nobin
+
+--type-set=scss=.scss
+--type-set=sass=.sass

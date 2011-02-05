@@ -12,5 +12,6 @@ set colorcolumn=85                " The edge of reason
 
 "set guioptions-=r                 " Don't show right scrollbar
 
-colorscheme sjl-molokai
+" colorscheme sjl-molokai
 " colorscheme wandering
+colorscheme ir_black

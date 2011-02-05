@@ -3,6 +3,7 @@ HISTSIZE=1000000
 
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/sphinx/bin:$PATH
+export PATH=/usr/local/bin/node:$PATH
 
 source ~/bin/git-completion.bash
 

@@ -22,14 +22,12 @@ set backspace=indent,eol,start    " Intuitive backspacing.
 
 set hidden                        " Handle multiple buffers better.
 
-" set nowrap                        " don't wrap lines
-
 set autoindent                    " always set autoindenting on
 set copyindent                    " copy the previous indentation on autoindenting
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=*.swp,*.bak
+set wildignore=*.swp,*.bak,.o,*.obj,.git,*.rbc
 
 " Taming searching and movement
 set ignorecase                    " Case-insensitive searching.
@@ -51,9 +49,10 @@ set smarttab                      " insert tabs on the start of a line according
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
-"set invlist                      " Show invisible characters.
-" set listchars=tab:»·,trail:·,extends:#,nbsp:·
-" set cursorline                    " Show the line my cursor's on
+set invlist                      " Show invisible characters.
+" set list
+" set listchars=tab:>,eol:$,extends:#,nbsp:_
+set cursorline                    " Show the line my cursor's on
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
@@ -61,11 +60,9 @@ set showmatch                    " set show matching parenthesis
 
 set wrap                          " Turn on line wrapping.
 " set textwidth=79
-" set formatoptions=qrn1
-" set colorcolumn=85
+set formatoptions=qrn1
+set colorcolumn=85
 set scrolloff=3                   " Show 3 lines of context around the cursor.
-
-" set title                         " Set the terminal's title
 
 set visualbell                    " No beeping.
 set noerrorbells                  " I really mean, no beeping.
@@ -87,7 +84,7 @@ set expandtab                    " Use spaces instead of tabs
 set laststatus=2                 " Show the status line all the time
 " Useful status information at bottom of screen
 " set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-set statusline=\                            "
+set statusline=\
 set statusline+=%f\                         " file name
 set statusline+=[
 set statusline+=%{strlen(&ft)?&ft:'none'},  " filetype
@@ -109,12 +106,7 @@ set cmdheight=2                  " use a status bar that is 2 rows high
 set history=1000                 " remember more commands and search history
 set undolevels=1000              " use many muchos levels of undo
 
-" Or use vividchalk
-" colorscheme topfunky-light
-" colorscheme vividchalk
-" colorscheme slate
 colorscheme sjl-molokai
-" colorscheme wandering
 
 let mapleader = ","
 
@@ -144,10 +136,10 @@ map <Leader>ff :FuzzyFinderTextMate<Enter>
 
 " Controversial...swap colon and semicolon for easier commands
 nnoremap ; :
-"nnoremap : ;
+nnoremap : ;
 
 vnoremap ; :
-"vnoremap : ;
+vnoremap : ;
 
 " Use Q for formatting the current paragraph (or visual selection)
 vmap Q gq
@@ -159,13 +151,7 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>"
 " Easy window navigation
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-" map <C-h> <C-w>h
-" map <C-j> <C-w>j
-" map <C-k> <C-w>k
-" map <C-l> <C-w>l
 
 " Filetype specific handling
 " only do this part when compiled with support for autocommands
@@ -208,8 +194,37 @@ nmap <silent> <leader>sgv :so $MYGVIMRC<CR>
 "NERD Tree Plugin
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
-" Don't display these kinda of files
-let NERDTreeIgnore=[ '\.obj$', '\.o$', '\.so$', '^\.git$']
+" Without setting this, ZoomWin restores windows in a way that causes
+" equalalways behavior to be triggered the next time CommandT is used.
+" This is likely a bludgeon to solve some other issue, but it works
+set noequalalways
+
+" NERDTree configuration
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.obj$', '\.o$', '\.so$', '^\.git$']
+map <Leader>n :NERDTreeToggle<CR>
+
+" ZoomWin configuration
+map <Leader><Leader> :ZoomWin<CR>
+
+" CTags
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+
+" Remember last location in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
+
+function s:setupWrapping()
+  set wrap
+  set wm=2
+  set textwidth=72
+endfunction
+
+function s:setupMarkup()
+  call s:setupWrapping()
+  map <buffer> <Leader>p :Mm <CR>
+endfunction
 
 " Conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
@@ -261,23 +276,30 @@ nnoremap <leader>q gqip
 " Exit out of insert mode and back to normal mode without the use of <ESC>
 inoremap <C-c> <ESC>
 
-" Fancy CSS headings.
-" inoremap <C-h> <Plug>SnipMate h<tab>
-
 " Helpful rails expander. Temporary until I find a better way to do this.
-" inoremap <C-l>  <Plug>SnipMate ><Tab> 
 inoremap <C-l> <Space>=><Space>
-
-" ERB tags
-" inoremap <leader>= <C-X>+
-" inoremap <leader>- <C-X>_
-" inoremap <leader># <C-X>"
 
 " Expose scopes for colorscheming
 nmap <C-S-P> :call <SID>SynStack()<CR>
-  function! <SID>SynStack()
-    if !exists("*synstack")
-      return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-  endfunc
+
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+" Enables Cmd-T functionality in MacVim
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> <Plug>PeepOpen
+
+  set list
+  set listchars=tab:▸\ ,eol:¬       " A very TextMate way of showing invisibles.
+
+  " clear the search results highlighting
+  nnoremap <leader><space> :noh<cr>
+else
+  " Command-T configuration
+  let g:CommandTMaxHeight=20
+end

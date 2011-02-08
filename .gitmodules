@@ -28,6 +28,6 @@
 [submodule "vim/src/vim-javascript"]
 	path = vim/src/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
+[submodule "vim/src/nerdtree"]
+	path = vim/src/nerdtree
+	url = git@github.com:miketierney/nerdtree.git

@@ -15,3 +15,15 @@ set colorcolumn=85                " The edge of reason
 " colorscheme sjl-molokai
 " colorscheme wandering
 colorscheme ir_black
+
+" Enables Cmd-T functionality in MacVim
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> <Plug>PeepOpen
+
+  set list
+  set listchars=tab:▸\ ,eol:¬       " A very TextMate way of showing invisibles.
+
+  " clear the search results highlighting
+  nnoremap <leader><space> :noh<cr>
+endif

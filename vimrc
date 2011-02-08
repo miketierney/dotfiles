@@ -40,6 +40,16 @@ nnoremap <leader><space> :let @/=""<CR>
 nnoremap / /\v
 vnoremap / /\v
 
+" Controversial...swap colon and semicolon for easier commands
+" Using ;; to restore the origin ; (repeat previous command) functionality
+nnoremap ; :
+" nnoremap : ;
+nnoremap ;; ;
+
+vnoremap ; :
+" vnoremap : ;
+vnoremap ;; ;
+
 " Changing bracket pair matching movements from % to <tab>, since it's more
 " natural
 nnoremap <tab> %
@@ -49,7 +59,7 @@ set smarttab                      " insert tabs on the start of a line according
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
-set invlist                      " Show invisible characters.
+" set invlist                      " Show invisible characters.
 " set list
 " set listchars=tab:>,eol:$,extends:#,nbsp:_
 set cursorline                    " Show the line my cursor's on
@@ -106,7 +116,7 @@ set cmdheight=2                  " use a status bar that is 2 rows high
 set history=1000                 " remember more commands and search history
 set undolevels=1000              " use many muchos levels of undo
 
-colorscheme sjl-molokai
+colorscheme ir_black
 
 let mapleader = ","
 
@@ -132,14 +142,11 @@ nnoremap <C-y> 2<C-y>
 
 " Uncomment to use Jamis Buck's file opening plugin
 " Requires the fuzzy_file_finder gem to be installed
-map <Leader>ff :FuzzyFinderTextMate<Enter>
+" map <Leader>ff :FuzzyFinderTextMate<Enter>
 
-" Controversial...swap colon and semicolon for easier commands
-nnoremap ; :
-nnoremap : ;
+" Ragtag stuff
+let g:ragtag_global_maps = 1
 
-vnoremap ; :
-vnoremap : ;
 
 " Use Q for formatting the current paragraph (or visual selection)
 vmap Q gq
@@ -183,7 +190,7 @@ if has("autocmd")
 endif " has("autocmd")
 
 " De-conflicting the rooter <Leader>cd mapping
-map <silent> <unique> <Leader>rd <Plug>RooterChangeToRootDirectory
+map <silent> <unique> <Leader>rcd <Plug>RooterChangeToRootDirectory
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -289,17 +296,3 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-" Enables Cmd-T functionality in MacVim
-if has("gui_macvim")
-  macmenu &File.New\ Tab key=<nop>
-  map <D-t> <Plug>PeepOpen
-
-  set list
-  set listchars=tab:▸\ ,eol:¬       " A very TextMate way of showing invisibles.
-
-  " clear the search results highlighting
-  nnoremap <leader><space> :noh<cr>
-else
-  " Command-T configuration
-  let g:CommandTMaxHeight=20
-end

@@ -105,7 +105,7 @@ hi ModeMsg          guifg=#2c2c2c       guibg=#cfedc6     gui=BOLD      ctermfg=
 if version >= 700 " Vim 7.x specific colors
   hi CursorLine     guifg=NONE        guibg=#353535     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=BOLD
   hi CursorColumn   guifg=NONE        guibg=#353535     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=BOLD
-  hi MatchParen     guifg=#2c2c2c     guibg=#cfedc6     gui=BOLD      ctermfg=white       ctermbg=darkgray    cterm=NONE
+  hi MatchParen     guifg=#2c2c2c     guibg=#5fc344     gui=BOLD      ctermfg=white       ctermbg=darkgray    cterm=NONE
   hi Pmenu          guifg=#f6f3e8     guibg=#444444     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
   hi PmenuSel       guifg=#000000     guibg=#cae682     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
   hi Search         guifg=#2c2c2c     guibg=#e1d896     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=underline
@@ -114,18 +114,16 @@ endif
 " Syntax highlighting
 hi Comment          guifg=#6f6f6f     guibg=#424241     gui=NONE      ctermfg=darkgray    ctermbg=NONE        cterm=NONE
 hi String           guifg=#75ba53     guibg=NONE        gui=NONE      ctermfg=green       ctermbg=NONE        cterm=NONE
-" TODO: Need 'Number' styling -- currently using the 'Constant' rules
-hi Number           guifg=#f61500     guibg=NONE        gui=NONE      ctermfg=red         ctermbg=NONE        cterm=NONE
+" TODO: Need 'Number' styling -- currently using the 'Variable' rules
+hi Number           guifg=#f79f38     guibg=NONE        gui=NONE      ctermfg=magenta     ctermbg=NONE        cterm=NONE
 
-" hi Keyword          guifg=#d3f678     guibg=NONE        gui=NONE      ctermfg=blue        ctermbg=NONE        cterm=NONE
+hi Keyword          guifg=#d3f678     guibg=NONE        gui=NONE      ctermfg=blue        ctermbg=NONE        cterm=NONE
 " TODO: Need 'PreProc' styling
 hi PreProc          guifg=#96CBFE     guibg=NONE        gui=NONE      ctermfg=blue        ctermbg=NONE        cterm=NONE
 hi Conditional      guifg=#d3f678     guibg=NONE        gui=NONE      ctermfg=blue        ctermbg=NONE        cterm=NONE  " if else end
 
 hi Todo             guifg=#cfcfcf     guibg=#424241     gui=NONE      ctermfg=red         ctermbg=NONE        cterm=NONE
 hi Constant         guifg=#e9411e     guibg=NONE        gui=NONE      ctermfg=cyan        ctermbg=NONE        cterm=NONE
-hi Entity           guifg=#96c8ff     guibg=NONE        gui=NONE      ctermfg=cyan        ctermbg=NONE        cterm=NONE
-hi Keyword          guifg=#c8ff65     guibg=NONE        gui=NONE      ctermfg=green       ctermbg=NONE        cterm=NONE
 
 " TODO: These are all using best guesses about what the color should be, based
 " on other elements that have been color. Need to refine these styles.
@@ -136,7 +134,7 @@ hi Function         guifg=#d99043     guibg=NONE        gui=NONE      ctermfg=br
 " Using the 'Type' color
 hi Type             guifg=#e1d896     guibg=NONE        gui=NONE      ctermfg=yellow      ctermbg=NONE        cterm=NONE
 " Using the 'Support' color
-hi Statement        guifg=#c8ff65     guibg=NONE        gui=NONE      ctermfg=lightblue   ctermbg=NONE        cterm=NONE
+hi Statement        guifg=#56d5b0     guibg=NONE        gui=NONE      ctermfg=lightblue   ctermbg=NONE        cterm=NONE
 
 hi Special          guifg=#ffffff     guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
 " Using the 'Entity' color
@@ -215,76 +213,21 @@ hi link xmlEndTag       Identifier
 
 
 " Special for HTML
-hi htmlLink                   guifg=#c69ebf     guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
-
 hi link htmlTag         Identifier 
 hi link htmlTagName     Identifier 
 hi link htmlEndTag      Identifier 
 
 
-" Special for CSS
-hi cssInclude                 guifg=#97a4b6     guibg=NONE        gui=NONE      ctermfg=gray        ctermbg=NONE        cterm=NONE
-hi cssBraces                  guifg=#ffffff     guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
-hi cssTagName                 guifg=#96c8ff     guibg=NONE        gui=NONE      ctermfg=blue        ctermbg=NONE        cterm=NONE
-hi cssIdentifier              guifg=#ff5500     guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
-hi cssClassName               guifg=#ff5500     guibg=NONE        gui=BOLD      ctermfg=white       ctermbg=NONE        cterm=BOLD
-hi cssFontAttr                guifg=#198a90     guibg=NONE        gui=NONE      ctermfg=blue        ctermbg=NONE        cterm=NONE
-hi cssPseudoClass             guifg=#c69ebf     guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
-hi cssFunctionName            guifg=#e0db8f     guibg=NONE        gui=NONE      ctermfg=brown       ctermbg=NONE        cterm=NONE
-hi cssRenderProp              guifg=#2e98da     guibg=NONE        gui=NONE      ctermfg=blue        ctermbg=NONE        cterm=NONE
-hi cssRenderAttr              guifg=#9add51     guibg=NONE        gui=NONE      ctermfg=green       ctermbg=NONE        cterm=NONE
-hi cssUrl                     guifg=#5fc344     guibg=NONE        gui=NONE      ctermfg=green       ctermbg=NONE        cterm=NONE
-hi cssValueNumber             guifg=#5fc344     guibg=NONE        gui=NONE      ctermfg=green       ctermbg=NONE        cterm=NONE
-hi cssUIAttr                  guifg=#5fc344     guibg=NONE        gui=NONE      ctermfg=green       ctermbg=NONE        cterm=NONE
-
-hi link cssPseudoClassId      cssPseudoClass
-hi link cssBoxProp            cssRenderProp
-hi link cssColorProp          cssRenderProp
-hi link cssTextProp           cssRenderProp
-hi link cssValueLength        cssRenderAttr
-hi link cssTextAttr           cssRenderAttr
-hi link cssCommonAttr         cssRenderAttr
-hi link cssBoxAttr            cssRenderAttr
-hi link cssColor              cssValueNumber
-" hi link cssUrl                cssFunctionName
-
-
-"Special for SCSS
-hi scssVariable               guifg=#9caf78     guibg=NONE        gui=BOLD      ctermfg=brown       ctermbg=NONE        cterm=BOLD
-
-hi link scssColor             cssValueNumber
-hi link scssAmpersand         scssVariable
-hi link scssMixin             cssInclude
-hi link scssInclude           cssInclude
-hi link scssExtend            cssInclude
-hi link scssMixinName         cssFunctionName
-hi link scssClass             cssClassName
-hi link scssID                cssIdentifier
-hi link scssIdChar            scssColor
-
-
 " Special for Javascript
-hi javaScriptType             guifg=#ff9c14     guibg=NONE        gui=NONE      ctermfg=red         ctermbg=NONE        cterm=NONE
-hi javaScriptBlock            guifg=#ffffff     guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
-hi javaScriptParen            guifg=#ffffff     guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
-hi javaScriptFunction         guifg=#9add51     guibg=NONE        gui=NONE      ctermfg=green       ctermbg=NONE        cterm=NONE
-hi javaScriptFuncName         guifg=#96c8ff     guibg=NONE        gui=NONE      ctermfg=cyan        ctermbg=NONE        cterm=NONE
-
-hi link javaScriptFuncBlock   Entity
-hi link javaScriptNumber      Number
+hi link javaScriptNumber      Number 
 
 
 " Special for Python
-"hi  link pythonEscape         Keyword
+"hi  link pythonEscape         Keyword      
 
 
 " Special for CSharp
-hi  link csXmlTag             Keyword
+hi  link csXmlTag             Keyword      
 
 
 " Special for PHP
-hi phpIdentifier              guifg=#ff9c14     guibg=NONE        gui=NONE      ctermfg=red         ctermbg=NONE        cterm=NONE
-hi phpStorageClass            guifg=#9add51     guibg=NONE        gui=NONE      ctermfg=green       ctermbg=NONE        cterm=NONE
-
-hi link phpOperator           Keyword
-hi link phpVarSelector        phpIdentifier

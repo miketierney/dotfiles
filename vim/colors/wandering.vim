@@ -1,0 +1,1 @@
+../src/wandering-vim-color/wandering.vim

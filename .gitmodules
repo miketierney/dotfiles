@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
+[submodule "vim/src/wandering-vim-color"]
+	path = vim/src/wandering-vim-color
+	url = git@github.com:miketierney/wandering.vim.git

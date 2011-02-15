@@ -54,6 +54,7 @@ vnoremap ;; ;
 " natural
 nnoremap <tab> %
 vnoremap <tab> %
+inoremap <tab> <C-P>
 
 set smarttab                      " insert tabs on the start of a line according to shiftwidth, not tabstop
 

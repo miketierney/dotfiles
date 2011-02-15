@@ -31,3 +31,6 @@
 [submodule "vim/src/nerdtree"]
 	path = vim/src/nerdtree
 	url = git@github.com:miketierney/nerdtree.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = git://github.com/pangloss/vim-javascript.git

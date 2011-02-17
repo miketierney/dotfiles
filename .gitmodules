@@ -30,10 +30,13 @@
 	url = git://github.com/pangloss/vim-javascript.git
 [submodule "vim/src/nerdtree"]
 	path = vim/src/nerdtree
-	url = git@github.com:miketierney/nerdtree.git
+	url = git://github.com/miketierney/nerdtree.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
 [submodule "vim/src/wandering-vim-color"]
 	path = vim/src/wandering-vim-color
 	url = git@github.com:miketierney/wandering.vim.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git

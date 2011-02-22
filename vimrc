@@ -72,7 +72,11 @@ set showmatch                    " set show matching parenthesis
 set wrap                          " Turn on line wrapping.
 " set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+
+if exists("&colorcolumn")
+  set colorcolumn=85
+endif
+
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set visualbell                    " No beeping.

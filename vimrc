@@ -7,6 +7,18 @@ filetype off                      " Forces the filetype settings to reset (mostl
 call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
+if $COLORTERM == 'gnome-terminal'
+  set term=gnome-256color
+"   colorscheme railscasts
+" else
+"   colorscheme ir_black
+endif
+
+" colorscheme ir_black
+" colorscheme wandering
+" colorscheme railscasts
+colorscheme topfunky-light
+
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
 
@@ -89,7 +101,6 @@ set noswapfile                    " do not write annoying intermediate swap file
                                   "     anyway?
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
-
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set softtabstop=2
@@ -121,8 +132,6 @@ set cmdheight=2                  " use a status bar that is 2 rows high
 set history=1000                 " remember more commands and search history
 set undolevels=1000              " use many muchos levels of undo
 
-colorscheme ir_black
-" colorscheme wandering
 
 let mapleader = ","
 

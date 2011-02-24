@@ -118,6 +118,7 @@ set history=1000                 " remember more commands and search history
 set undolevels=1000              " use many muchos levels of undo
 
 colorscheme ir_black
+" colorscheme wandering
 
 let mapleader = ","
 

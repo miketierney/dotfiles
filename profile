@@ -25,6 +25,7 @@ export PATH=/opt/local/apache2/bin:/usr/local/mysql/bin:/usr/local/sphinx/bin:$P
 export PATH=/usr/local/share/npm/bin:$PATH
 export NODE_PATH="/usr/local/lib/node"
 
+export CLICOLOR=1;
 # Authme function (railsrumble)
 function authme {
 ssh $1 'cat >>.ssh/authorized_keys' <~/.ssh/id_rsa.pub

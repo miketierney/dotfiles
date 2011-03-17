@@ -183,11 +183,6 @@ if has("autocmd")
     autocmd filetype cmd set expandtab    " disallow tabs in Vim files
   augroup end
 
-  augroup vimrc
-    au BufReadPre * setlocal foldmethod=indent
-    au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-  augroup end
-
   " use closetag plugin to auto-close HTML tags
   autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
 

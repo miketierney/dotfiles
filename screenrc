@@ -8,3 +8,8 @@
 # register n ^b^c^bA
 caption always "%{bk}%H%{gk}: screen%{gk} | %{rk}(system load: %l)%{gk} | %-21=%{gk}%D %Y.%m.%d %0c"
 hardstatus alwayslastline "%?%-Lw%?%{+b wk}%n*%f %t%?(%u)%?%{kw}%?%+Lw%? %{wk}"
+
+attrcolor b ".I" 
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' 
+defbce "on" 
+term screen-256color-bce

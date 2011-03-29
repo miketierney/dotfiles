@@ -45,4 +45,4 @@
 	url = git://github.com/miketierney/snipmate-snippets.git
 [submodule "vim/src/snipMate-snippets"]
 	path = vim/src/snipMate-snippets
-	url = https://miketierney@github.com/miketierney/snipmate-snippets.git
+	url = git@github.com:miketierney/snipmate-snippets.git

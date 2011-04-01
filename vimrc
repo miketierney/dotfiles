@@ -162,7 +162,6 @@ nnoremap <C-y> 2<C-y>
 " Ragtag stuff
 let g:ragtag_global_maps = 1
 
-
 " Use Q for formatting the current paragraph (or visual selection)
 vmap Q gq
 nmap Q gqap
@@ -183,6 +182,8 @@ if has("autocmd")
     autocmd filetype cmd set expandtab    " disallow tabs in Vim files
   augroup end
 
+  au BufRead,BufNewFile *.scss set filetype=scss
+
   " use closetag plugin to auto-close HTML tags
   autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
 
@@ -191,16 +192,14 @@ if has("autocmd")
   autocmd filetype textile highlight link frontmatter Comment
 
   " Automatic fold settings for specific files. Uncomment to use.
-  autocmd FileType css scss sass  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+  " autocmd FileType css,scss,sass  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+  autocmd FileType css,scss,sass  setlocal shiftwidth=2 tabstop=2
 
   " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
   autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
-  au BufRead,BufNewFile *.scss set filetype=scss
-
   " Saves on blur
   au FocusLost * :wa
-
 endif " has("autocmd")
 
 " De-conflicting the rooter <Leader>cd mapping

@@ -10,10 +10,13 @@ set lines=40 columns=180          " Window dimensions.
 set cursorline                    " Show the line my cursor is on.
 set colorcolumn=85                " The edge of reason
 
-"set guioptions-=r                 " Don't show right scrollbar
+"set guioptions-=r                " Don't show right scrollbar
 
 colorscheme wandering
 " colorscheme solarized
+
+set list
+set listchars=tab:▸\ ,eol:¬    " A very TextMate way of showing invisibles.
 
 
 " Enables Cmd-T functionality in MacVim
@@ -21,9 +24,4 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <D-t> <Plug>PeepOpen
 
-  set list
-  set listchars=tab:▸\ ,eol:¬       " A very TextMate way of showing invisibles.
-
-  " clear the search results highlighting
-  nnoremap <leader><space> :noh<cr>
 endif

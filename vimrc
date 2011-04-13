@@ -41,7 +41,8 @@ set smartcase                     " But case-sensitive if expression contains a 
 set gdefault                      " Apply substitutions globally on lines. Single substitutions can be done by appending 'g' to the search pattern
 
 " clear the search results highlighting
-nnoremap <leader><space> :let @/=""<CR>
+" nnoremap <leader><space> :let @/=""<CR>
+nnoremap <leader><space> :noh<cr>
 
 nnoremap / /\v
 vnoremap / /\v

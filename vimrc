@@ -7,17 +7,11 @@ filetype off                      " Forces the filetype settings to reset (mostl
 call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
-if $COLORTERM == 'gnome-terminal'
-  set term=gnome-256color
-"   colorscheme railscasts
-" else
-"   colorscheme ir_black
-endif
+" enable 256 colors in vim
+set t_Co=256
 
-" colorscheme ir_black
-colorscheme wandering
-" colorscheme railscasts
-colorscheme topfunky-light
+" colorscheme topfunky-light
+colorscheme railscasts
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
@@ -162,7 +156,6 @@ nnoremap <C-y> 2<C-y>
 " Ragtag stuff
 let g:ragtag_global_maps = 1
 
-
 " Use Q for formatting the current paragraph (or visual selection)
 vmap Q gq
 nmap Q gqap
@@ -183,6 +176,8 @@ if has("autocmd")
     autocmd filetype cmd set expandtab    " disallow tabs in Vim files
   augroup end
 
+  au BufRead,BufNewFile *.scss set filetype=scss
+
   " use closetag plugin to auto-close HTML tags
   autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
 
@@ -191,16 +186,14 @@ if has("autocmd")
   autocmd filetype textile highlight link frontmatter Comment
 
   " Automatic fold settings for specific files. Uncomment to use.
-  autocmd FileType css scss sass  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+  " autocmd FileType css,scss,sass  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+  autocmd FileType css,scss,sass  setlocal shiftwidth=2 tabstop=2
 
   " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
   autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
-  au BufRead,BufNewFile *.scss set filetype=scss
-
   " Saves on blur
   au FocusLost * :wa
-
 endif " has("autocmd")
 
 " De-conflicting the rooter <Leader>cd mapping

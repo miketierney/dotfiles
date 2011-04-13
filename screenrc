@@ -9,7 +9,13 @@
 caption always "%{bk}%H%{gk}: screen%{gk} | %{rk}(system load: %l)%{gk} | %-21=%{gk}%D %Y.%m.%d %0c"
 hardstatus alwayslastline "%?%-Lw%?%{+b wk}%n*%f %t%?(%u)%?%{kw}%?%+Lw%? %{wk}"
 
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
 attrcolor b ".I" 
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' 
+
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm "Co#256:AB=\\E[48;5;%dm:AF=\\E[38;5;%dm"
+termcapinfo xterm-color256 "Co#256:AB=\\E[48;5;%dm:AF=\\E[38;5;%dm"]
+
+# erase background with current bg color
 defbce "on" 
-term screen-256color-bce

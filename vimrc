@@ -7,14 +7,11 @@ filetype off                      " Forces the filetype settings to reset (mostl
 call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
-if $COLORTERM == 'gnome-terminal'
-  set term=gnome-256color
-"   colorscheme railscasts
-" else
-"   colorscheme ir_black
-endif
+" enable 256 colors in vim
+set t_Co=256
 
-colorscheme topfunky-light
+" colorscheme topfunky-light
+colorscheme railscasts
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.

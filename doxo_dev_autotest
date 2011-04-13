@@ -1,8 +1,8 @@
-require 'autotest/screen'
+# require 'autotest/screen'
 
-Autotest::Screen.statusline = "%?%-Lw%?%{+b wk}%n*%f %t%?(%u)%?%{kw}%?%+Lw%? %{wk}"
+# Autotest::Screen.statusline = "%?%-Lw%?%{+b wk}%n*%f %t%?(%u)%?%{kw}%?%+Lw%? %{wk}"
 
 Autotest.add_hook :initialize do |autotest|
   autotest.sleep = 1
-  %w{.git .svn .hg .DS_Store ._* vendor :2e_ .AppleDouble .scss .sass}.each { |exception| autotest.add_exception(exception)}
+  %w{.git .svn .hg .DS_Store ._* vendor :2e_ .AppleDouble .scss .sass .css}.each { |exception| autotest.add_exception(exception)}
 end

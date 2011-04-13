@@ -14,9 +14,6 @@ if $COLORTERM == 'gnome-terminal'
 "   colorscheme ir_black
 endif
 
-" colorscheme ir_black
-colorscheme wandering
-" colorscheme railscasts
 colorscheme topfunky-light
 
 syntax enable                     " Turn on syntax highlighting.

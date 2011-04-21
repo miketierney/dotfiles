@@ -41,8 +41,7 @@ set smartcase                     " But case-sensitive if expression contains a 
 set gdefault                      " Apply substitutions globally on lines. Single substitutions can be done by appending 'g' to the search pattern
 
 " clear the search results highlighting
-" nnoremap <leader><space> :let @/=""<CR>
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space> :let @/=""<CR>
 
 nnoremap / /\v
 vnoremap / /\v
@@ -178,6 +177,8 @@ if has("autocmd")
   augroup end
 
   au BufRead,BufNewFile *.scss set filetype=scss
+  au BufRead, BufNewFile *.js.erb set filetype=eruby.js
+  au BufRead, BufNewFile *.html.erb set filetype=eruby.html
 
   " use closetag plugin to auto-close HTML tags
   autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim

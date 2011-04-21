@@ -25,3 +25,5 @@ if has("gui_macvim")
   map <D-t> <Plug>PeepOpen
 
 endif
+
+nnoremap <leader><space> :noh<cr>

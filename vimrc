@@ -8,7 +8,7 @@ call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
 " enable 256 colors in vim
-" set t_Co=256
+set t_Co=256
 
 " colorscheme topfunky-light
 colorscheme railscasts

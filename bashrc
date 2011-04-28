@@ -109,7 +109,7 @@ complete -o default -o nospace -F _git_pull gl
 complete -o default -o nospace -F _git_push gp
 
 export CLICOLOR=1
-export TERM=xterm-color
+# export TERM=xterm-color
 export LSCOLORS=gxfxcxdxbxegedabagacad # cyan directories
 
 COLOR_YELLOW='\[\e[1;33m\]'

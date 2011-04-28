@@ -7,11 +7,14 @@ filetype off                      " Forces the filetype settings to reset (mostl
 call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
-" enable 256 colors in vim
-set t_Co=256
+colorscheme solarized             " set the default colorscheme to something universally usable
+set background=dark               " terminal is dark, and the solarized theme works best with a dark bg
 
-" colorscheme topfunky-light
-colorscheme railscasts
+if $TERM=="xterm-256color"        " enable 256 colors in vim
+  set t_Co=256
+  colorscheme railscasts
+endif
+
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.

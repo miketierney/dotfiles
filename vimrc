@@ -12,7 +12,6 @@ set background=dark               " terminal is dark, and the solarized theme wo
 
 if $TERM=="xterm-256color"        " enable 256 colors in vim
   set t_Co=256
-  colorscheme railscasts
 endif
 
 

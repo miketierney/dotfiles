@@ -36,16 +36,13 @@
 	url = git://github.com/pangloss/vim-javascript.git
 [submodule "vim/src/wandering-vim-color"]
 	path = vim/src/wandering-vim-color
-	url = git@github.com:miketierney/wandering.vim.git
+	url = git://github.com/miketierney/wandering.vim.git
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/snipMate/snippets"]
-	path = vim/bundle/snipMate/snippets
-	url = git://github.com/miketierney/snipmate-snippets.git
 [submodule "vim/src/snipMate-snippets"]
 	path = vim/src/snipMate-snippets
-	url = git@github.com:miketierney/snipmate-snippets.git
+	url = git://github.com/miketierney/snipmate-snippets.git
 [submodule "vim/bundle/vim-ragtag"]
 	path = vim/bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag.git

@@ -7,12 +7,16 @@ filetype off                      " Forces the filetype settings to reset (mostl
 call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
+set background=dark               " terminal is dark, and the solarized theme works best with a dark bg
 colorscheme solarized             " set the default colorscheme to something universally usable
 set background=dark               " terminal is dark, and the solarized theme works best with a dark bg
 
 if $TERM=="xterm-256color"        " enable 256 colors in vim
   set t_Co=256
-  colorscheme railscasts
+endif
+
+if $TERM=="screen-256color"
+  set t_Co=256
 endif
 
 

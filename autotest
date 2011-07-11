@@ -1,6 +1,6 @@
 require 'autotest/growl'
-require 'autotest/fsevent'
-require 'redgreen/autotest' unless ENV['RSPEC']
+# require 'autotest/fsevent'
+# require 'redgreen/autotest' unless ENV['RSPEC']
 # require 'autotest/screen'
 
 Autotest::Growl::clear_terminal = true
@@ -10,15 +10,15 @@ Autotest::Growl::show_modified_files = false
 # Autotest::Screen.statusline = "%?%-Lw%?%{+b wk}%n*%f %t%?(%u)%?%{kw}%?%+Lw%? %{wk}"
 
 
-Autotest.add_hook :initialize do |autotest|
-  autotest.sleep = 1
-  %w{.git .svn .hg .DS_Store ._* vendor}.each {|exception| autotest.add_exception(exception)}
-  
-  # unless ARGV.empty?
-  #   if File.exist? 'config/environment.rb'
-  #     autotest.find_directories = ARGV.length = 1 ? ["spec/#{ARGV.first}", "app/#{ARGV.first}"] : ARGV.dup
-  #   end
-  # end
-  # 
-  # autotest.add_mapping(%r%^spec/(processors|mailers|middlewares)/.*rb$%) { |filename, _| filename}
-end
+# Autotest.add_hook :initialize do |autotest|
+#   autotest.sleep = 1
+#   %w{.git .svn .hg .DS_Store ._* vendor}.each {|exception| autotest.add_exception(exception)}
+#   
+#   # unless ARGV.empty?
+#   #   if File.exist? 'config/environment.rb'
+#   #     autotest.find_directories = ARGV.length = 1 ? ["spec/#{ARGV.first}", "app/#{ARGV.first}"] : ARGV.dup
+#   #   end
+#   # end
+#   # 
+#   # autotest.add_mapping(%r%^spec/(processors|mailers|middlewares)/.*rb$%) { |filename, _| filename}
+# end

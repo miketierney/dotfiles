@@ -126,7 +126,7 @@ set encoding=utf-8
 set lazyredraw                   " don't update the display while executing macros
 
 set showtabline=2                " show a tabbar on top, always
-set cmdheight=2                  " use a status bar that is 2 rows high
+" set cmdheight=2                  " use a status bar that is 2 rows high
 
 " Vim behavior
 

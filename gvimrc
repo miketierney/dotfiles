@@ -12,8 +12,8 @@ set colorcolumn=85                " The edge of reason
 
 "set guioptions-=r                " Don't show right scrollbar
 
-" colorscheme wandering
-colorscheme solarized
+colorscheme wandering
+" colorscheme solarized
 
 set list
 set listchars=tab:▸\ ,eol:¬    " A very TextMate way of showing invisibles.

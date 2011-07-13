@@ -55,3 +55,6 @@
 [submodule "vim/bundle/vim-superstatus"]
 	path = vim/bundle/vim-superstatus
 	url = https://github.com/Lokaltog/vim-superstatus.git
+[submodule "vim/bundle/vim-tagbar"]
+	path = vim/bundle/vim-tagbar
+	url = https://github.com/majutsushi/tagbar.git

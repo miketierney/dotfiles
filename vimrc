@@ -229,6 +229,9 @@ map <Leader>n :NERDTreeToggle<CR>
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
 
+" Tagbar configuration
+nnoremap <silent> <F9> :TagbarToggle<CR>
+
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 

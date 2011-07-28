@@ -77,7 +77,7 @@ inoremap <tab> <C-P>
 " set smarttab " insert tabs on the start of a line according to a shiftwidth, not tabstop
 
 " Tab mappings.
-map <leader>tt :tabnew<cr>
+" map <leader>tt :tabnew<cr>
 " map <leader>te :tabedit<cr>
 map <leader>tc :tabclose<cr>
 map <leader>to :tabonly<cr>

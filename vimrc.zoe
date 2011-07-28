@@ -8,6 +8,11 @@ let mapleader=","
 " set list
 " set listchars=tab:>,eol:$,extends:#,nbsp:_
 set cursorline                    " display the currently active line
+set formatoptions=qrn1            " see :help fo-table for more on what this does
+" set formatoptions-=0            " don't start new lines w/ comment leader on pressing 'o'
+" au filetype vim set formatoptions-=o
+                        " somehow, during vim filetype detection, this gets
+                        " set, so explicitly unset it again for vim files
 
 " Pathogen initialization
 call pathogen#helptags()
@@ -18,6 +23,11 @@ color solarized
 set background=dark
 
 " Enable 256 color support, if available
+if $TERM=="xterm-256color"
+  set t_Co=256
+endif
+
+" Enable 256 color support in screen
 if $TERM=="xterm-256color"
   set t_Co=256
 endif
@@ -77,8 +87,8 @@ inoremap <tab> <C-P>
 " set smarttab " insert tabs on the start of a line according to a shiftwidth, not tabstop
 
 " Tab mappings.
-" map <leader>tt :tabnew<cr>
-" map <leader>te :tabedit<cr>
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit<cr>
 map <leader>tc :tabclose<cr>
 map <leader>to :tabonly<cr>
 map <leader>tn :tabnext<cr>
@@ -86,6 +96,11 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+
+" Easy window navigation
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Ragtag stuff
 " let g:ragtag_global_maps = 1
@@ -95,6 +110,9 @@ map <leader>tm :tabmove
 " vmap Q gq
 " nmap Q gqap
 
+" make p in Visual mode replace the selected text with the yank register
+vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>"
+
 " Quickly edit/reload the vimrc files
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -103,6 +121,38 @@ nmap <silent> <leader>sgv :so $MYGVIMRC<CR>
 
 " NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$', '\.obj$', '\.o$', '\.so$', '^\.git$']
+map <leader>n :NERDTreeToggle<CR>
+
+" Tagbar
+nnoremap <silent> <F9> :TagbarToggle<CR>
+
+" CTags
+map <leader>rt :!ctags --extra=+f -R *<CR><CR>
+
+" easymotion
+let g:EasyMotion_leader_key = '<leader>m' " prevents this from conflicting with Command-T
+
+" Conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" shortcut to jump to next conflict marker
+nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+
+" * Window splits
+
+" Open new horizontal split windows below current
+set splitbelow
+
+" Open new vertical split windows to the right
+set splitright
+
+" Disable the help key, which is inconveniently placed next to the esc key. Dumb.
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" JSLint Rules
+let g:JSLintHighlightErrorLine = 1
 
 " Filetype specific handling
 " only do this part when compiled with support for autocommands
@@ -129,6 +179,10 @@ if has("autocmd")
 
   " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
   autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+
+  " Remember the last location in file
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
 
   " Saves on blur. Uncomment to use.
   " au FocusLost * :wa

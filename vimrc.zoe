@@ -1,0 +1,135 @@
+" colorscheme topfunky-light      " use a lighter theme style by default
+" set cmdheight=1                 " use a status bar that is 2 rows high
+
+" Change the <leader> to a comma
+let mapleader=","
+
+" set invlist                     " show invisible characters
+" set list
+" set listchars=tab:>,eol:$,extends:#,nbsp:_
+set cursorline                    " display the currently active line
+
+" Pathogen initialization
+call pathogen#helptags()
+silent! call pathogen#runtime_append_all_bundles()
+
+" Override the default colorscheme.
+color solarized
+set background=dark
+
+" Enable 256 color support, if available
+if $TERM=="xterm-256color"
+  set t_Co=256
+endif
+
+" Display the mode you're in.
+set showmode
+
+" Handle multiple buffers better.
+set hidden
+
+" Indentation settings. Uncomment to use.
+" set autoindent
+" set copyindent
+
+" Set up some more shell-like behaviors. Uncomment to use.
+" set wildmenu                                      " Enhanced command line completion
+" set wildmode=list:longest                         " Complete files like a shell
+" set wildignore=*.swp,*.bak,.o,*.obj,.git,*.rbc
+
+" Taming searching and movement
+set gdefault                                      " Apply substitutions globally on lines. Single substitutions can be done by appending 'g' to the search pattern
+nnoremap / /\v
+vnoremap / /\v
+
+" * scroll up and down 10 lines at a time
+noremap <C-K> 10k
+noremap <C-J> 10j
+
+" Speed up scrolling of the viewport slightly
+" nnoremap <C-e> 2<C-e>
+" nnoremap <C-y> 2<C-y>
+
+" Clear the search results highlighting
+nnoremap <leader><space> :let @/=""<CR>
+
+" Controversial ... swap colon and semicolon for easier commands
+
+nnoremap ; :
+nnoremap : ;
+" Using ;; to restore the original ; (repeat previous command) functionality
+" nnoremap ;; ;
+
+vnoremap ; :
+vnoremap : ;
+" Using ;; to restore the original ; (repeat previous command) functionality
+" vnoremap ;; ;
+
+" Changing bracket pair matching movements from % to <tab>, since it's more
+" natural
+nnoremap <tab> %
+vnoremap <tab> %
+inoremap <tab> <C-P>
+
+" show matching parenthesis. Uncomment to use.
+" set showmatch
+
+" set smarttab " insert tabs on the start of a line according to a shiftwidth, not tabstop
+
+" Tab mappings.
+map <leader>tt :tabnew<cr>
+" map <leader>te :tabedit<cr>
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
+
+" Ragtag stuff
+" let g:ragtag_global_maps = 1
+
+" Document formatting
+" Use Q for formatting the current paragraph (or visual selection)
+" vmap Q gq
+" nmap Q gqap
+
+" Quickly edit/reload the vimrc files
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>egv :e $MYGVIMRC<CR>
+nmap <silent> <leader>sgv :so $MYGVIMRC<CR>
+
+" NERDTree
+let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$', '\.obj$', '\.o$', '\.so$', '^\.git$']
+
+" Filetype specific handling
+" only do this part when compiled with support for autocommands
+if has("autocmd")
+  augroup vim_files
+    au!
+    autocmd filetype cmd set expandtab        " disallow tabs in Vim files
+  augroup end
+
+  au BufRead,BufNewFile *.scss set filetype=scss
+  au BufRead,BufNewFile *.js.erb set filetype=eruby.js
+  au BufRead,BufNewFile *.html.erb set filetype=eruby.html
+
+  " use closetag plugin to auto-close HTML tags
+  " autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
+
+  " render YAML front matter inside Textile documents as comments
+  autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
+  autocmd filetype textile highlight link frontmatter Comment
+
+  " Automatic fold settings for specific files. Uncomment to use.
+  " autocmd FileType css,scss,sass setlocal foldmethod=indent shiftwidth=2 tabstop=2
+  autocmd FileType css,scss,sass setlocal shiftwidth=2 tabstop=2
+
+  " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
+  autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+
+  " Saves on blur. Uncomment to use.
+  " au FocusLost * :wa
+endif " has("autocmd")

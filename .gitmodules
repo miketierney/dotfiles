@@ -61,3 +61,6 @@
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim-janus"]
+	path = vim-janus
+	url = git://github.com/miketierney/janus.git

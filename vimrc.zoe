@@ -66,13 +66,13 @@ nnoremap <leader><space> :let @/=""<CR>
 
 " Controversial ... swap colon and semicolon for easier commands
 
-nnoremap ; :
-nnoremap : ;
+"nnoremap ; :
+"nnoremap : ;
 " Using ;; to restore the original ; (repeat previous command) functionality
 " nnoremap ;; ;
 
-vnoremap ; :
-vnoremap : ;
+"vnoremap ; :
+"vnoremap : ;
 " Using ;; to restore the original ; (repeat previous command) functionality
 " vnoremap ;; ;
 

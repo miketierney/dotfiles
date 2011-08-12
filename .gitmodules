@@ -64,3 +64,6 @@
 [submodule "vim-janus"]
 	path = vim-janus
 	url = git://github.com/miketierney/janus.git
+[submodule "colorschemes/tomorrow-theme"]
+	path = colorschemes/tomorrow-theme
+	url = https://github.com/ChrisKempson/Tomorrow-Theme.git

@@ -21,6 +21,7 @@ silent! call pathogen#runtime_append_all_bundles()
 " Override the default colorscheme.
 "color solarized
 "set background=dark
+"color Tomorrow-Night-Eighties
 color Tomorrow
 
 " Enable 256 color support, if available

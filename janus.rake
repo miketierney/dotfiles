@@ -11,6 +11,7 @@ vim_plugin_task "vim-ragtag", "https://github.com/tpope/vim-ragtag.git"
 vim_plugin_task "scss-syntax", "https://github.com/cakebaker/scss-syntax.vim.git"
 vim_plugin_task "gundo", "https://github.com/sjl/gundo.vim.git"
 vim_plugin_task "pathogen", "https://github.com/tpope/vim-pathogen.git"
+vim_plugin_task "jshint", "https://github.com/walm/jshint.vim.git"
 
 # colorschemes
 vim_plugin_task "wandering", "https://github.com/miketierney/wandering.vim.git"

@@ -189,3 +189,7 @@ if has("autocmd")
   " Saves on blur. Uncomment to use.
   " au FocusLost * :wa
 endif " has("autocmd")
+
+
+" Use Node.js for JavaScript interpretation
+let $JS_CMD='node'

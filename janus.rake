@@ -14,6 +14,7 @@ vim_plugin_task "gundo", "https://github.com/sjl/gundo.vim.git"
 vim_plugin_task "pathogen", "https://github.com/tpope/vim-pathogen.git"
 #vim_plugin_task "jshint", "https://github.com/walm/jshint.vim.git"
 vim_plugin_task "jslint", "https://github.com/hallettj/jslint.vim.git"
+vim_plugin_task "jst", "https://github.com/briancollins/vim-jst.git"
 
 # colorschemes
 vim_plugin_task "wandering", "https://github.com/miketierney/wandering.vim.git"

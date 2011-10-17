@@ -167,6 +167,8 @@ if has("autocmd")
   au BufRead,BufNewFile *.scss set filetype=scss
   au BufRead,BufNewFile *.js.erb set filetype=eruby.js
   au BufRead,BufNewFile *.html.erb set filetype=eruby.html
+  au BufRead,BufNewFile *.jst set filetype=jst
+  au BufRead,BufNewFile *.ejs set filetype=jst
 
   " use closetag plugin to auto-close HTML tags
   " autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim

@@ -107,3 +107,5 @@ export VISUAL=vim
 #export GIT_EDITOR='vim'
 
 unset MAILCHECK
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

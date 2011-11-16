@@ -67,3 +67,6 @@
 [submodule "colorschemes/tomorrow-theme"]
 	path = colorschemes/tomorrow-theme
 	url = https://github.com/ChrisKempson/Tomorrow-Theme.git
+[submodule "colorschemes/vim-mac-classic-theme"]
+	path = colorschemes/vim-mac-classic-theme
+	url = https://github.com/nelstrom/vim-mac-classic-theme.git

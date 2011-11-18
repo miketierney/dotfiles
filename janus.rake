@@ -13,8 +13,8 @@ vim_plugin_task "vim-ragtag", "https://github.com/tpope/vim-ragtag.git"
 vim_plugin_task "scss-syntax", "https://github.com/cakebaker/scss-syntax.vim.git"
 vim_plugin_task "gundo", "https://github.com/sjl/gundo.vim.git"
 vim_plugin_task "pathogen", "https://github.com/tpope/vim-pathogen.git"
-#vim_plugin_task "jshint", "https://github.com/walm/jshint.vim.git"
-vim_plugin_task "jslint", "https://github.com/hallettj/jslint.vim.git"
+vim_plugin_task "jshint", "https://github.com/walm/jshint.vim.git"
+#vim_plugin_task "jslint", "https://github.com/hallettj/jslint.vim.git"
 vim_plugin_task "jst", "https://github.com/briancollins/vim-jst.git"
 
 # colorschemes

@@ -2,6 +2,7 @@ skip_vim_plugin "taglist"
 skip_vim_plugin "scala"
 skip_vim_plugin "puppet"
 #skip_vim_plugin "supertab"
+skip_vim_plugin "command_t"
 
 vim_plugin_task "zencoding", "https://github.com/mattn/zencoding-vim.git"
 vim_plugin_task "tagbar", "https://github.com/majutsushi/tagbar.git"

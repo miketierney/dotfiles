@@ -1,18 +1,64 @@
 [user]
-  name = Mike Tierney
-  email = mike@panpainter.com
+	name = Mike Tierney
+	email = mike@panpainter.com
 [github]
   user = miketierney
   token = ENTER GITHUB API KEY HERE
 [alias]
+  # git commit
+  commit = commit --verbose
+  amend = commit --verbose --amend
+  ci = commit --verbose
+  ca = commit --verbose --all
+  cn = commit --verbose --amend
+  n = commit --verbose --amend
+
+  # git add
+  a = add
+  aa = add --update
+  ap = add --patch
+
+
+  # git checkout
   co = checkout
-  pl = pull
+  c = checkout
+
+  # git fetch
+  f = fetch
   pu = push
+  pl = pull
+
+  # git rebase
+  # r = rebase --interactive HEAD~10
+
+  # git diff
+  d = diff --word-diff
+  p = diff --cached # mnemonic: "patch"
+
+  # git difftool: Kaleidoscope
+  kd = difftool -y -t Kaleidoscope
+  kp = difftool --cached -y -t Kaleidoscope
+  ksd = difftool -y -t Kaleidoscope
+  ksdiff = difftool -y -t Kaleidoscope
+
+  # git status
+  s = status -sb
   st = status -sb
   stat = status
+
+  # git show
+  ss = show --name-only # "show short"
+  sn = show --name-only # "show name"
+
+  # git branch
+  b = branch
   br = branch
-  ca = commit -v -a
-  ci = commit -v
+
+  # git log
+  L = log --decorate
+  l = log --pretty=oneline --decorate --abbrev-commit
+  ll = log --pretty=oneline --decorate --abbrev-commit --max-count=15
+
   # up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
   sh = !git-sh
 
@@ -21,13 +67,7 @@
   update = svn rebase
   up = update
   dcommit = svn dcommit
-  # git log
-  L = log --decorate
-  l = log --pretty=oneline --decorate --abbrev-commit
-  ll = log --pretty=oneline --decorate --abbrev-commit --max-count=15
-  d = diff --word-diff
-  ksd = difftool -y -t Kaleidoscope
-  ksdiff = difftool -y -t Kaleidoscope
+
 [push]
   default = current
 [pull]
@@ -75,7 +115,6 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[difftool "Kaleidoscope"]
 [difftool "Kaleidoscope"]
 [difftool]
 	prompt = false

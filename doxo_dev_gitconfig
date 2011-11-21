@@ -24,20 +24,59 @@
   branch = yellow
   workdir = green
 [alias]
+  # git commit
+  commit = commit --verbose
+  amend = commit --verbose --amend
+  ci = commit --verbose
+  ca = commit --verbose --all
+  cn = commit --verbose --amend
+  n = commit --verbose --amend
+
+  # git add
+  a = add
+  aa = add --update
+  ap = add --patch
+
+
+  # git checkout
   co = checkout
-  pl = pull
+  c = checkout
+
+  # git fetch
+  f = fetch
   pu = push
+  pl = pull
+
+  # git rebase
+  # r = rebase --interactive HEAD~10
+
+  # git diff
+  d = diff --word-diff
+  p = diff --cached # mnemonic: "patch"
+
+  # git status
+  s = status -sb
   st = status -sb
   stat = status
+
+  # git show
+  ss = show --name-only # "show short"
+  sn = show --name-only # "show name"
+
+  # git branch
+  b = branch
   br = branch
-  ca = commit -v -a
-  ci = commit -v
-  sh = !git-sh
+
   # git log
   L = log --decorate
   l = log --pretty=oneline --decorate --abbrev-commit
   ll = log --pretty=oneline --decorate --abbrev-commit --max-count=15
+
+  # up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+  sh = !git-sh
+
   # Git-SVN stuff
+  # sup = !sh -c 'git svn rebase && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}'
   update = svn rebase
   up = update
   dcommit = svn dcommit

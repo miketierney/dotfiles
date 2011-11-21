@@ -164,6 +164,13 @@ if has("autocmd")
     autocmd filetype cmd set expandtab        " disallow tabs in Vim files
   augroup end
 
+  highlight ExtraWhitespace ctermbg=red ctermfg=white guibg=#F8E7E5 guifg=#E05B45
+  au ColorScheme * highlight ExtraWhitespace guibg=#F8E7E5 guifg=#E05B45
+  au BufEnter * match ExtraWhitespace /\s\+$/
+  au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  au InsertLeave * match ExtraWhiteSpace /\s\+$/
+  au BufWinLeave * call clearmatches()
+
   au BufRead,BufNewFile *.scss set filetype=scss
   au BufRead,BufNewFile *.js.erb set filetype=eruby.js
   au BufRead,BufNewFile *.html.erb set filetype=eruby.html

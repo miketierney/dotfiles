@@ -25,7 +25,6 @@ export PATH=/opt/local/apache2/bin:/usr/local/mysql/bin:/usr/local/sphinx/bin:$P
 export PATH=/usr/local/share/npm/bin:$PATH
 # export PATH=/usr/local/Cellar/php/5.3.6/bin:$PATH
 # export PATH='`brew --prefix php`'/bin:$PATH
-export NODE_PATH="/usr/local/lib/node"
 
 # Authme function (railsrumble)
 function authme {

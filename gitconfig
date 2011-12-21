@@ -50,6 +50,11 @@
   ss = show --name-only # "show short"
   sn = show --name-only # "show name"
 
+  # git stash
+  sts = stash save
+  sta = stash apply
+  stp = stash pop
+
   # git branch
   b = branch
   br = branch

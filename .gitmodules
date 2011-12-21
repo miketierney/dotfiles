@@ -73,3 +73,6 @@
 [submodule "vim/bundle/cakebaker-scss-syntax.vim"]
 	path = vim/bundle/cakebaker-scss-syntax.vim
 	url = git://github.com/cakebaker/scss-syntax.vim.git
+[submodule "colorschemes/vim-colors-solarized"]
+	path = colorschemes/vim-colors-solarized
+	url = https://github.com/altercation/solarized.git

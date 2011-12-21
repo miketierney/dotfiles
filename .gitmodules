@@ -76,3 +76,6 @@
 [submodule "colorschemes/vim-colors-solarized"]
 	path = colorschemes/vim-colors-solarized
 	url = https://github.com/altercation/solarized.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git

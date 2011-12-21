@@ -1,1 +1,0 @@
-../bundle/cakebaker-scss-syntax/syntax/scss.vim

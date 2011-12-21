@@ -1,5 +1,0 @@
-" Makes Ack work properly, since Ubuntu sees it as 'ack-grep'
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-" set background=light
-colorscheme github
-" colorscheme solarized

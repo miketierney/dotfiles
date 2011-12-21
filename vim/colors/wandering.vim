@@ -1,1 +1,0 @@
-../bundle/vim-colors-wandering/wandering.vim

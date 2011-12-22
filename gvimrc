@@ -5,6 +5,10 @@ set guioptions-=T
 set lines=40 columns=180
 set cursorline
 
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
 set list
 set listchars=tab:\ \ ,trail:· " Highlight trailing whitespace and tabs.
 

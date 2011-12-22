@@ -14,7 +14,7 @@ let mapleader=","               " Change the <leader> to a comma (easier to reac
 set nowrap                      " don't wrap lines
 set tabstop=2                   " a tab is two spaces
 set shiftwidth=2                " a tab is two spaces
-set expandtab	                  " use spaces, not tabs
+set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
 set list
 set listchars=tab:\ \ ,trail:·  " Highlight trailing whitespace and tabs.
@@ -157,7 +157,7 @@ if has("autocmd")
 
   " Automatic fold settings for specific files. Uncomment to use.
   " autocmd FileType css,scss,sass setlocal foldmethod=indent shiftwidth=2 tabstop=2
-  autocmd FileType css,scss,sass,javascript,jst setlocal shiftwidth=2 tabstop=2
+  autocmd FileType css,scss,sass,javascript,jst setlocal shiftwidth=2 tabstop=2 expandtab foldmethod=indent
 
   " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
   autocmd BufNewFile,BufRead *_spec.rb compiler rspec

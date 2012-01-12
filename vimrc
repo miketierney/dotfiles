@@ -62,7 +62,8 @@ call pathogen#infect()
 
 "" Coloring
 " color mac_classic
-color ir_black " at least until wandering can be converted properly
+"color ir_black " at least until wandering can be converted properly
+color Tomorrow-Night-Eighties
 
 if $TERM=="xterm-256color"
   set t_Co=256                  " enable 256 color support, if available
@@ -122,6 +123,9 @@ vnoremap <F1> <ESC>
 "" File-specific
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'  " Conflict markers
 
+" Commenting
+let NERD_scss_alt_style=1
+
 " only do this part when compiled with support for autocommands
 if has("autocmd")
   augroup vim_files
@@ -171,3 +175,12 @@ if has("autocmd")
 endif " has("autocmd")
 
 " Formatting
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunction

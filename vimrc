@@ -161,7 +161,7 @@ if has("autocmd")
 
   " Automatic fold settings for specific files. Uncomment to use.
   " autocmd FileType css,scss,sass setlocal foldmethod=indent shiftwidth=2 tabstop=2
-  autocmd FileType css,scss,sass,javascript,jst setlocal shiftwidth=2 tabstop=2 expandtab foldmethod=indent
+  autocmd FileType css,scss,sass,javascript,jst setlocal shiftwidth=2 tabstop=2 expandtab " foldmethod=indent
 
   " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
   autocmd BufNewFile,BufRead *_spec.rb compiler rspec

@@ -46,9 +46,6 @@
 [submodule "vim/bundle/vim-ragtag"]
 	path = vim/bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag.git
-[submodule "vim/src/vim-colors-solarized"]
-	path = vim/src/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/vim-colors-wandering"]
 	path = vim/bundle/vim-colors-wandering
 	url = git://github.com/miketierney/wandering.vim.git
@@ -73,9 +70,6 @@
 [submodule "vim/bundle/cakebaker-scss-syntax.vim"]
 	path = vim/bundle/cakebaker-scss-syntax.vim
 	url = git://github.com/cakebaker/scss-syntax.vim.git
-[submodule "colorschemes/vim-colors-solarized"]
-	path = colorschemes/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -100,3 +94,6 @@
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "colorschemes/solarized"]
+	path = colorschemes/solarized
+	url = git://github.com/altercation/solarized

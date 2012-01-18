@@ -11,13 +11,13 @@ set scrolloff=3                 " Show 3 lines of content around the cursor
 let mapleader=","               " Change the <leader> to a comma (easier to reach)
 
 "" Whitespace
-set nowrap                      " don't wrap lines
-set tabstop=2                   " a tab is two spaces
-set shiftwidth=2                " a tab is two spaces
-set expandtab                   " use spaces, not tabs
-set backspace=indent,eol,start  " backspace through everything in insert mode
+set nowrap                                         " don't wrap lines
+set tabstop=2                                      " a tab is two spaces
+set shiftwidth=2                                   " a tab is two spaces
+set expandtab                                      " use spaces, not tabs
+set backspace=indent,eol,start                     " backspace through everything in insert mode
 set list
-set listchars=tab:\ \ ,trail:·  " Highlight trailing whitespace and tabs.
+set listchars=tab:>·,trail:·,extends:>,precedes:<  " Highlight trailing whitespace and tabs.
 
 "" Modelines
 set modeline                    " modeline overrides
@@ -67,7 +67,11 @@ color Tomorrow-Night-Eighties
 
 if $TERM=="xterm-256color"
   set t_Co=256                  " enable 256 color support, if available
+  let g:solarized_termcolors=256
 endif
+
+" Solarized settings
+let g:solarized_visibility="high"
 
 "" Meta
 set showcmd                     " display incomplete commands

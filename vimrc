@@ -128,6 +128,10 @@ vnoremap <F1> <ESC>
 "" File-specific
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'  " Conflict markers
 
+" Plugins
+" Use Node.js for JavaScript interpretation
+let $JS_CMD='node'
+
 " Commenting
 let NERD_scss_alt_style=1
 

@@ -97,3 +97,6 @@
 [submodule "colorschemes/solarized"]
 	path = colorschemes/solarized
 	url = git://github.com/altercation/solarized
+[submodule "vim/bundle/jslint.vim"]
+	path = vim/bundle/jslint.vim
+	url = https://github.com/hallettj/jslint.vim.git

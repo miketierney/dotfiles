@@ -61,10 +61,10 @@ call pathogen#infect()
 " runtime! plugin/matchit.vim     " Load the matchit plugin
 
 "" Coloring
-" color mac_classic
+color mac_classic
 "color ir_black " at least until wandering can be converted properly
 "color Tomorrow-Night-Eighties
-color solarized
+"color solarized
 
 if $TERM=="xterm-256color"
   set t_Co=256                  " enable 256 color support, if available
@@ -127,6 +127,10 @@ vnoremap <F1> <ESC>
 
 "" File-specific
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'  " Conflict markers
+
+" Plugins
+" Use Node.js for JavaScript interpretation
+let $JS_CMD='node'
 
 " Commenting
 let NERD_scss_alt_style=1

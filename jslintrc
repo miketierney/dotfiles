@@ -1,2 +1,4 @@
-/*global jQuery, $j */
-/*global Prototype, $ */
+/*jslint browser: true, regexp: true, devel: true */
+/*global jQuery, $, $j */
+
+/* vim: set ft=javascript: */

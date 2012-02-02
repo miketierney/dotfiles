@@ -24,7 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler cap cloudapp gem git git-flow heroku npm osx pow rails rails3 ruby rvm svn textmate)
+plugins=(brew bundler cap cloudapp gem git heroku npm osx pow rails rails3 ruby rvm svn)
 
 source $ZSH/oh-my-zsh.sh
 

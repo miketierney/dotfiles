@@ -54,6 +54,9 @@ alias rdm='rake db:migrate'
 alias rdtp='rake db:test:prepare'
 alias rdma='rake db:migrate && rake db:test:prepare'
 
+# Ruby aliases
+alias rake='noglob rake' # make zsh/rake behave more like bash/rake for commands that take arguments
+
 # Mike's sanity-saving shortcuts
 # apache short cut
 # alias start_apache='sudo /opt/local/apache2/bin/apachectl start'

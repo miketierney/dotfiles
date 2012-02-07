@@ -134,7 +134,10 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'  " Conflict markers
 let $JS_CMD='node'
 
 " Commenting
-let NERD_scss_alt_style=1
+let g:NERDCustomDelimiters = {
+  \ 'scss' : { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
+  \ 'sass' : { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' }
+\ }
 
 " only do this part when compiled with support for autocommands
 if has("autocmd")

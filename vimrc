@@ -57,6 +57,22 @@ call pathogen#helptags()         " initialize Pathogen
 call pathogen#infect()
 " silent! call pathogen#runtime_append_all_bundles()
 
+" Command-T
+"" Open files with <leader>f
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+"" Open files, limited to the directory of the current file, with <leader>gf
+"" This requires the %% mapping found below
+map <leader>gf :CommandTFlush<cr>\|:CommandT %%
+
+" File Navigation
+"" Edit or view files in same directory as current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
 " Matchit
 " runtime! plugin/matchit.vim     " Load the matchit plugin
 
@@ -119,6 +135,15 @@ nnoremap <C-l> <C-w>l
 " Splits
 set splitbelow " Open new horizontal split windows below current
 set splitright " Open new vertical split windows to the right
+
+" Make the current window big, but leave others context
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
 
 "" Global key mappings
 " Disable the help key, which is inconveniently placed next to the esc key.
@@ -198,3 +223,80 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunction
+
+" Rails
+"" Show current routes in the split
+function! ShowRoutes()
+  " Requires 'scratch' plugin
+  :topleft 100 :split __Routes__
+  " Make sure Vim doesn't write __Routes__ as a file
+  :set buftype=nofile
+  " Delete everything
+  :normal 1GdG
+  " Put routes output in buffer
+  :0r! rake -s routes
+  " Size window to number of lines (1 plus rake output length)
+  :exec ":normal " . line("$") . "_ "
+  " Move cursor to bottom
+  :normal 1GG
+  " Delete empty trailing line
+  :normal dd
+endfunction
+map <leader>gR :call ShowRoutes()<cr>
+
+"" Tests - Run only the tests you want while moving around
+function! RunTests(filename)
+  " Write the file and run tests for the given filename
+  :w
+  :silent !echo;echo;echo;echo;echo
+  exec ":!bundle exec rspec " . a:filename
+endfunction
+
+function! SetTestFile()
+  " Set the spec file that tests will be run for.
+  let t:grb_test_file=@%
+endfunction
+
+function! RunTestFile(...)
+  if a:0
+    let command_suffix = a:1
+  else
+    let command_suffix = ""
+  end
+
+  " Run the tests for the previously-marked file.
+  let in_spec_file = match(expand("%"), '_spec.rb$') != -1
+  if in_spec_file
+    call SetTestFile()
+  elseif !exists("t:grb_test_file")
+    return
+  end
+  call RunTests(t:grb_test_file . command_suffix)
+endfunction
+
+function! RunNearestTest()
+  let spec_line_number = line('.')
+  call RunTestFile(":" . spec_line_number)
+endfunction
+
+""" Run this file
+map <leader>t :call RunTestFile()<cr>
+""" Run only the example under the cursor
+map <leader>T :call RunNearestTest()<cr>
+""" Run all test files
+map <leader>a :call RunTests('spec')<cr>
+
+"" File keystrokes
+map <leader>gr :topleft :split config/routes.rb<cr>
+map <leader>gg :topleft 100 :split Gemfile<cr>
+
+"" Command-T Mappings
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
+map <leader>gj :CommandTFlush<cr>\|:CommandT public/javascripts<cr>
+map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>

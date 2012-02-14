@@ -9,7 +9,7 @@
 	url = https://github.com/taq/vim-rspec.git
 [submodule "vim/bundle/vim-scratch"]
 	path = vim/bundle/vim-scratch
-	url = https://github.com/vim-scripts/scratch.vim.git
+	url = git://github.com/chrismetcalf/vim-scratch.git
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = git://github.com/wincent/Command-T.git

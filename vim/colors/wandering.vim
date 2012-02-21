@@ -15,22 +15,22 @@ hi Visual ctermfg=NONE ctermbg=58 cterm=NONE guifg=NONE guibg=#354c2b gui=NONE
 hi CursorLine ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#373737 gui=NONE
 hi CursorColumn ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#373737 gui=NONE
 hi ColorColumn ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#373737 gui=NONE
-hi LineNr ctermfg=246 ctermbg=237 cterm=NONE guifg=#909090 guibg=#373737 gui=NONE
+hi LineNr ctermfg=237 ctermbg=234 cterm=NONE guifg=#373737 guibg=#212121 gui=NONE
 hi VertSplit ctermfg=241 ctermbg=241 cterm=NONE guifg=#616161 guibg=#616161 gui=NONE
 hi MatchParen ctermfg=191 ctermbg=NONE cterm=NONE guifg=#ccff66 guibg=NONE gui=NONE
 hi StatusLine ctermfg=15 ctermbg=241 cterm=bold guifg=#ffffff guibg=#616161 gui=bold
 hi StatusLineNC ctermfg=15 ctermbg=241 cterm=NONE guifg=#ffffff guibg=#616161 gui=NONE
-hi Pmenu ctermfg=111 ctermbg=NONE cterm=NONE guifg=#89bdff guibg=NONE gui=NONE
+hi Pmenu ctermfg=111 ctermbg=237 cterm=NONE guifg=#89bdff guibg=#373737 gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=58 cterm=NONE guifg=NONE guibg=#354c2b gui=NONE
 hi IncSearch ctermfg=NONE ctermbg=58 cterm=NONE guifg=NONE guibg=#6a4525 gui=NONE
-hi Search ctermfg=NONE ctermbg=58 cterm=NONE guifg=NONE guibg=#6a4525 gui=NONE
+hi Search ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
 hi Directory ctermfg=160 ctermbg=NONE cterm=NONE guifg=#e12a05 guibg=NONE gui=NONE
 hi Folded ctermfg=238 ctermbg=234 cterm=NONE guifg=#434343 guibg=#212121 gui=NONE
-
+"This is a comment.
 hi Normal ctermfg=15 ctermbg=234 cterm=NONE guifg=#ffffff guibg=#212121 gui=NONE
 hi Boolean ctermfg=160 ctermbg=NONE cterm=NONE guifg=#e12a05 guibg=NONE gui=NONE
 hi Character ctermfg=160 ctermbg=NONE cterm=NONE guifg=#e12a05 guibg=NONE gui=NONE
-hi Comment ctermfg=240 ctermbg=236 cterm=NONE guifg=#666666 guibg=#333333 gui=italic
+hi Comment ctermfg=240 ctermbg=236 cterm=NONE guifg=#707070 guibg=#333333 gui=italic
 hi Conditional ctermfg=191 ctermbg=NONE cterm=NONE guifg=#ccff66 guibg=NONE gui=NONE
 hi Constant ctermfg=160 ctermbg=NONE cterm=NONE guifg=#e12a05 guibg=NONE gui=NONE
 hi Define ctermfg=191 ctermbg=NONE cterm=NONE guifg=#ccff66 guibg=NONE gui=NONE

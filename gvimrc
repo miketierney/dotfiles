@@ -1,4 +1,4 @@
-set guifont=AnonymousPro:h13
+set guifont=Inconsolata:h16
 set antialias
 set encoding=utf-8
 set guioptions-=T

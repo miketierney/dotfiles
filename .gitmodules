@@ -100,3 +100,6 @@
 [submodule "vim/bundle/jslint.vim"]
 	path = vim/bundle/jslint.vim
 	url = https://github.com/hallettj/jslint.vim.git
+[submodule "vim/bundle/vim-rvm"]
+	path = vim/bundle/vim-rvm
+	url = https://github.com/tpope/vim-rvm.git

@@ -34,11 +34,8 @@
   ci = commit -v
   sh = !git-sh
   # git log
-  # L = log --decorate
-  # l = log --pretty=oneline --decorate --abbrev-commit
-  # ll = log --pretty=oneline --decorate --abbrev-commit --max-count=15
-  # l = "!f() { git log --graph --abbrev-commit --date=relative $* | sed -Ee 's/, [[:digit:]]+ .*months? ago)/)/' | sed -Ee 's/ ago//' | column -s '}' -t | less -FXRS; }; f"
-  l = "!source ~/.githelpers && pretty_git_log"
+  l = !git pretty-commit-log
+  ll = !git l --max-count=15
   la = !git l --all
   # Git-SVN stuff
   update = svn rebase

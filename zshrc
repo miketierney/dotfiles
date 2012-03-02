@@ -112,4 +112,4 @@ export VISUAL=vim
 
 unset MAILCHECK
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+[[ -s "/Users/mike/.rvm/scripts/rvm" ]] && source "/Users/mike/.rvm/scripts/rvm"  # This loads RVM into a shell session.

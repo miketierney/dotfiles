@@ -63,8 +63,8 @@
   # L = log --decorate
   # l = log --pretty=oneline --decorate --abbrev-commit
   # ll = log --pretty=oneline --decorate --abbrev-commit --max-count=15
-  # l = "!f() { git log --graph --abbrev-commit --date=relative $* | sed -Ee 's/, [[:digit:]]+ .*months? ago)/)/' | sed -Ee 's/ ago//' | column -s '}' -t | less -FXRS; }; f"
   l = "!source ~/.githelpers && pretty_git_log"
+  ll = !git l --max-count=15
   la = !git l --all
 
   # up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'

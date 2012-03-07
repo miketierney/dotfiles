@@ -73,6 +73,23 @@ map <leader>v :view %%
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Open Files in Directory of Current File
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+" Rename current file
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'))
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+
 " Matchit
 " runtime! plugin/matchit.vim     " Load the matchit plugin
 
@@ -151,6 +168,19 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
 "" File-specific
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'  " Conflict markers
 
@@ -200,7 +230,8 @@ if has("autocmd")
 
   " Automatic fold settings for specific files. Uncomment to use.
   " autocmd FileType css,scss,sass setlocal foldmethod=indent shiftwidth=2 tabstop=2
-  autocmd FileType css,scss,sass,javascript,jst setlocal shiftwidth=2 tabstop=2 expandtab " foldmethod=indent
+  autocmd FileType css,scss,sass,javascript,jst,eruby.js setlocal shiftwidth=2 tabstop=2 expandtab " foldmethod=indent
+  autocmd FileType html,eruby.html setlocal shiftwidth=2 tabstop=2 expandtab
 
   " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
   autocmd BufNewFile,BufRead *_spec.rb compiler rspec
@@ -244,11 +275,12 @@ function! ShowRoutes()
 endfunction
 map <leader>gR :call ShowRoutes()<cr>
 
-"" Tests - Run only the tests you want while moving around
+"" (RSpec) Tests - Run only the tests you want while moving around
 function! RunTests(filename)
   " Write the file and run tests for the given filename
   :w
   :silent !echo;echo;echo;echo;echo
+
   exec ":!bundle exec rspec " . a:filename
 endfunction
 
@@ -279,6 +311,17 @@ function! RunNearestTest()
   call RunTestFile(":" . spec_line_number)
 endfunction
 
+" Promote variable to let
+function! PromoteToLet()
+  :normal! dd
+  " :exec '?^\s*it\>'
+  :normal! P
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  :normal ==
+endfunction
+:command! PromoteToLet :call PromoteToLet()
+:map <leader>ptl :PromoteToLet<cr>
+
 """ Run this file
 map <leader>t :call RunTestFile()<cr>
 """ Run only the example under the cursor
@@ -301,3 +344,16 @@ map <leader>gpub :CommandTFlush<cr>\|:CommandT public<cr>
 map <leader>gst :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
 map <leader>gjs :CommandTFlush<cr>\|:CommandT public/javascripts<cr>
 map <leader>gaa :CommandTFlush<cr>\|:CommandT app/assets<cr>
+
+" OpenChangedFiles COMMAND
+" Open a split for each dirty file in git
+function! OpenChangedFiles()
+  only " Close all windows, unless they're modified
+  let status = system('git status -s | grep "^ \?\(M\|A\)" | cut -d " " -f 3')
+  let filenames = split(status, "\n")
+  exec "edit " . filenames[0]
+  for filename in filenames[1:]
+    exec "sp " . filename
+  endfor
+endfunction
+command! OpenChangedFiles :call OpenChangedFiles()

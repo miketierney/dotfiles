@@ -1,0 +1,1 @@
+../../colorschemes/slate/colors/slate.vim

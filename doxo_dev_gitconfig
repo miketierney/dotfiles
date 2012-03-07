@@ -68,13 +68,9 @@
   br = branch
 
   # git log
-  L = log --decorate
-  l = log --pretty=oneline --decorate --abbrev-commit
-  ll = log --pretty=oneline --decorate --abbrev-commit --max-count=15
-
-  # up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
-  sh = !git-sh
-
+  l = !git pretty-commit-log
+  ll = !git l --max-count=15
+  la = !git l --all
   # Git-SVN stuff
   # sup = !sh -c 'git svn rebase && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}'
   update = svn rebase

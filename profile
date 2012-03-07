@@ -40,3 +40,5 @@ export RUBY_HEAP_FREE_MIN=500000
 
 # This is a good place to source rvm v v v
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+[[ -s "/Users/mike/.rvm/scripts/rvm" ]] && source "/Users/mike/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

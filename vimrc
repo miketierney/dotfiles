@@ -23,6 +23,9 @@ set listchars=tab:>·,trail:·,extends:>,precedes:<  " Highlight trailing whites
 set modeline                    " modeline overrides
 set modelines=10
 
+"" Shell
+set shell=/bin/zsh
+
 "" Commands
 if has("eval")
   function! SL(function)

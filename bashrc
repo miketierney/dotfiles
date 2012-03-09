@@ -147,3 +147,5 @@ export SVN_EDITOR='vim -w'
 
 # export PATH="$PATH:~/projects/utilities/git-achievements"
 # alias git="git-achievements"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

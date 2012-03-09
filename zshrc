@@ -22,15 +22,17 @@ ZSH_THEME="alanpeabody"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+# Customize to your needs...
+export PATH=/Users/mike/bin:/usr/local/share/npm/bin:/usr/local/mysql/bin:/usr/local/sphinx/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin/node:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin
+PATH=$PATH:$HOME/
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export NODE_PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/bin/npm:/Users/mike/.npm:/usr/local/lib/jsctags"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(brew bundler cap cloudapp gem git heroku npm osx pow rails rails3 ruby rvm svn)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export PATH=/Users/mike/.rvm/gems/ruby-1.8.7-p302/bin:/Users/mike/.rvm/gems/ruby-1.8.7-p302@global/bin:/Users/mike/.rvm/rubies/ruby-1.8.7-p302/bin:/Users/mike/.rvm/bin:/usr/local/share/npm/bin:/opt/local/apache2/bin:/usr/local/mysql/bin:/usr/local/sphinx/bin:/usr/local/bin:/usr/local/sbin:/Users/mike/bin:/usr/bin:/usr/sbin:/bin:/sbin:/Users/mike/bin:/usr/local/bin/node:/usr/local/sphinx/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
-export NODE_PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/bin/npm:/Users/mike/.npm:/usr/local/lib/jsctags"
 
 # Compress the cd, ls -l series of commands
 alias lc='cl'

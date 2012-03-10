@@ -280,11 +280,18 @@ map <leader>gR :call ShowRoutes()<cr>
 
 "" (RSpec) Tests - Run only the tests you want while moving around
 function! RunTests(filename)
+  let is_spec = match(a:filename, '_spec.rb$') != -1
+  let is_test = match(a:filename, 'test_\w\+\.rb') != -1
+
   " Write the file and run tests for the given filename
   :w
   :silent !echo;echo;echo;echo;echo
 
-  exec ":!bundle exec rspec " . a:filename
+  if is_spec
+    exec ":!bundle exec rspec " . a:filename
+  elseif is_test
+    exec ":!ruby -I 'lib:test' -rminitest/colorize " . a:filename
+  end
 endfunction
 
 function! SetTestFile()
@@ -301,7 +308,8 @@ function! RunTestFile(...)
 
   " Run the tests for the previously-marked file.
   let in_spec_file = match(expand("%"), '_spec.rb$') != -1
-  if in_spec_file
+  let in_test_file = match(expand("%"), 'test_\w\+\.rb') != -1
+  if in_spec_file || in_test_file
     call SetTestFile()
   elseif !exists("t:grb_test_file")
     return

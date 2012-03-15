@@ -103,3 +103,9 @@
 [submodule "vim/bundle/vim-rvm"]
 	path = vim/bundle/vim-rvm
 	url = https://github.com/tpope/vim-rvm.git
+[submodule "vim/bundle/snipmate-snippets"]
+	path = vim/bundle/snipmate-snippets
+	url = git://github.com/miketierney/snipmate-snippets.git
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git

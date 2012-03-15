@@ -160,3 +160,6 @@ hi phpStorageClass            guifg=#9add51     guibg=NONE        gui=NONE
 
 hi link phpOperator           Keyword
 hi link phpVarSelector        phpIdentifier
+
+" Highlight trailing whitespace
+hi ExtraWhitespace guifg=#ffffff guibg=#e12a05 ctermfg=white ctermbg=160

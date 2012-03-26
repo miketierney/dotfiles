@@ -102,8 +102,7 @@ hi cssValueLength ctermfg=160 ctermbg=NONE cterm=NONE guifg=#e12a05 guibg=NONE g
 hi cssCommonAttr ctermfg=17 ctermbg=NONE cterm=bold guifg=#2a173d guibg=NONE gui=bold
 hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 
-" TODO: Fix this
-hi cssImportant ctermfg=WHITE ctermbg=160 cterm=BOLD guifg=#ffffff guibg=#89bdff gui=bold
+hi cssImportant ctermfg=WHITE ctermbg=160 cterm=BOLD guifg=#ffffff guibg=#e12a05 gui=bold
 
 
 

@@ -101,7 +101,7 @@ alias d='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/t
 alias b='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list bugs'
 
 # Github commands
-#alias git=hub
+alias git=hub
 
 # Git aliases
 alias gl='source ~/.githelpers && pretty_git_log'

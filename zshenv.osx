@@ -1,5 +1,3 @@
-export CC=gcc-4.2
-
 # REE tweaks
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000

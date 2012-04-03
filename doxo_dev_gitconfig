@@ -73,11 +73,6 @@
   l = !git pretty-commit-log
   ll = !git l --max-count=15
   la = !git l --all
-  # Git-SVN stuff
-  # sup = !sh -c 'git svn rebase && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}'
-  update = svn rebase
-  up = update
-  dcommit = svn dcommit
 [push]
   default = current
 [pull]

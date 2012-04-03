@@ -106,14 +106,8 @@ alias git=hub
 # Git aliases
 alias gl='source ~/.githelpers && pretty_git_log'
 
-# Git SVN fixer
-function gits() {
-  git svn $1
-}
-
 export EDITOR='vim -r'
 export VISUAL=vim
-#export SVN_EDITOR='vim -w'
 #export GIT_EDITOR='vim'
 
 unset MAILCHECK

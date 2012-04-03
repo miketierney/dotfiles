@@ -37,6 +37,8 @@
   aa = add --update
   ap = add --patch
 
+  hp = !git show-git-head
+
 
   # git checkout
   co = checkout

@@ -35,3 +35,8 @@ pretty_git_log() {
         less -FXRS
 }
 
+show_git_head() {
+  pretty_git_log -1
+  git show -p --pretty="tformat:"
+}
+

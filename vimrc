@@ -19,6 +19,9 @@ set backspace=indent,eol,start                     " backspace through everythin
 set list
 set listchars=tab:>·,trail:·,extends:>,precedes:<  " Highlight trailing whitespace and tabs.
 
+"" Mouse
+set mouse=a
+
 "" Modelines
 set modeline                    " modeline overrides
 set modelines=10

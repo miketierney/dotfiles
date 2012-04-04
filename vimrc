@@ -22,6 +22,10 @@ set listchars=tab:>·,trail:·,extends:>,precedes:<  " Highlight trailing whites
 "" Mouse
 set mouse=a
 
+"" Edit and reload VIMRC easily
+nmap <silent> <leader>ev :e $MYVIMRC
+nmap <silent> <leader>sv :so $MYVIMRC
+
 "" Modelines
 set modeline                    " modeline overrides
 set modelines=10

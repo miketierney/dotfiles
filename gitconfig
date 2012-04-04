@@ -67,6 +67,8 @@
   ll = !git l --max-count=15
   la = !git l --all
 
+  hp = "!source ~/.githelpers && show_git_head"
+
   # up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
   sh = !git-sh
 

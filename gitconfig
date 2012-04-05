@@ -42,9 +42,9 @@
   ksdiff = difftool -y -t Kaleidoscope
 
   # git status
+  st = status
   s = status -sb
-  st = status -sb
-  stat = status
+  stat = status -sb
 
   # git show
   ss = show --name-only # "show short"

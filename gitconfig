@@ -122,6 +122,7 @@
 	icon = /Users/mike/.git-dude/images/hubot.jpg
 [core]
 	excludesfile = /Users/mike/.gitignore_global
+	whitespace = trailing-space,space-before-tab
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
@@ -133,7 +134,15 @@
 	prompt = false
 [diff]
 	tool = Kaleidoscope
+	mnemonicprefix = true
+	renames = copies
 [difftool "Kaleidoscope"]
 	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [mergetool]
 	keepBackup = true
+[advice]
+	pushNonFastForward = false
+[branch]
+	autosetupmerge = true
+[merge]
+	stat = true

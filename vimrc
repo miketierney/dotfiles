@@ -19,6 +19,13 @@ set backspace=indent,eol,start                     " backspace through everythin
 set list
 set listchars=tab:>·,trail:·,extends:>,precedes:<  " Highlight trailing whitespace and tabs.
 
+"" Mouse
+set mouse=a
+
+"" Edit and reload VIMRC easily
+nmap <silent> <leader>ev :e $MYVIMRC
+nmap <silent> <leader>sv :so $MYVIMRC
+
 "" Modelines
 set modeline                    " modeline overrides
 set modelines=10

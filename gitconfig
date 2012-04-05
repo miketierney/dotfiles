@@ -67,6 +67,8 @@
   ll = !git l --max-count=15
   la = !git l --all
 
+  hp = "!source ~/.githelpers && show_git_head"
+
   # up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
   sh = !git-sh
 
@@ -120,6 +122,7 @@
 	icon = /Users/mike/.git-dude/images/hubot.jpg
 [core]
 	excludesfile = /Users/mike/.gitignore_global
+	whitespace = trailing-space,space-before-tab
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
@@ -131,7 +134,15 @@
 	prompt = false
 [diff]
 	tool = Kaleidoscope
+	mnemonicprefix = true
+	renames = copies
 [difftool "Kaleidoscope"]
 	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [mergetool]
 	keepBackup = true
+[advice]
+	pushNonFastForward = false
+[branch]
+	autosetupmerge = true
+[merge]
+	stat = true

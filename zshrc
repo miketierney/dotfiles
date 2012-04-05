@@ -29,7 +29,7 @@ export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/l
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler cap cloudapp gem git heroku npm osx pow rails rails3 ruby rvm svn)
+plugins=(brew bundler gem git)
 
 source $ZSH/oh-my-zsh.sh
 

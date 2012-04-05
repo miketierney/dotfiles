@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Counter-script to Travis Squires' git-promote script
+# (http://hoth.entp.com/2008/11/10/improving-my-git-workflow)
+# Removes a 'promoted' branch from the git config file.
+
+curr_branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
+
+git config --remove-section "branch.${curr_branch}"
+
+

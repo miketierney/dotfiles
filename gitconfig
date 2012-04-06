@@ -1,6 +1,6 @@
 [user]
-	name = Mike Tierney
-	email = mike@panpainter.com
+  name = Mike Tierney
+  email = mike@panpainter.com
 [github]
   user = miketierney
   token = ENTER GITHUB API KEY HERE
@@ -75,12 +75,6 @@
   # git cherry-pick
   cp = cherry-pick
 
-  # Git-SVN stuff
-  # sup = !sh -c 'git svn rebase && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}'
-  update = svn rebase
-  up = update
-  dcommit = svn dcommit
-
 [push]
   default = current
 [pull]
@@ -107,42 +101,28 @@
   workdir = green
 [help]
   autocorrect = 1
-# [merge]
-#   tool = extMerge
-# [mergetool "extMerge"]
-#   cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-#   trustExitCode = false
-# [diff]
-#   external = extDiff
-[achievement]
-	upload = false
-[difftool "Kaleidoscope"]
-[dude]
-	interval = 300
-	icon = /Users/mike/.git-dude/images/hubot.jpg
 [core]
-	excludesfile = /Users/mike/.gitignore_global
-	whitespace = trailing-space,space-before-tab
+  excludesfile = /Users/mike/.gitignore_global
+  whitespace = trailing-space,space-before-tab
 [difftool "sourcetree"]
-	cmd = /Applications/Kaleidoscope.app/Contents/MacOS/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = /Applications/Kaleidoscope.app/Contents/MacOS/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[difftool "Kaleidoscope"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [difftool]
-	prompt = false
+  prompt = false
 [diff]
-	tool = Kaleidoscope
-	mnemonicprefix = true
-	renames = copies
+  tool = Kaleidoscope
+  mnemonicprefix = true
+  renames = copies
 [difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [mergetool]
-	keepBackup = true
+  keepBackup = true
 [advice]
-	pushNonFastForward = false
+  pushNonFastForward = false
 [branch]
-	autosetupmerge = true
+  autosetupmerge = true
 [merge]
-	stat = true
+  stat = true

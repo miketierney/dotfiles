@@ -1,6 +1,6 @@
 [user]
   name = Michael Tierney
-	email = mike.tierney@doxo.com
+  email = mike.tierney@doxo.com
 [github]
   user = panpainter
 [color]
@@ -57,13 +57,18 @@
   p = diff --cached # mnemonic: "patch"
 
   # git status
+  st = status
   s = status -sb
-  st = status -sb
-  stat = status
+  stat = status -sb
 
   # git show
   ss = show --name-only # "show short"
   sn = show --name-only # "show name"
+
+  # git stash
+  sts = stash save
+  sta = stash apply
+  stp = stash pop
 
   # git branch
   b = branch
@@ -81,3 +86,14 @@
   autocorrect = 1
 [core]
   editor = vim
+  excludesfile = /home/mike/.gitignore_global
+  whitespace = trailing-space,space-before-tab
+[diff]
+  mnemonicprefix = true
+  renames = copies
+[advice]
+  pushNonFastForward = false
+[branch]
+  autosetupmerge = true
+[merge]
+  stat = true

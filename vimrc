@@ -116,7 +116,7 @@ if $TERM=="xterm-256color"
 endif
 
 " Solarized settings
-call togglebg#map("<F5>")
+"call togglebg#map("<F5>")
 
 "" Meta
 set showcmd                     " display incomplete commands

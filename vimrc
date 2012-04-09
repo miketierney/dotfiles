@@ -8,7 +8,8 @@ set number
 set ruler
 set scrolloff=3                 " Show 3 lines of content around the cursor
 
-let mapleader=","               " Change the <leader> to a comma (easier to reach)
+let mapleader = ","             " Change the <leader> to a comma (easier to reach)
+let maplocalleader = "\\"       " Change the <localleader> to a backslash
 
 "" Whitespace
 set nowrap                                                " don't wrap lines
@@ -66,6 +67,10 @@ nmap Q gqap
 "" Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.swp,*.bak
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir' : '\.git$\|\.hg$\|\.svn$',
+  \ }
 
 "" Searching
 set hlsearch                    " highlighting matches
@@ -152,6 +157,7 @@ set noerrorbells                " I really mean, no beeping.
 
 
 "" Status Bar
+let g:Powerline_symbols = 'fancy'
 set laststatus=2
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{rvm#statusline()}%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
@@ -379,16 +385,29 @@ map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
 "" Command-T Mappings
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
-map <leader>gpub :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gst :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
-map <leader>gjs :CommandTFlush<cr>\|:CommandT public/javascripts<cr>
-map <leader>gaa :CommandTFlush<cr>\|:CommandT app/assets<cr>
+"map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+"map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+"map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+"map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+"map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+"map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
+"map <leader>gpub :CommandTFlush<cr>\|:CommandT public<cr>
+"map <leader>gst :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
+"map <leader>gjs :CommandTFlush<cr>\|:CommandT public/javascripts<cr>
+"map <leader>gaa :CommandTFlush<cr>\|:CommandT app/assets<cr>
+
+"" Ctrl-P Mappings
+map <leader>gv :CtrlP app/views<cr>
+map <leader>gc :CtrlP app/controllers<cr>
+map <leader>gm :CtrlP app/models<cr>
+map <leader>gh :CtrlP app/helpers<cr>
+map <leader>gl :CtrlP lib<cr>
+map <leader>gt :CtrlP spec<cr>
+map <leader>gpub :CtrlP public<cr>
+map <leader>gst :CtrlP public/stylesheets<cr>
+map <leader>gjs :CtrlP public/javascripts<cr>
+map <leader>gaa :CtrlP app/assets<cr>
+
 
 " OpenChangedFiles COMMAND
 " Open a split for each dirty file in git

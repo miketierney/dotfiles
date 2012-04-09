@@ -11,20 +11,30 @@ set scrolloff=3                 " Show 3 lines of content around the cursor
 let mapleader=","               " Change the <leader> to a comma (easier to reach)
 
 "" Whitespace
-set nowrap                                         " don't wrap lines
-set tabstop=2                                      " a tab is two spaces
-set shiftwidth=2                                   " a tab is two spaces
-set expandtab                                      " use spaces, not tabs
-set backspace=indent,eol,start                     " backspace through everything in insert mode
+set nowrap                                                " don't wrap lines
+set tabstop=2                                             " a tab is two spaces
+set shiftwidth=2                                          " a tab is two spaces
+set shiftround                                            " use multiple of shiftwidth when indenting with '<' and '>'
+set expandtab                                             " use spaces, not tabs
+set backspace=indent,eol,start                            " backspace through everything in insert mode
 set list
-set listchars=tab:>·,trail:·,extends:>,precedes:<  " Highlight trailing whitespace and tabs.
+set listchars=tab:>·,trail:·,extends:>,precedes:<,nbsp:.  " Highlight trailing whitespace and tabs.
+set autoindent                                            " always set autoindenting on
+set copyindent                                            " copy the previous indentation on autindenting
+set showmatch                                             " set show matching parenthesis
+
+set pastetoggle=<F2>                                      " allow easy toggling of paste mode
 
 "" Mouse
 set mouse=a
 
+"" History
+set history=1000                                   " remember more commands and search history
+set undolevels=1000                                " use lots of levels of undo
+
 "" Edit and reload VIMRC easily
-nmap <silent> <leader>ev :e $MYVIMRC
-nmap <silent> <leader>sv :so $MYVIMRC
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 "" Modelines
 set modeline                    " modeline overrides
@@ -49,17 +59,21 @@ set cursorline                  " display the currently active line
 set formatoptions=qrn1          " this affects vim's auto-formatting. See :help fo-table for more details.
 set smarttab                    " insert tabs on the start of a line according to shiftwidth, not tabstop
 
+" Shorten the formatting commands.
+vmap Q gq
+nmap Q gqap
+
 "" Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.swp,*.bak
 
 "" Searching
 set hlsearch                    " highlighting matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case sensitive...
 set smartcase                   " ...unless they contain at least one capital letter
-" Clear the search result highlighting
-nnoremap <leader><space> :let @/=""<CR>
+" Clear the search result highlighting, but keep history intact
+nnoremap <leader><space> :nohlsearch<CR>
 
 "" Plugins
 " Pathogen
@@ -79,6 +93,10 @@ map <leader>gf :CommandTFlush<cr>\|:CommandT %%
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
+
+" clever trick that lets you effectively sudo !! after opnening a file in vim
+" (thanks to Steve Lost and Vincent Driessen
+cmap w!! w !sudo tee % >/dev/null
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -118,11 +136,16 @@ endif
 " Solarized settings
 "call togglebg#map("<F5>")
 
+" Toggle Gundo
+nnoremap <F5> :GundoToggle<CR>
+
 "" Meta
 set showcmd                     " display incomplete commands
 set showmode                    " display the mode you're currently in
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+set nobackup                    " keep no backups
+set noswapfile                  " don't store swap files
+"set backupdir=~/.vim/backup
+"set directory=~/.vim/backup
 
 set visualbell                  " No beeping.
 set noerrorbells                " I really mean, no beeping.
@@ -143,6 +166,10 @@ noremap <C-J> 10j
 " it's more natural
 nnoremap <tab> %
 vnoremap <tab> %
+
+" Make j/k move across lines
+nnoremap j gj
+nnoremap k gk
 
 "" Tabs
 "map <leader>tt :tabnew<cr>

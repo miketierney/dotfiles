@@ -384,29 +384,17 @@ map <leader>a :call RunTests('spec')<cr>
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
-"" Command-T Mappings
-"map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-"map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-"map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-"map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-"map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-"map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
-"map <leader>gpub :CommandTFlush<cr>\|:CommandT public<cr>
-"map <leader>gst :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
-"map <leader>gjs :CommandTFlush<cr>\|:CommandT public/javascripts<cr>
-"map <leader>gaa :CommandTFlush<cr>\|:CommandT app/assets<cr>
-
 "" Ctrl-P Mappings
-map <leader>gv :CtrlP app/views<cr>
-map <leader>gc :CtrlP app/controllers<cr>
-map <leader>gm :CtrlP app/models<cr>
-map <leader>gh :CtrlP app/helpers<cr>
-map <leader>gl :CtrlP lib<cr>
-map <leader>gt :CtrlP spec<cr>
-map <leader>gpub :CtrlP public<cr>
-map <leader>gst :CtrlP public/stylesheets<cr>
-map <leader>gjs :CtrlP public/javascripts<cr>
-map <leader>gaa :CtrlP app/assets<cr>
+map <leader>gv :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
+map <leader>gc :CtrlPClearCache<cr>\|:CtrlP app/controllers<cr>
+map <leader>gm :CtrlPClearCache<cr>\|:CtrlP app/models<cr>
+map <leader>gh :CtrlPClearCache<cr>\|:CtrlP app/helpers<cr>
+map <leader>gl :CtrlPClearCache<cr>\|:CtrlP lib<cr>
+map <leader>gt :CtrlPClearCache<cr>\|:CtrlP spec<cr>
+map <leader>gpub :CtrlPClearCache<cr>\|:CtrlP public<cr>
+map <leader>gst :CtrlPClearCache<cr>\|:CtrlP public/stylesheets<cr>
+map <leader>gjs :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
+map <leader>gaa :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
 
 
 " OpenChangedFiles COMMAND

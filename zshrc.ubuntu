@@ -85,16 +85,10 @@ alias projects='cl ~/Projects'
 alias mine=projects
 alias dev_aspen='terminitor start aspen_remote' # starts up 4 ssh tabs in my development instance, and puts me in the right directory/doing the right task. Requires terminitor.
 alias local_aspen='terminitor start aspen_local' # starts up 4 ssh tabs in my local environment, and puts me in the right directory/doing the right task. Requires terminitor.
-alias cd_aspen='cl ~/Projects/doxo/aspen'
-#alias aspen='cl ~/Projects/doxo/aspen'
-alias dogwood='cl ~/Projects/doxo/dogwood'
-alias doxocom='cl ~/Projects/doxo/doxo-com/wp-content/themes/doxo'
-alias bonsai='cl ~/Projects/doxo/bonsai'
-alias sites='cl ~/Sites/'
-
-# Development
-alias mate_aspen='mate /Volumes/Home\ Directory/projects/aspen'
-alias mvim_aspen='mvim /Volumes/Home\ Directory/projects/aspen'
+alias aspen='cl ~/projects/aspen'
+alias dogwood='cl ~/projects/dogwood'
+alias doxocom='cl ~/projects/corp/wordpress/wp-content/themes/doxo'
+alias bonsai='cl ~/projects/bonsai'
 
 # Task Management
 alias t='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/tasks --list tasks'
@@ -104,14 +98,9 @@ alias b='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/t
 # Github commands
 alias git=hub
 
-# Git aliases
-alias gl='source ~/.githelpers && pretty_git_log'
-
 export EDITOR='vim -r'
 export VISUAL=vim
 #export GIT_EDITOR='vim'
-
-unset MAILCHECK
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 

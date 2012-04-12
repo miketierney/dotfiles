@@ -319,48 +319,48 @@ endfunction
 map <leader>gR :call ShowRoutes()<cr>
 
 "" (RSpec) Tests - Run only the tests you want while moving around
-function! RunTests(filename)
-  let is_spec = match(a:filename, '_spec.rb$') != -1
-  let is_test = match(a:filename, 'test_\w\+\.rb') != -1
+"function! RunTests(filename)
+  "let is_spec = match(a:filename, '_spec.rb$') != -1
+  "let is_test = match(a:filename, 'test_\w\+\.rb') != -1
 
-  " Write the file and run tests for the given filename
-  :w
-  :silent !echo;echo;echo;echo;echo
+   ""Write the file and run tests for the given filename
+  ":w
+  ":silent !echo;echo;echo;echo;echo
 
-  if is_spec
-    exec ":!bundle exec rspec " . a:filename
-  elseif is_test
-    exec ":!ruby -I 'lib:test' -rminitest/colorize " . a:filename
-  end
-endfunction
+  "if is_spec
+    "exec \":!bundle exec rspec \" . a:filename
+  "elseif is_test
+    "exec \":!ruby -I 'lib:test' -rminitest/colorize \" . a:filename
+  "end
+"endfunction
 
-function! SetTestFile()
-  " Set the spec file that tests will be run for.
-  let t:grb_test_file=@%
-endfunction
+"function! SetTestFile()
+  "" Set the spec file that tests will be run for.
+  "let t:grb_test_file=@%
+"endfunction
 
-function! RunTestFile(...)
-  if a:0
-    let command_suffix = a:1
-  else
-    let command_suffix = ""
-  end
+"function! RunTestFile(...)
+  "if a:0
+    "let command_suffix = a:1
+  "else
+    "let command_suffix = ""
+  "end
 
-  " Run the tests for the previously-marked file.
-  let in_spec_file = match(expand("%"), '_spec.rb$') != -1
-  let in_test_file = match(expand("%"), 'test_\w\+\.rb') != -1
-  if in_spec_file || in_test_file
-    call SetTestFile()
-  elseif !exists("t:grb_test_file")
-    return
-  end
-  call RunTests(t:grb_test_file . command_suffix)
-endfunction
+   ""Run the tests for the previously-marked file.
+  "let in_spec_file = match(expand("%"), '_spec.rb$') != -1
+  "let in_test_file = match(expand("%"), 'test_\w\+\.rb') != -1
+  "if in_spec_file || in_test_file
+    "call SetTestFile()
+  "elseif !exists("t:grb_test_file")
+    "return
+  "end
+  "call RunTests(t:grb_test_file . command_suffix)
+"endfunction
 
-function! RunNearestTest()
-  let spec_line_number = line('.')
-  call RunTestFile(":" . spec_line_number)
-endfunction
+"function! RunNearestTest()
+  "let spec_line_number = line('.')
+  "call RunTestFile(":" . spec_line_number)
+"endfunction
 
 " Promote variable to let
 function! PromoteToLet()
@@ -374,11 +374,11 @@ endfunction
 :map <leader>ptl :PromoteToLet<cr>
 
 """ Run this file
-map <leader>t :call RunTestFile()<cr>
+"map <leader>t :call RunTestFile()<cr>
 """ Run only the example under the cursor
-map <leader>T :call RunNearestTest()<cr>
+"map <leader>T :call RunNearestTest()<cr>
 """ Run all test files
-map <leader>a :call RunTests('spec')<cr>
+"map <leader>a :call RunTests('spec')<cr>
 
 "" File keystrokes
 map <leader>gr :topleft :split config/routes.rb<cr>

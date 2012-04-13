@@ -115,3 +115,6 @@
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "vim_janus"]
+	path = vim_janus
+	url = https://github.com/carlhuda/janus.git

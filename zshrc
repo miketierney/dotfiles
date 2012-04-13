@@ -32,6 +32,7 @@ export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/l
 plugins=(brew bundler gem git)
 
 source $ZSH/oh-my-zsh.sh
+rvm use default &> /dev/null
 
 # Compress the cd, ls -l series of commands
 alias lc='cl'
@@ -57,6 +58,9 @@ alias rdma='rake db:migrate && rake db:test:prepare'
 
 # Ruby aliases
 alias rake='noglob rake' # make zsh/rake behave more like bash/rake for commands that take arguments
+
+# Tmux
+alias tm="tmuxinator"
 
 # Mike's sanity-saving shortcuts
 # apache short cut
@@ -106,10 +110,8 @@ function gits() {
   git svn $1
 }
 
-export EDITOR='vim -r'
+export EDITOR=vim
 export VISUAL=vim
-#export SVN_EDITOR='vim -w'
-#export GIT_EDITOR='vim'
 
 unset MAILCHECK
 

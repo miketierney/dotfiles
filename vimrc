@@ -130,9 +130,9 @@ map <leader>n :call RenameFile()<cr>
 "color mac_classic
 "color ir_black " at least until wandering can be converted properly
 "color Tomorrow-Night-Eighties
-color solarized
-set background=dark
-"color wandering
+"color solarized
+"set background=dark
+color wandering
 
 if $TERM=="xterm-256color"
   set t_Co=256                  " enable 256 color support, if available
@@ -158,6 +158,7 @@ set noerrorbells                " I really mean, no beeping.
 
 
 "" Status Bar
+call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 set laststatus=2
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{rvm#statusline()}%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
@@ -263,6 +264,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.ejs set filetype=jst
   au BufRead,BufNewFile {Gemfile,Rakefile,VagrantFile,Thorfile,config.ru}   set ft=ruby
   au BufRead,BufNewFile *.json set ft=javascript
+  au BufRead,BufNewFile /usr/local/nginx/conf/* set ft=nginx
 
   " use closetag plugin to auto-close HTML tags
   " autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim

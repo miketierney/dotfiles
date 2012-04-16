@@ -380,6 +380,10 @@ endfunction
 """ Run all test files
 "map <leader>a :call RunTests('spec')<cr>
 
+let g:vroom_map_keys = 0
+map <leader>t :VroomRunTestFile<cr>
+map <leader>T :VroomRunNearestTest<cr>
+
 "" File keystrokes
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>

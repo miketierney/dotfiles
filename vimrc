@@ -159,6 +159,7 @@ set noerrorbells                " I really mean, no beeping.
 
 "" Status Bar
 let g:Powerline_symbols = 'fancy'
+call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 set laststatus=2
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{rvm#statusline()}%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 

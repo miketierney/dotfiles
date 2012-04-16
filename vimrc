@@ -264,6 +264,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.ejs set filetype=jst
   au BufRead,BufNewFile {Gemfile,Rakefile,VagrantFile,Thorfile,config.ru}   set ft=ruby
   au BufRead,BufNewFile *.json set ft=javascript
+  au BufRead,BufNewFile /usr/local/nginx/conf/* set ft=nginx
 
   " use closetag plugin to auto-close HTML tags
   " autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim

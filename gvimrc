@@ -20,6 +20,7 @@ color wandering
 " Enables Cmd-T functionality in MacVim
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
+  let g:Powerline_symbols = 'fancy'
   map <D-t> <Plug>PeepOpen
 endif
 

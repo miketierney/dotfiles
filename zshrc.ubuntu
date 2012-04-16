@@ -98,7 +98,7 @@ alias b='python ~/Projects/utilities/t/t.py --task-dir ~/Dropbox/Synced\ Files/t
 # Github commands
 alias git=hub
 
-export EDITOR='vim -r'
+export EDITOR=vim
 export VISUAL=vim
 #export GIT_EDITOR='vim'
 

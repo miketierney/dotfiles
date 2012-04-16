@@ -12,9 +12,8 @@ set shiftwidth=2
 set list
 "set listchars=tab:>- ,trail:· " Highlight trailing whitespace and tabs.
 
-color wandering
+"color wandering
 "color Tomorrow-Night-Eighties
-"color Solarized
 
 
 " Enables Cmd-T functionality in MacVim

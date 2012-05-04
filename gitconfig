@@ -126,5 +126,6 @@
   pushNonFastForward = false
 [branch]
   autosetupmerge = true
+  autosetuprebase = always
 [merge]
   stat = true

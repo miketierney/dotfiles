@@ -1,6 +1,6 @@
 require 'autotest/fsevent'
 require 'autotest/growl'
-require 'redgreen/autotest' unless (ENV['RSPEC'] || RUBY_VERSION == "1.9.2" || ENV['RUBY_VERSION'].include?("ree"))
+require 'redgreen/autotest' unless (ENV['RSPEC'] || RUBY_VERSION.split('.')[1] == '9' || ENV['RUBY_VERSION'].include?('ree'))
 
 #Autotest::Growl::clear_terminal = true
 #Autotest::Growl::show_modified_files = false

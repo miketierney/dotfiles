@@ -27,7 +27,7 @@ set showmatch                                             " set show matching pa
 set pastetoggle=<F2>                                      " allow easy toggling of paste mode
 
 "" Mouse
-set mouse=a
+"set mouse=a
 
 "" History
 set history=1000                                   " remember more commands and search history

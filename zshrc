@@ -90,6 +90,7 @@ alias local_aspen='terminitor start aspen_local' # starts up 4 ssh tabs in my lo
 alias aspen='cl ~/Projects/doxo/aspen'
 alias dogwood='cl ~/Projects/doxo/dogwood'
 alias doxocom='cl ~/Projects/doxo/doxo-com/wp-content/themes/doxo'
+alias doxoconnect='cl ~/Projects/doxo/doxoconnect'
 alias bonsai='cl ~/Projects/doxo/bonsai'
 alias sites='cl ~/Sites/'
 

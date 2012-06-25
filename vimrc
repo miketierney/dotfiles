@@ -4,7 +4,7 @@ set encoding=utf-8
 
 syntax enable
 filetype plugin indent on       " load file type plugins + indentation
-set number
+set nonumber                    " Disable numbers by default
 set ruler
 set scrolloff=3                 " Show 3 lines of content around the cursor
 

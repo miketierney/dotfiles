@@ -1,4 +1,4 @@
-set guifont=InconsolataForPowerline:h14
+set guifont=InconsolataForPowerline:h16
 set antialias
 set encoding=utf-8
 set guioptions-=T

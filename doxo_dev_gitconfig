@@ -1,7 +1,7 @@
 # vim:ft=gitconfig
 
 [user]
-  name = Michael Tierney
+  name = Mike Tierney
   email = mike.tierney@doxo.com
 [github]
   user = panpainter

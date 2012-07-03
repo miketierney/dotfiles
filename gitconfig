@@ -79,7 +79,7 @@
   cp = cherry-pick
 
 [push]
-  default = current
+	default = tracking
 [pull]
   default = current
 [color]

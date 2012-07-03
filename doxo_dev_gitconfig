@@ -81,7 +81,7 @@
   ll = !git l --max-count=15
   la = !git l --all
 [push]
-  default = current
+	default = tracking
 [pull]
   default = current
 [help]

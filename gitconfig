@@ -44,7 +44,8 @@
   ksdiff = difftool -y -t Kaleidoscope
 
   # git status
-  st = status
+  status = status -sb
+  st = status -sb
   s = status -sb
   stat = status -sb
 

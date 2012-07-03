@@ -34,6 +34,9 @@ plugins=(brew bundler gem git)
 source $ZSH/oh-my-zsh.sh
 rvm use default &> /dev/null
 
+# Help Git autocompletion work
+autoload -U compinit && compinit
+
 # Compress the cd, ls -l series of commands
 alias lc='cl'
 function cl () {

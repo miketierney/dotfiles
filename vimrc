@@ -270,7 +270,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.html.erb set filetype=eruby.html
   au BufRead,BufNewFile *.jst set filetype=jst
   au BufRead,BufNewFile *.ejs set filetype=jst
-  au BufRead,BufNewFile {Gemfile,Rakefile,VagrantFile,Thorfile,config.ru}   set ft=ruby
+  au BufRead,BufNewFile {Gemfile,Rakefile,VagrantFile,Thorfile,config.ru,Capfile}   set ft=ruby
   au BufRead,BufNewFile *.json set ft=javascript
   au BufRead,BufNewFile /usr/local/nginx/conf/* set ft=nginx
 

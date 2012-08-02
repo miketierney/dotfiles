@@ -277,6 +277,12 @@ if has("autocmd")
   " use closetag plugin to auto-close HTML tags
   " autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
 
+  " Rainbow Parentheses
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+  au Syntax * RainbowParenthesesLoadBraces
+
   " render YAML front matter inside Textile documents as comments
   autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
   autocmd filetype textile highlight link frontmatter Comment
@@ -307,6 +313,10 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunction
+
+" Rainbow Parentheses options
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
 
 " Rails
 "" Show current routes in the split

@@ -232,7 +232,7 @@ nnoremap zO zCzO
 function! MyFoldText() " {{{
   let line = getline(v:foldstart)
 
-  if (&relativenumber == 1)
+  if (&relativenumber)
     let nucolwidth = &fdc + &relativenumber * &numberwidth
   else
     let nucolwidth = &fdc + &number * &numberwidth

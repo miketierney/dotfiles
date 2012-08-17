@@ -214,6 +214,42 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
+" Folding
+
+set foldlevelstart=0
+
+" Space to toggle folds
+nnoremap <Space> za
+vnoremap <Space> za
+
+" "Refocus" folds
+nnoremap ,z zMzvzz
+
+" Make zO recursively open whatever top level fold we're in, no matter where
+" the cursor happens to be.
+nnoremap zO zCzO
+
+function! MyFoldText() " {{{
+  let line = getline(v:foldstart)
+
+  if (&relativenumber == 1)
+    let nucolwidth = &fdc + &relativenumber * &numberwidth
+  else
+    let nucolwidth = &fdc + &number * &numberwidth
+  endif
+  let windowwidth = winwidth(0) - nucolwidth - 3
+  let foldedlinecount = v:foldend - v:foldstart
+
+  " expand tabs into spaces
+  let onetab = strpart('          ', 0, &tabstop)
+  let line = substitute(line, '\t', onetab, 'g')
+
+  let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+  let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+  return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+endfunction " }}}
+set foldtext=MyFoldText()
+
 "" Global key mappings
 " Disable the help key, which is inconveniently placed next to the esc key.
 inoremap <F1> <ESC>
@@ -404,3 +440,4 @@ function! s:NumberTextObject(whole)
     endwhile
   endif
 endfunction
+

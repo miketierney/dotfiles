@@ -79,7 +79,7 @@
   cp = cherry-pick
 
 [push]
-	default = tracking
+  default = tracking
 [pull]
   default = current
 [color]
@@ -108,11 +108,11 @@
   excludesfile = /Users/mike/.gitignore_global
   whitespace = trailing-space,space-before-tab
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [difftool]
   prompt = false
 [diff]

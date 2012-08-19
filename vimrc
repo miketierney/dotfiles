@@ -132,11 +132,11 @@ map <leader>n :call RenameFile()<cr>
 "color Tomorrow-Night-Eighties
 "color solarized
 "set background=dark
-"color wandering
-color badwolf
+color wandering
+"color badwolf
 
-let g:badwolf_html_link_underline = 0
-let g:badwolf_css_props_highlight = 1
+"let g:badwolf_html_link_underline = 0
+"let g:badwolf_css_props_highlight = 1
 
 if $TERM=="xterm-256color"
   set t_Co=256                  " enable 256 color support, if available

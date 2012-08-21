@@ -182,6 +182,9 @@ noremap <C-J> 10j
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Change snipMate trigger key
+let g:snips_trigger_key = '<leader><tab>'
+
 " Make j/k move across lines
 nnoremap j gj
 nnoremap k gk

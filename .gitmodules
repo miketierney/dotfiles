@@ -93,7 +93,7 @@
 	url = https://github.com/tpope/vim-rvm.git
 [submodule "vim/bundle/snipmate-snippets"]
 	path = vim/bundle/snipmate-snippets
-	url = git://github.com/miketierney/snipmate-snippets.git
+	url = https://github.com/honza/snipmate-snippets
 [submodule "vim/bundle/vim-markdown-preview"]
 	path = vim/bundle/vim-markdown-preview
 	url = https://github.com/nelstrom/vim-markdown-preview.git
@@ -133,3 +133,6 @@
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/custom_snippets"]
+	path = vim/custom_snippets
+	url = https://github.com/miketierney/snipmate-snippets-ext.git

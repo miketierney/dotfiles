@@ -133,3 +133,6 @@
 [submodule "vim/custom_snippets"]
 	path = vim/custom_snippets
 	url = https://github.com/miketierney/snipmate-snippets-ext.git
+[submodule "vim/bundle/snipmate.vim"]
+	path = vim/bundle/snipmate.vim
+	url = https://github.com/garbas/vim-snipmate.git

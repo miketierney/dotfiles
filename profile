@@ -41,4 +41,5 @@ export RUBY_HEAP_FREE_MIN=500000
 [[ -s "/Users/mike/.rvm/scripts/rvm" ]] && source "/Users/mike/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 
-export CC=gcc-4.2
+#export CC=gcc-4.2
+export CC=/usr/bin/gcc-4.2

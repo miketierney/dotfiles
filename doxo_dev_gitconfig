@@ -12,16 +12,16 @@
   added = yellow
   changed = green
   untracked = cyan
-  nobranch = red bold
+  nobranch = red
 [color "branch"]
   current = yellow reverse
   local = yellow
   remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
+  meta = yellow
+  frag = magenta
   old = red bold
-  new = green bold
+  new = green
 [color "sh"]
   branch = yellow
   workdir = green

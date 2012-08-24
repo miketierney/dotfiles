@@ -1,0 +1,10 @@
+#!/bin/bash
+old_date=''
+git log --date=short --format='%ad %s (%cn)' "$@" |\
+  while read -r date string; do
+    if [ "$date" != "$old_date" ]; then
+        echo -e \\n$date\\n
+    fi
+    echo "  * $string"
+    old_date=$date
+  done

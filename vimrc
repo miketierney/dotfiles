@@ -331,6 +331,10 @@ if has("autocmd")
   autocmd FileType css,scss,sass,javascript,jst,eruby.js setlocal shiftwidth=2 tabstop=2 expandtab " foldmethod=indent
   autocmd FileType html,eruby.html,php setlocal shiftwidth=2 tabstop=2 expandtab
 
+  " HTML Validation Compiler
+  au FileType html compiler html
+  au QuickFixCmdPost make cwindow " automatically open the quickfix window
+
   " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
   autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 

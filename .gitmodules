@@ -136,3 +136,6 @@
 [submodule "vim/bundle/snipmate.vim"]
 	path = vim/bundle/snipmate.vim
 	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/vim-htmlvalidator"]
+	path = vim/bundle/vim-htmlvalidator
+	url = https://github.com/sorin-ionescu/vim-htmlvalidator.git

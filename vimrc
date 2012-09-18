@@ -130,9 +130,9 @@ map <leader>n :call RenameFile()<cr>
 "color mac_classic
 "color ir_black " at least until wandering can be converted properly
 "color Tomorrow-Night-Eighties
-color solarized
-set background=dark
-"color wandering
+"color solarized
+"set background=dark
+color wandering
 "color badwolf
 
 "let g:badwolf_html_link_underline = 0

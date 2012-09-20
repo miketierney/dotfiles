@@ -142,3 +142,6 @@
 [submodule "vim/bundle/vim-ruby-sinatra"]
 	path = vim/bundle/vim-ruby-sinatra
 	url = https://github.com/hallison/vim-ruby-sinatra.git
+[submodule "colorschemes/vim-jellybeans"]
+	path = colorschemes/vim-jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git

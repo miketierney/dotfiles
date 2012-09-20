@@ -139,3 +139,6 @@
 [submodule "vim/bundle/vim-htmlvalidator"]
 	path = vim/bundle/vim-htmlvalidator
 	url = https://github.com/sorin-ionescu/vim-htmlvalidator.git
+[submodule "vim/bundle/vim-ruby-sinatra"]
+	path = vim/bundle/vim-ruby-sinatra
+	url = https://github.com/hallison/vim-ruby-sinatra.git

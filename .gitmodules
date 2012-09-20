@@ -54,7 +54,7 @@
 	url = git://github.com/miketierney/janus.git
 [submodule "colorschemes/tomorrow-theme"]
 	path = colorschemes/tomorrow-theme
-	url = https://github.com/ChrisKempson/Tomorrow-Theme.git
+	url = https://github.com/chriskempson/tomorrow-theme.git
 [submodule "colorschemes/vim-mac-classic-theme"]
 	path = colorschemes/vim-mac-classic-theme
 	url = https://github.com/nelstrom/vim-mac-classic-theme.git

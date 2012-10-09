@@ -86,6 +86,13 @@ call pathogen#helptags()         " initialize Pathogen
 call pathogen#infect()
 " silent! call pathogen#runtime_append_all_bundles()
 
+" NERDTree
+"" Open NERDTree if no file has been specified.
+autocmd vimenter * if !argc() | NERDTree | endif
+
+"" Close vim if NERDTree is the only window left open.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 " Command-T
 "" Open files with <leader>f
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
@@ -207,9 +214,9 @@ set winwidth=84
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight will
 " fail.
-set winheight=5
-set winminheight=5
-set winheight=999
+"set winheight=5
+"set winminheight=5
+"set winheight=999
 
 " Folding
 

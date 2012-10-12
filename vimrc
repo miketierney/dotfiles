@@ -110,9 +110,6 @@ map <leader>v :view %%
 " (thanks to Steve Lost and Vincent Driessen
 cmap w!! w !sudo tee % >/dev/null
 
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
-
 " Open Files in Directory of Current File
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%

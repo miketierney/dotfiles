@@ -172,3 +172,6 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/lunaru/vim-less.git
+[submodule "vim/bundle/vim-backbone"]
+	path = vim/bundle/vim-backbone
+	url = https://github.com/mklabs/vim-backbone.git

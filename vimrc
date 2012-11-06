@@ -106,9 +106,14 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
 
+" restart passenger for the current directory
+map <leader>rst :!touch tmp/restart.txt<cr>
+
 " clever trick that lets you effectively sudo !! after opnening a file in vim
 " (thanks to Steve Lost and Vincent Driessen
 cmap w!! w !sudo tee % >/dev/null
+
+map <leader>csc :CSScomb<cr>
 
 " Open Files in Directory of Current File
 cnoremap %% <C-R>=expand('%:h').'/'<cr>

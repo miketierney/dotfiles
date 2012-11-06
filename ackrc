@@ -16,3 +16,4 @@
 
 --type-set=scss=.scss
 --type-set=sass=.sass
+--type-set=less=.less

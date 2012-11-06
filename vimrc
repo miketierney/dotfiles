@@ -113,6 +113,8 @@ map <leader>rst :!touch tmp/restart.txt<cr>
 " (thanks to Steve Lost and Vincent Driessen
 cmap w!! w !sudo tee % >/dev/null
 
+map <leader>csc :CSScomb<cr>
+
 " Open Files in Directory of Current File
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%

@@ -18,3 +18,4 @@
 --type-set=sass=.sass
 --type-set=less=.less
 --type-set=json=.json
+--type-set=yml=.yml

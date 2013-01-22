@@ -86,6 +86,12 @@ alias aprestart=restart_apache
 # Dev Resources (only works on the doxo intranet)
 alias dev='ssh -X dev' # requires that the 'dev' ssh alias be set up properly
 
+# CTags
+
+function generate_ctags {
+  ctags -R --exclude=.git --exclude=log *
+}
+
 # Personal
 alias projects='cl ~/Projects'
 alias mine=projects

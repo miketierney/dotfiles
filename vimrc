@@ -136,7 +136,9 @@ map <leader>n :call RenameFile()<cr>
 " runtime! plugin/matchit.vim     " Load the matchit plugin
 
 "" Coloring
-color jellybeans
+"color jellybeans
+"color tomorrow
+color tomorrow-night
 
 "let g:badwolf_html_link_underline = 0
 "let g:badwolf_css_props_highlight = 1
@@ -285,7 +287,8 @@ let $JS_CMD='node'
 " Commenting
 let g:NERDCustomDelimiters = {
   \ 'scss' : { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
-  \ 'sass' : { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' }
+  \ 'sass' : { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
+  \ 'less' : { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' }
 \ }
 
 " only do this part when compiled with support for autocommands

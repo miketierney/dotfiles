@@ -175,3 +175,6 @@
 [submodule "vim/bundle/vim-backbone"]
 	path = vim/bundle/vim-backbone
 	url = https://github.com/mklabs/vim-backbone.git
+[submodule "colorschemes/badwolf"]
+	path = colorschemes/badwolf
+	url = https://github.com/sjl/badwolf.git

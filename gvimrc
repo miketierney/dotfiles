@@ -1,5 +1,5 @@
-"set guifont=Anonymous\ Pro\ for\ Powerline:h13
-set guifont=Source\ Code\ Pro:h14
+set guifont=Anonymous\ Pro\ for\ Powerline:h14
+"set guifont=Source\ Code\ Pro:h14
 set antialias
 set encoding=utf-8
 set guioptions-=T

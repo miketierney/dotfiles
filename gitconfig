@@ -37,7 +37,6 @@
   d = diff --word-diff
   p = diff --cached # mnemonic: "patch"
 
-  # git difftool: Kaleidoscope
   kd = difftool -y -t Kaleidoscope
   kp = difftool --cached -y -t Kaleidoscope
   ksd = difftool -y -t Kaleidoscope
@@ -118,3 +117,8 @@
   autosetuprebase = always
 [merge]
   stat = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true

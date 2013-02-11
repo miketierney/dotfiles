@@ -138,7 +138,8 @@ map <leader>n :call RenameFile()<cr>
 "" Coloring
 "color jellybeans
 "color tomorrow
-color tomorrow-night
+"color tomorrow-night
+color wandering
 
 "let g:badwolf_html_link_underline = 0
 "let g:badwolf_css_props_highlight = 1

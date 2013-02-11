@@ -1,5 +1,5 @@
-require 'autotest/fsevent'
-require 'autotest/growl'
+#require 'autotest/fsevent'
+#require 'autotest/growl'
 require 'redgreen/autotest' unless (ENV['RSPEC'] || RUBY_VERSION.split('.')[1] == '9' || ENV['RUBY_VERSION'].include?('ree'))
 
 #Autotest::Growl::clear_terminal = true

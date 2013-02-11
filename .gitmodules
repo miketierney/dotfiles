@@ -178,3 +178,6 @@
 [submodule "colorschemes/badwolf"]
 	path = colorschemes/badwolf
 	url = https://github.com/sjl/badwolf.git
+[submodule "vim/bundle/vim-ruby-minitest"]
+	path = vim/bundle/vim-ruby-minitest
+	url = git://github.com/sunaku/vim-ruby-minitest.git

@@ -454,3 +454,5 @@ function! s:NumberTextObject(whole)
   endif
 endfunction
 
+" Minitest
+set completefunc=syntaxcomplete#Complete

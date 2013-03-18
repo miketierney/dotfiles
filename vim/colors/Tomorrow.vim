@@ -1,1 +1,1 @@
-/Users/mike/.dotfiles/colorschemes/tomorrow-theme/Vim/Tomorrow.vim
+../../colorschemes/tomorrow-theme/vim/colors/Tomorrow.vim

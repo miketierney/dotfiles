@@ -140,6 +140,9 @@ map <leader>n :call RenameFile()<cr>
 "color tomorrow
 "color tomorrow-night
 color wandering
+"color railscasts
+"color solarized
+"set background=light
 
 "let g:badwolf_html_link_underline = 0
 "let g:badwolf_css_props_highlight = 1
@@ -312,6 +315,7 @@ if has("autocmd")
   au BufWinLeave * call clearmatches()
 
   au BufRead,BufNewFile *.scss set filetype=scss
+  au BufRead,BufNewFile *.css.scss set filetype=scss
   au BufRead,BufNewFile *.js.erb set filetype=eruby.js
   au BufRead,BufNewFile *.html.erb set filetype=eruby.html
   au BufRead,BufNewFile *.jst set filetype=jst
@@ -351,6 +355,10 @@ if has("autocmd")
 
   " Saves on blur. Uncomment to use.
   " au FocusLost * :wa
+
+  " Indent Guides settings
+  set ts=4 sw=4 et
+  let g:indent_guides_guide_size = 1
 endif " has("autocmd")
 
 " Formatting
@@ -455,5 +463,5 @@ function! s:NumberTextObject(whole)
   endif
 endfunction
 
-" Minitest
+" Tab completion for plugins
 set completefunc=syntaxcomplete#Complete

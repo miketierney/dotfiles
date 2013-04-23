@@ -131,5 +131,8 @@ unset MAILCHECK
 
 [[ -s "/Users/mike/.rvm/scripts/rvm" ]] && source "/Users/mike/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
+# Powerline
+#. ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

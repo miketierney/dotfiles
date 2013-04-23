@@ -1,6 +1,6 @@
 "set guifont=Anonymous\ Pro\ for\ Powerline:h12
 "set guifont=Source\ Code\ Pro:h11
-set guifont=Ubuntu\ Mono:h14
+set guifont=Ubuntu\ Mono\ Regular\ for\ Powerline:h14
 set antialias
 set encoding=utf-8
 set guioptions-=T

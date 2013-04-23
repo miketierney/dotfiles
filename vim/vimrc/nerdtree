@@ -1,0 +1,57 @@
+" vim: syntax=vim; filetype=vim
+" Borrowing the Janus NERDTree Config: https://github.com/carlhuda/janus/blob/9a6be477bbbe9d95142de80ad2db8c606168ae09/janus/vim/tools/janus/after/plugin/nerdtree.vim
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+
+" Default mapping, <leader>n
+" map <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR> " Default
+map <leader>k :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+
+augroup AuNERDTreeCmd
+augroup AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+augroup AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
+
+" If the parameter is a directory, cd into it
+function s:CdIfDirectory(directory)
+  let explicitDirectory = isdirectory(a:directory)
+  let directory = explicityDirectory || empty(a:directory)
+
+  if explicitDirectory
+    exe "cd " . fnameescape(a:directory)
+  endif
+
+  " Allows reading from stdin
+  " ex: git diff | mvim -R -
+  if strlen(a:directory) == 0
+    return
+  endif
+
+  if directory
+    NERDTree
+    wincmd p
+    bd
+  endif
+
+  if explicitDirectory
+    wincmd p
+  endif
+endfunction
+
+" NERDTree Utility Function
+function s:UpdateNERDTree(...)
+  let stay = 0
+
+  if(exists("a:1"))
+    let stay = a:1
+  endif
+
+  if exists("t:NERDTreeBufName")
+    let nr = bufwinnr(t:NERDTreeBufName)
+    if nr != -1
+      exe nr . "wincmd w"
+      exe substitute(mapcheck("R"), "<CR>", "", "")
+      if !stay
+        wincmd p
+      endif
+    endif
+  endif
+endfunction

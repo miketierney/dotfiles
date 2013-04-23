@@ -87,11 +87,7 @@ call pathogen#infect()
 " silent! call pathogen#runtime_append_all_bundles()
 
 " NERDTree
-"" Open NERDTree if no file has been specified.
-autocmd vimenter * if !argc() | NERDTree | endif
-
-"" Close vim if NERDTree is the only window left open.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+source ~/.vim/vimrc/nerdtree
 
 " Command-T
 "" Open files with <leader>f
@@ -155,7 +151,8 @@ endif
 "call togglebg#map("<F5>")
 
 " Toggle Gundo
-nnoremap <F5> :GundoToggle<CR>
+nmap <F5> :GundoToggle<CR>
+imap <F5> <ESC>:GundoToggle<CR>
 
 "" Meta
 set showcmd                     " display incomplete commands
@@ -291,6 +288,15 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'  " Conflict markers
 let $JS_CMD='node'
 
 " Commenting
+"" Map the commenting command to Command / (when in MacVim), and <leader>/
+"" when in terminal vim
+if has("gui_macvim") && has("gui_running")
+  map <D-/> <plug>NERDCommenterToggle
+  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+else
+  map <leader>/ <plug>NERDCommenterToggle
+endif
+
 let g:NERDCustomDelimiters = {
   \ 'scss' : { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
   \ 'sass' : { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
@@ -443,6 +449,11 @@ map <leader>gpub :CtrlPClearCache<cr>\|:CtrlP public<cr>
 map <leader>gst :CtrlPClearCache<cr>\|:CtrlP public/stylesheets<cr>
 map <leader>gjs :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
 map <leader>gaa :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\.pyc$\|\.pyo$\|\.rbc$\|\.rbo$\|\.class$\|\.o$\|\~$',
+  \ }
 
 
 " OpenChangedFiles COMMAND

@@ -19,3 +19,4 @@
 --type-set=less=.less
 --type-set=json=.json
 --type-set=yml=.yml
+--type-set=erb=.erb

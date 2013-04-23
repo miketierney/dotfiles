@@ -193,7 +193,8 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Change snipMate trigger key
-let g:snips_trigger_key = '<leader><tab>'
+:imap <leader><tab> <Plug>snipMateNextOrTrigger
+:smap <leader><tab> <Plug>snipMateNextOrTrigger
 
 " Make j/k move across lines
 nnoremap j gj

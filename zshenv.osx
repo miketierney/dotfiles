@@ -1,18 +1,3 @@
-# Client-specific settings
-export SURESMILE_DEV_CIS_DB='suresmile_identity_development'
-export SURESMILE_DEV_CIS_DB_HOST='localhost'
-export SURESMILE_TEST_CIS_DB='suresmile_identity_test'
-export SURESMILE_TEST_CIS_DB_HOST='localhost'
-export SURESMILE_CIS_URL="http://${SURESMILE_DEV_CIS_DB_HOST}:3000"
-export SURESMILE_FILE_SERVER_HOST="http://${SURESMILE_DEV_CIS_DB_HOST}:3002"
-
-export SURESMILE_DEV_PATIENT_DB='suresmile_development'
-export SURESMILE_DEV_PATIENT_DB_HOST='localhost'
-#export SURESMILE_TEST_PATIENT_DB='suresmile_test'
-export SURESMILE_TEST_PATIENT_DB_HOST='localhost'
-
-export SURESMILE_ASSETS_PATH='~/Projects/orametrix/SureSmile/app/assets'
-
 export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/bin/npm:/Users/mike/.npm:/usr/local/lib/jsctags/:$NODE_PATH
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 

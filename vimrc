@@ -137,8 +137,7 @@ map <leader>n :call RenameFile()<cr>
 
 "" Coloring
 "color jellybeans
-"color tomorrow
-"color tomorrow-night
+"color Tomorrow
 color wandering
 "color railscasts
 "color solarized

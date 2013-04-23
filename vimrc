@@ -328,6 +328,24 @@ if has("autocmd")
   " use closetag plugin to auto-close HTML tags
   " autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
 
+  " Tagbar
+  "nmap <F8> :TagbarToggle<CR>
+
+  "let g:tagbar_type_javascript = {
+    "\ 'ctagsbin' : '/usr/local/bin/jsctags'
+  "\ }
+
+  "let g:tagbar_type_ruby = {
+  "\ 'kinds' : [
+      "\ 'm:modules',
+      "\ 'c:classes',
+      "\ 'd:describes',
+      "\ 'C:contexts',
+      "\ 'f:methods',
+      "\ 'F:singleton methods'
+    "\ ]
+  "\ }
+
   " Rainbow Parentheses
   au VimEnter * RainbowParenthesesToggle
   au Syntax * RainbowParenthesesLoadRound

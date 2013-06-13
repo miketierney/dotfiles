@@ -123,7 +123,7 @@ function gits() {
 
 export EDITOR=vim
 export VISUAL=vim
-export PAGER=vimpager
+#export PAGER=vimpager
 
 unset MAILCHECK
 

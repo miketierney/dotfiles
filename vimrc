@@ -135,6 +135,7 @@ map <leader>n :call RenameFile()<cr>
 "color jellybeans
 "color Tomorrow
 color wandering
+"color badwolf
 "color railscasts
 "color solarized
 "set background=light
@@ -151,7 +152,7 @@ endif
 "call togglebg#map("<F5>")
 
 " Toggle Gundo
-nmap <F5> :GundoToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
 imap <F5> <ESC>:GundoToggle<CR>
 
 "" Meta
@@ -168,14 +169,25 @@ set noerrorbells                " I really mean, no beeping.
 
 "" Status Bar
 """ Powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set rtp+=/Users/mike/.vim/bundle/powerline/powerline/bindings/vim
 "call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 set laststatus=2
+set noshowmode
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{rvm#statusline()}%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
-"if has("gui_macvim")
+if has("gui_macvim") && has("gui_running")
   let g:Powerline_symbols = 'fancy'
-"endif
+endif
+
+if ! has("gui_running")
+  " Fix terminal vim so it properly leaves insert mode. See https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
 
 "" Buffers
 set hidden                      " better support for multiple buffers
@@ -287,6 +299,12 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'  " Conflict markers
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
 
+" Indentation
+if has("gui_macvim") && has("gui_running")
+  nmap <D-]> v><ESC>
+  nmap <D-[> v<<ESC>
+endif
+
 " Commenting
 "" Map the commenting command to Command / (when in MacVim), and <leader>/
 "" when in terminal vim
@@ -336,22 +354,22 @@ if has("autocmd")
   " autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
 
   " Tagbar
-  "nmap <F8> :TagbarToggle<CR>
+  nmap <F8> :TagbarToggle<CR>
 
-  "let g:tagbar_type_javascript = {
-    "\ 'ctagsbin' : '/usr/local/bin/jsctags'
-  "\ }
+  let g:tagbar_type_javascript = {
+    \ 'ctagsbin' : '/usr/local/bin/jsctags'
+  \ }
 
-  "let g:tagbar_type_ruby = {
-  "\ 'kinds' : [
-      "\ 'm:modules',
-      "\ 'c:classes',
-      "\ 'd:describes',
-      "\ 'C:contexts',
-      "\ 'f:methods',
-      "\ 'F:singleton methods'
-    "\ ]
-  "\ }
+  let g:tagbar_type_ruby = {
+  \ 'kinds' : [
+      \ 'm:modules',
+      \ 'c:classes',
+      \ 'd:describes',
+      \ 'C:contexts',
+      \ 'f:methods',
+      \ 'F:singleton methods'
+    \ ]
+  \ }
 
   " Rainbow Parentheses
   au VimEnter * RainbowParenthesesToggle
@@ -365,7 +383,7 @@ if has("autocmd")
 
   " Automatic fold settings for specific files. Uncomment to use.
   " autocmd FileType css,scss,sass setlocal foldmethod=indent shiftwidth=2 tabstop=2
-  autocmd FileType css,scss,sass,javascript,jst,eruby.js setlocal shiftwidth=2 tabstop=2 expandtab " foldmethod=indent
+  autocmd FileType css,scss,sass,javascript,jst,eruby.js,coffee setlocal shiftwidth=2 tabstop=2 expandtab " foldmethod=indent
   autocmd FileType html,eruby.html,php setlocal shiftwidth=2 tabstop=2 expandtab
 
   " HTML Validation Compiler

@@ -1,5 +1,7 @@
 " vim: syntax=vim; filetype=vim
 " Borrowing the Janus NERDTree Config: https://github.com/carlhuda/janus/blob/9a6be477bbbe9d95142de80ad2db8c606168ae09/janus/vim/tools/janus/after/plugin/nerdtree.vim
+let NERDTreeHijackNetrw = 0
+
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 
 " Default mapping, <leader>n

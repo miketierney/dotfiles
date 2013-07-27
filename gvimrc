@@ -1,6 +1,4 @@
-"set guifont=Anonymous\ Pro\ for\ Powerline:h12
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12
-"set guifont=Ubuntu\ Mono\ for\ Powerline:h14
+set guifont=Source\ Code\ Pro\ for\ Powerline:h11
 set antialias
 set encoding=utf-8
 set guioptions-=T
@@ -16,6 +14,8 @@ set list
 
 "color wandering
 "color Tomorrow-Night-Eighties
+color solarized
+set background=dark
 
 
 " Enables Cmd-T functionality in MacVim

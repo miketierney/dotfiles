@@ -1,0 +1,1 @@
+../../colorschemes/vim-distinguished/colors/distinguished.vim

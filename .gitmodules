@@ -190,3 +190,6 @@
 [submodule "vim/bundle/vim-abolish"]
 	path = vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "colorschemes/vim-distinguished"]
+	path = colorschemes/vim-distinguished
+	url = https://github.com/Lokaltog/vim-distinguished.git

@@ -1,0 +1,1 @@
+../../colorschemes/codeschool/colors/codeschool.vim

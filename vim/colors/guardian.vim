@@ -1,0 +1,1 @@
+../../colorschemes/guardian/colors/guardian.vim

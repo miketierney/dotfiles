@@ -411,6 +411,13 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunction
 
+" Line editing helpers
+nnoremap - ddp
+nnoremap _ ddkP
+inoremap <c-u> <esc>viwUi
+nnoremap <c-u> viwU
+nnoremap <space> viw
+
 " Rainbow Parentheses options
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0

@@ -132,13 +132,8 @@ map <leader>n :call RenameFile()<cr>
 " runtime! plugin/matchit.vim     " Load the matchit plugin
 
 "" Coloring
-"color jellybeans
-"color Tomorrow
-color wandering
-"color badwolf
-"color railscasts
-"color solarized
-"set background=light
+"color wandering
+color codeschool
 
 "let g:badwolf_html_link_underline = 0
 "let g:badwolf_css_props_highlight = 1

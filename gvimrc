@@ -14,8 +14,8 @@ set list
 
 "color wandering
 "color Tomorrow-Night-Eighties
-color solarized
-set background=dark
+"color solarized
+"set background=dark
 
 
 " Enables Cmd-T functionality in MacVim

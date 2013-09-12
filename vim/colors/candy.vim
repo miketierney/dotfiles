@@ -1,1 +1,0 @@
-../../colorschemes/candy/colors/candy.vim

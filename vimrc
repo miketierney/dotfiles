@@ -128,23 +128,13 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-" Matchit
-" runtime! plugin/matchit.vim     " Load the matchit plugin
-
 "" Coloring
-"color wandering
-color codeschool
-
-"let g:badwolf_html_link_underline = 0
-"let g:badwolf_css_props_highlight = 1
+color wandering
 
 if $TERM=="xterm-256color"
   set t_Co=256                  " enable 256 color support, if available
   let g:solarized_termcolors=256
 endif
-
-" Solarized settings
-"call togglebg#map("<F5>")
 
 " Toggle Gundo
 nnoremap <F5> :GundoToggle<CR>
@@ -155,8 +145,6 @@ set showcmd                     " display incomplete commands
 set showmode                    " display the mode you're currently in
 set nobackup                    " keep no backups
 set noswapfile                  " don't store swap files
-"set backupdir=~/.vim/backup
-"set directory=~/.vim/backup
 
 set visualbell                  " No beeping.
 set noerrorbells                " I really mean, no beeping.
@@ -165,7 +153,6 @@ set noerrorbells                " I really mean, no beeping.
 "" Status Bar
 """ Powerline
 set rtp+=/Users/mike/.vim/bundle/powerline/powerline/bindings/vim
-"call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 set laststatus=2
 set noshowmode
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{rvm#statusline()}%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P

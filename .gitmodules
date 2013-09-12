@@ -190,3 +190,9 @@
 [submodule "colorschemes/vim-distinguished"]
 	path = colorschemes/vim-distinguished
 	url = https://github.com/Lokaltog/vim-distinguished.git
+[submodule "vim/bundle/vimshell-vim"]
+	path = vim/bundle/vimshell-vim
+	url = https://github.com/Shougo/vimshell.vim.git
+[submodule "vim/bundle/vimproc-vim"]
+	path = vim/bundle/vimproc-vim
+	url = https://github.com/Shougo/vimproc.vim.git

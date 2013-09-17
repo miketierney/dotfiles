@@ -61,6 +61,9 @@
   b = branch
   br = branch
 
+  # push development to heroku
+  pdth = !git push heroku development:master
+
   # git log
   # L = log --decorate
   # l = log --pretty=oneline --decorate --abbrev-commit

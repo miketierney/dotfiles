@@ -383,7 +383,7 @@ if has("autocmd")
   " au FocusLost * :wa
 
   " Indent Guides settings
-  set ts=4 sw=4 et
+  "set ts=4 sw=4 et
   let g:indent_guides_guide_size = 1
 endif " has("autocmd")
 

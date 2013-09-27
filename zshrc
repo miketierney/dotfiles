@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="eastwood"
-ZSH_THEME="panpainter"
+ZSH_THEME="slosh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -62,6 +62,9 @@ alias rdma='rake db:migrate && rake db:test:prepare'
 
 # Ruby aliases
 alias rake='noglob rake' # make zsh/rake behave more like bash/rake for commands that take arguments
+
+# Bower
+alias bower='noglob bower'
 
 # Tmux
 alias tm="tmuxinator"

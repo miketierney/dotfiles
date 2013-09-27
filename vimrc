@@ -129,7 +129,7 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 "" Coloring
-color wandering
+color molokai
 
 if $TERM=="xterm-256color"
   set t_Co=256                  " enable 256 color support, if available
@@ -156,10 +156,6 @@ set rtp+=/Users/mike/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 set noshowmode
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{rvm#statusline()}%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
-
-if has("gui_macvim") && has("gui_running")
-  let g:Powerline_symbols = 'fancy'
-endif
 
 if ! has("gui_running")
   " Fix terminal vim so it properly leaves insert mode. See https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
@@ -215,9 +211,9 @@ set winwidth=84
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight will
 " fail.
-set winheight=5
-set winminheight=5
-set winheight=999
+"set winheight=5
+"set winminheight=5
+"set winheight=999
 
 " Folding
 

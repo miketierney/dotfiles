@@ -1,4 +1,4 @@
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
 set antialias
 set encoding=utf-8
 set guioptions-=T
@@ -11,6 +11,7 @@ set shiftwidth=2
 
 set list
 
+let g:Powerline_symbols = 'fancy'
 
 " Enables Cmd-T functionality in MacVim
 if has("gui_macvim")

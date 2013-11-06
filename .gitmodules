@@ -205,3 +205,6 @@
 [submodule "vim/bundle/vim-characterize"]
 	path = vim/bundle/vim-characterize
 	url = https://github.com/tpope/vim-characterize.git
+[submodule "vim/bundle/vim-dispatch"]
+	path = vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git

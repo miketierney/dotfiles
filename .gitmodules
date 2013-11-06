@@ -202,3 +202,6 @@
 [submodule "colorschemes/vim-lucius"]
 	path = colorschemes/vim-lucius
 	url = https://github.com/jonathanfilip/vim-lucius.git
+[submodule "vim/bundle/vim-characterize"]
+	path = vim/bundle/vim-characterize
+	url = https://github.com/tpope/vim-characterize.git

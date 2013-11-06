@@ -199,3 +199,6 @@
 [submodule "vim/bundle/vim-accordion"]
 	path = vim/bundle/vim-accordion
 	url = https://github.com/mattboehm/vim-accordion.git
+[submodule "colorschemes/vim-lucius"]
+	path = colorschemes/vim-lucius
+	url = https://github.com/jonathanfilip/vim-lucius.git

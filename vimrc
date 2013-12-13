@@ -482,6 +482,15 @@ function! s:NumberTextObject(whole)
   endif
 endfunction
 
+" Dash settings
+
+let g:dash_map = {
+  \ 'ruby'       : 'rails ruby2',
+  \ 'javascript' : 'backbone jquery underscore',
+  \ 'scss'       : 'compass sass',
+  \ 'sass'       : 'compass'
+  \ }
+
 " Add functions to highlight and trim unwanted whitespace.
 " Here, 'unwanted' means any spaces before a tab character, or any space or
 " tab at the end of a line.

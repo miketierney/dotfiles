@@ -1,4 +1,4 @@
-set guifont=Ubuntu\ Mono\ derivative\ Powerline:h20
+set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
 set antialias
 set encoding=utf-8
 set guioptions-=T

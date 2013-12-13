@@ -482,5 +482,15 @@ function! s:NumberTextObject(whole)
   endif
 endfunction
 
+" Add functions to highlight and trim unwanted whitespace.
+" Here, 'unwanted' means any spaces before a tab character, or any space or
+" tab at the end of a line.
+" from: http://vim.wikia.com/wiki/Remove_unwanted_spaces
+function TrimWhiteSpace()
+  :%s/\s*$//
+endfunction
+
+nnoremap <F12> :call TrimWhiteSpace()<CR>
+
 " Tab completion for plugins
 set completefunc=syntaxcomplete#Complete

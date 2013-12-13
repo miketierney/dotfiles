@@ -22,3 +22,4 @@
 --type-set=json=.json
 --type-set=yml=.yml
 --type-set=erb=.erb
+--type-set=handlebars=.handlebars

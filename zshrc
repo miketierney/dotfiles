@@ -30,7 +30,7 @@ export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/l
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler gem git osx rails3)
+plugins=(brew bundler gem git osx rails)
 
 source $ZSH/oh-my-zsh.sh
 rvm use default &> /dev/null
@@ -139,3 +139,7 @@ unset MAILCHECK
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Enable homebrew tab completion
+fpath=($HOME/.zsh/func $fpath)
+typeset -U fpath

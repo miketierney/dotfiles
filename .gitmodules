@@ -217,3 +217,6 @@
 [submodule "vim/bundle/dash.vim"]
 	path = vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule "vim/bundle/investigate.vim"]
+	path = vim/bundle/investigate.vim
+	url = https://github.com/Keithbsmiley/investigate.vim.git

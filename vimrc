@@ -482,15 +482,6 @@ function! s:NumberTextObject(whole)
   endif
 endfunction
 
-" Dash settings
-
-let g:dash_map = {
-  \ 'ruby'       : 'rails ruby2',
-  \ 'javascript' : 'backbone jquery underscore',
-  \ 'scss'       : 'compass sass',
-  \ 'sass'       : 'compass'
-  \ }
-
 " Add functions to highlight and trim unwanted whitespace.
 " Here, 'unwanted' means any spaces before a tab character, or any space or
 " tab at the end of a line.
@@ -503,3 +494,33 @@ nnoremap <F12> :call TrimWhiteSpace()<CR>
 
 " Tab completion for plugins
 set completefunc=syntaxcomplete#Complete
+
+" Add support for reading localized .jshintrc files to Syntastic
+function s:find_jshintrc(dir)
+  let l:found = globpath(a:dir, '.jshintrc')
+  if filereadable(l:found)
+    return l:found
+  endif
+
+  let l:parent = fnamemodify(a:dir, ':h')
+  if l:parent != a:dir
+    return s:find_jshintrc(l:parent)
+  endif
+
+  return "~/.jshintrc"
+endfunction
+
+function UpdateJsHintConf()
+  let l:dir = expand('%:p:h')
+  let l:jshintrc = s:find_jshintrc(l:dir)
+  let g:syntastic_javascript_jshint_conf = l:jshintrc
+endfunction
+
+au BufEnter *.js call UpdateJsHintConf()
+
+" Investigate.vim settings
+let g:investigate_use_dash=1
+let g:investigate_dash_for_javascript="js-libs"
+let g:investigate_dash_for_sass="sass-libs"
+let g:investigate_dash_for_scss="sass-libs"
+nnoremap <leader>K :call investigate#Investigate()<CR>

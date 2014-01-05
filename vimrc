@@ -4,9 +4,9 @@ set encoding=utf-8
 
 syntax enable
 filetype plugin indent on       " load file type plugins + indentation
-set nonumber                    " Disable numbers by default
 set ruler
 set scrolloff=3                 " Show 3 lines of content around the cursor
+set number                      " Show line numbers.
 
 let mapleader = ","             " Change the <leader> to a comma (easier to reach)
 let maplocalleader = "\\"       " Change the <localleader> to a backslash

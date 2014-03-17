@@ -144,3 +144,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Enable homebrew tab completion
 fpath=($HOME/.zsh/func $fpath)
 typeset -U fpath
+
+# Make for a better history browsing experience
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward

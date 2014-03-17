@@ -63,6 +63,8 @@
 
   # push development to heroku
   pdth = !git push heroku development:master
+  # push 'heroku' branch to heroku
+  phth = !git push heroku heroku:master
 
   # git log
   # L = log --decorate

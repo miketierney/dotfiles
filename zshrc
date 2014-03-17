@@ -25,8 +25,9 @@ COMPLETION_WAITING_DOTS="true"
 
 # Customize to your needs...
 export PATH=bin:/Users/mike/bin:/usr/local/share/npm/bin:/usr/local/mysql/bin:/usr/local/sphinx/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin/node:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
+PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/bin/npm:/Users/mike/.npm:/usr/local/lib/jsctags/:$NODE_PATH
+export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/bin/npm:/Users/mike/.npm:/usr/local/lib/jsctags/:/usr/local/share/npm/lib/node_modules:$NODE_PATH
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)

@@ -69,7 +69,7 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.swp,*.bak,Build/*
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir' : '\.git$\|\.hg$\|\.svn$',
+  \ 'dir' : '\v[\/](\.git|\.hg|\.svn)$',
   \ }
 
 "" Searching
@@ -439,7 +439,7 @@ map <leader>gjs :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
 map <leader>gaa :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\.git$\|\.hg$\|\.svn$',
+  \ 'dir': '\.git$\|\.hg$\|\.svn\|node_modules$',
   \ 'file': '\.pyc$\|\.pyo$\|\.rbc$\|\.rbo$\|\.class$\|\.o$\|\~$',
   \ }
 

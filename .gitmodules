@@ -238,3 +238,6 @@
 [submodule "vim/bundle/vim-rbenv"]
 	path = vim/bundle/vim-rbenv
 	url = git@github.com:tpope/vim-rbenv.git
+[submodule "vim/bundle/sparkup"]
+	path = vim/bundle/sparkup
+	url = git@github.com:rstacruz/sparkup.git

@@ -193,9 +193,6 @@
 [submodule "vim/bundle/vimproc-vim"]
 	path = vim/bundle/vimproc-vim
 	url = https://github.com/Shougo/vimproc.vim.git
-[submodule "vim/bundle/livestyle-vim"]
-	path = vim/bundle/livestyle-vim
-	url = https://github.com/mattn/livestyle-vim.git
 [submodule "vim/bundle/vim-accordion"]
 	path = vim/bundle/vim-accordion
 	url = https://github.com/mattboehm/vim-accordion.git

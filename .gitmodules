@@ -226,3 +226,6 @@
 [submodule "vim/bundle/vim-angular"]
 	path = vim/bundle/vim-angular
 	url = git://github.com/burnettk/vim-angular.git
+[submodule "vim/bundle/vim-mustache-handlebars"]
+	path = vim/bundle/vim-mustache-handlebars
+	url = git://github.com/mustache/vim-mustache-handlebars.git

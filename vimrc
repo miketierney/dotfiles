@@ -529,4 +529,4 @@ let g:investigate_use_dash=1
 let g:investigate_dash_for_javascript="js-libs"
 let g:investigate_dash_for_sass="sass-libs"
 let g:investigate_dash_for_scss="sass-libs"
-nnoremap <leader>K :call investigate#Investigate()<CR>
+nnoremap <leader>h :call investigate#Investigate()<CR>

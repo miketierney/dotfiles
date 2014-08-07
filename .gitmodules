@@ -235,3 +235,6 @@
 [submodule "vim/bundle/vim-projectionist"]
 	path = vim/bundle/vim-projectionist
 	url = git@github.com:tpope/vim-projectionist.git
+[submodule "vim/bundle/vim-rbenv"]
+	path = vim/bundle/vim-rbenv
+	url = git@github.com:tpope/vim-rbenv.git

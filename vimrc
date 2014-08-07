@@ -66,7 +66,7 @@ nmap Q gqap
 
 "" Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.swp,*.bak,Build/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.swp,*.bak,*/Build/*,*/build/*,*/dist/*
 
 let g:ctrlp_custom_ignore = {
   \ 'dir' : '\v[\/](\.git|\.hg|\.svn)$',

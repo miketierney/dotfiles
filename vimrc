@@ -495,30 +495,34 @@ nnoremap <F12> :call TrimWhiteSpace()<CR>
 " Tab completion for plugins
 set completefunc=syntaxcomplete#Complete
 
-" Add support for reading localized .jshintrc files to Syntastic
-"function s:find_jshintrc(dir)
-  "let l:found = globpath(a:dir, '.jshintrc')
-  "if filereadable(l:found)
-    "return l:found
-  "endif
+"" Add support for reading localized .jshintrc files to Syntastic
+function s:find_jshintrc(dir)
+  let l:found = globpath(a:dir, '.jshintrc')
+  if filereadable(l:found)
+    return l:found
+  endif
 
-  "let l:parent = fnamemodify(a:dir, ':h')
-  "if l:parent != a:dir
-    "return s:find_jshintrc(l:parent)
-  "endif
+  let l:parent = fnamemodify(a:dir, ':h')
+  if l:parent != a:dir
+    return s:find_jshintrc(l:parent)
+  endif
 
-  "return "~/.jshintrc"
-"endfunction
+  return "~/.jshintrc"
+endfunction
 
-"function UpdateJsHintConf()
-  "let l:dir = expand('%:p:h')
-  "let l:jshintrc = s:find_jshintrc(l:dir)
-  "let g:syntastic_javascript_jshint_conf = l:jshintrc
-"endfunction
+function UpdateJsHintConf()
+  let l:dir = expand('%:p:h')
+  let l:jshintrc = s:find_jshintrc(l:dir)
+  let g:syntastic_javascript_jshint_conf = l:jshintrc
+endfunction
 
-"autocmd! BufEnter *.js call UpdateJsHintConf()
+au BufEnter * call UpdateJsHintConf()
 
-let g:syntastic_enable_javascript_checker = 0
+let g:syntastic_enable_javascript_checkers = []
+let g:syntastic_disabled_filetypes = ['html', 'js']
+let g:syntastic_mode_map = { 'mode': 'active',
+                            \ 'active_filetypes': [],
+                            \ 'passive_filetypes': ['javascript'] }
 
 " Investigate.vim settings
 let g:investigate_use_dash=1

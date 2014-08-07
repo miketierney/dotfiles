@@ -129,8 +129,8 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 "" Coloring
-"colorscheme lucius
 colorscheme molokai
+"colorscheme solarized
 
 if $TERM=="xterm-256color"
   set t_Co=256                  " enable 256 color support, if available

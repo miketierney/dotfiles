@@ -11,6 +11,8 @@ set shiftwidth=2
 
 set list
 
+colorscheme github
+
 let g:Powerline_symbols = 'fancy'
 
 " Enables Cmd-T functionality in MacVim

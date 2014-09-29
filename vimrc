@@ -156,7 +156,7 @@ set noerrorbells                " I really mean, no beeping.
 set rtp+=/Users/mike/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 set noshowmode
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{rvm#statusline()}%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
 if ! has("gui_running")
   " Fix terminal vim so it properly leaves insert mode. See https://powerline.readthedocs.org/en/latest/tipstricks.html#vim

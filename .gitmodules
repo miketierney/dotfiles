@@ -244,3 +244,6 @@
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
+[submodule "vim/bundle/vim-fidget"]
+	path = vim/bundle/vim-fidget
+	url = git://github.com/mohitleo9/vim-fidget.git

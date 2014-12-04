@@ -1,5 +1,9 @@
 set nocompatible                " choose no compatibility with legacy vi
 
+" Enable project-specific vimrc files
+set exrc                        " enables per-directory .vimrc files
+set secure                      " don't assume good behavior; disable unsafe commands in local .vimrc files
+
 set encoding=utf-8
 
 syntax enable
@@ -495,7 +499,7 @@ nnoremap <F12> :call TrimWhiteSpace()<CR>
 " Tab completion for plugins
 set completefunc=syntaxcomplete#Complete
 
-"" Add support for reading localized .jshintrc files to Syntastic
+" Add support for reading localized .jshintrc files to Syntastic
 function s:find_jshintrc(dir)
   let l:found = globpath(a:dir, '.jshintrc')
   if filereadable(l:found)

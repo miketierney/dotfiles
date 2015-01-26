@@ -241,3 +241,6 @@
 [submodule "vim/bundle/vim-fidget"]
 	path = vim/bundle/vim-fidget
 	url = git://github.com/mohitleo9/vim-fidget.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = git@github.com:ctrlpvim/ctrlp.vim.git

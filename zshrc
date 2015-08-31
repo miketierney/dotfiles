@@ -26,15 +26,17 @@ COMPLETION_WAITING_DOTS="true"
 # Customize to your needs...
 export PATH=bin:/Users/mike/bin:/usr/local/share/npm/bin:/usr/local/mysql/bin:/usr/local/sphinx/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin/node:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
 PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/bin/npm:/Users/mike/.npm:/usr/local/lib/jsctags/:/usr/local/share/npm/lib/node_modules:$NODE_PATH
+export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/bin/npm:/Users/mike/.npm:/usr/local/lib/jsctags:/usr/local/share/npm/lib/node_modules:$NODE_PATH
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(brew bundler gem git osx rails)
 
 source $ZSH/oh-my-zsh.sh
-rvm use default &> /dev/null
+
+# rbenv
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Help Git autocompletion work
 autoload -U compinit && compinit
@@ -70,6 +72,9 @@ alias bower='noglob bower'
 # Tmux
 alias tm="tmuxinator"
 
+# JSC
+alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc"
+
 # Mike's sanity-saving shortcuts
 # apache short cut
 # alias start_apache='sudo /opt/local/apache2/bin/apachectl start'
@@ -93,7 +98,7 @@ alias dev='ssh -X dev' # requires that the 'dev' ssh alias be set up properly
 # CTags
 
 function generate_ctags {
-  ctags -R --exclude=.git --exclude=log *
+  ctags -R *
 }
 
 # Personal
@@ -133,8 +138,6 @@ unset MAILCHECK
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-[[ -s "/Users/mike/.rvm/scripts/rvm" ]] && source "/Users/mike/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
 # Powerline
 #. /Users/mike/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
 
@@ -148,3 +151,5 @@ typeset -U fpath
 # Make for a better history browsing experience
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+
+export CC=/usr/bin/gcc

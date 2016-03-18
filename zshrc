@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="eastwood"
-ZSH_THEME="slosh"
+ZSH_THEME="agnoster"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -25,12 +25,17 @@ COMPLETION_WAITING_DOTS="true"
 
 # Customize to your needs...
 export PATH=bin:/Users/mike/bin:/usr/local/share/npm/bin:/usr/local/mysql/bin:/usr/local/sphinx/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin/node:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
-PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
+export PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
+export PATH=/usr/local/terraform/bin:/home/your-user-name/terraform:$PATH
 export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/bin/npm:/Users/mike/.npm:/usr/local/lib/jsctags:/usr/local/share/npm/lib/node_modules:$NODE_PATH
+export NODE_PATH=$NODE_PATH:/Users/mike/.nvm/versions/node/v4.1.1/lib/node_modules
+
+# PHP CLI override
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler gem git osx rails)
+plugins=(brew bundler gem git osx rails history nyan)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -74,6 +79,9 @@ alias tm="tmuxinator"
 
 # JSC
 alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc"
+
+# Postgres
+alias start_postgres="postgres -D /usr/local/var/postgres"
 
 # Mike's sanity-saving shortcuts
 # apache short cut
@@ -153,3 +161,18 @@ bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
 export CC=/usr/bin/gcc
+
+export NVM_DIR="/Users/mike/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+alias vmxc='printf "mtierney\nWelcome2VMX!" | /opt/cisco/anyconnect/bin/vpn -s connect vpn.verimatrix.com/intridea'
+alias vmxd='/opt/cisco/anyconnect/bin/vpn disconnect'
+
+eval "$(docker-machine env default)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# iTerm2 custom variables
+function iterm2_print_user_vars() {
+  iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+}

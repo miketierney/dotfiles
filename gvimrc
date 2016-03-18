@@ -1,5 +1,6 @@
 "set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
-set guifont=M+\ 1MN\ regular\ for\ Powerline:h14
+" set guifont=M+\ 1MN\ regular\ for\ Powerline:h12
+set guifont=Hack:h14
 set antialias
 set encoding=utf-8
 set guioptions-=T
@@ -11,8 +12,6 @@ set tabstop=2
 set shiftwidth=2
 
 set list
-
-"colorscheme github
 
 let g:Powerline_symbols = 'fancy'
 

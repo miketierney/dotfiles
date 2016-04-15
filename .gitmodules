@@ -52,6 +52,12 @@
 [submodule "vim-janus"]
 	path = vim-janus
 	url = git://github.com/miketierney/janus.git
+[submodule "vim/snippets-custom"]
+	path = vim/snippets-custom
+	url = https://github.com/miketierney/snipmate-snippets-ext.git
+[submodule "colorschemes/vim-hybrid-material.git"]
+	path = colorschemes/vim-hybrid-material.git
+	url = https://github.com/kristijanhusak/vim-hybrid-material.git
 [submodule "colorschemes/tomorrow-theme"]
 	path = colorschemes/tomorrow-theme
 	url = https://github.com/chriskempson/tomorrow-theme.git

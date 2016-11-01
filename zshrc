@@ -165,14 +165,15 @@ export CC=/usr/bin/gcc
 export NVM_DIR="/Users/mike/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-alias vmxc='printf "mtierney\nWelcome2VMX!" | /opt/cisco/anyconnect/bin/vpn -s connect vpn.verimatrix.com/intridea'
-alias vmxd='/opt/cisco/anyconnect/bin/vpn disconnect'
-
-eval "$(docker-machine env default)"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # iTerm2 custom variables
 function iterm2_print_user_vars() {
   iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
 }
+
+# Keep for last, since it should hold overrides
+if [ -f $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
+fi
+

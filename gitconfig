@@ -23,6 +23,7 @@
 
   # git checkout
   co = checkout
+  cot = !git checkout && ctags -R -f ./.git/tags .
   c = checkout
 
   # git fetch

@@ -6,6 +6,5 @@ export NODE_PATH=/usr/local/bin:/usr/local/sbin:/usr/local/lib/node:/usr/local/l
 export LDFLAGS="-L/usr/local/opt"
 
 # Initialize rbenv
-eval "$(rbenv init -)"
 PATH=$HOME/.rbenv/shims:$PATH
 

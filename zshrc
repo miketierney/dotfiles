@@ -52,7 +52,7 @@ alias mc='mc -c'
 alias ..='cd ../'
 alias ...='cd ../..'
 alias home='cd $HOME'
-# alias emacs='/usr/local/Cellar/emacs/HEAD-f5543ff/Emacs.app/Contents/MacOS/Emacs -nw'
+alias emacs='/usr/local/Cellar/emacs/HEAD-f5543ff/Emacs.app/Contents/MacOS/Emacs -nw'
 
 # Rails command aliases
 alias rdm='rake db:migrate'

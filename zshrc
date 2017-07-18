@@ -53,6 +53,7 @@ alias ..='cd ../'
 alias ...='cd ../..'
 alias home='cd $HOME'
 alias emacs='/usr/local/Cellar/emacs/HEAD-f5543ff/Emacs.app/Contents/MacOS/Emacs -nw'
+alias gplb="git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
 
 # Rails command aliases
 alias rdm='rake db:migrate'
